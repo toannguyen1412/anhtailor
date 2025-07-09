@@ -380,10 +380,10 @@ body, .bio-container {
 
 @media (max-width: 480px) {
     .feedback-gallery.vertical-scroll {
-        max-height: 220px;
+        max-height: 300px;
     }
     .feedback-item img {
-        width: 70px;
-        height: 70px;
+        width: 220px0px;
+        height: 220px;
     }
 }
