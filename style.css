@@ -359,7 +359,7 @@ body, .bio-container {
 
 .feedback-gallery.vertical-scroll {
     display: block;
-    max-height: 350px; /* hoặc điều chỉnh theo ý bạn */
+    max-height: 400px; 
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 6px;
