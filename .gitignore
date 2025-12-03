@@ -1,1 +1,7 @@
-.vs/
+node_modules/
+.DS_Store
+*.log
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/anhtailor/v17/.wsuo
