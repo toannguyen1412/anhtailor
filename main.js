@@ -42,10 +42,12 @@ createApp({
           target: '_blank'
         }
       ],
-      feedbackImages: Array.from({ length: 17 }, (_, i) => ({
+      feedbackImages: Array.from({ length: 23 }, (_, i) => ({
         src: `images/feedback/customer (${i + 1}).jpg`,
         alt: `Feedback ${i + 1}`
-      }))
+      })),
+      showLightbox: false,
+      currentImageIndex: 0
     };
   },
   methods: {
@@ -64,10 +66,40 @@ createApp({
       setTimeout(() => {
         button.style.transform = '';
       }, 150);
+    },
+    openLightbox(index) {
+      this.currentImageIndex = index;
+      this.showLightbox = true;
+      document.body.style.overflow = 'hidden';
+    },
+    closeLightbox() {
+      this.showLightbox = false;
+      document.body.style.overflow = '';
+    },
+    nextImage() {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.feedbackImages.length;
+    },
+    prevImage() {
+      this.currentImageIndex = (this.currentImageIndex - 1 + this.feedbackImages.length) % this.feedbackImages.length;
+    },
+    handleKeydown(event) {
+      if (!this.showLightbox) return;
+      
+      if (event.key === 'Escape') {
+        this.closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        this.nextImage();
+      } else if (event.key === 'ArrowLeft') {
+        this.prevImage();
+      }
     }
   },
   mounted() {
     this.$el.style.opacity = '1';
+    window.addEventListener('keydown', this.handleKeydown);
+  },
+  beforeUnmount() {
+    window.removeEventListener('keydown', this.handleKeydown);
   }
 }).mount('#app');
 

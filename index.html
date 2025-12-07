@@ -60,7 +60,30 @@
                 <h3 class="feedback-title">Customer Feedback</h3>
                 <div class="feedback-gallery vertical-scroll">
                     <div class="feedback-item" v-for="(image, index) in feedbackImages" :key="index">
-                        <img :src="image.src" :alt="image.alt">
+                        <img :src="image.src" :alt="image.alt" @click="openLightbox(index)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div v-if="showLightbox" class="lightbox-overlay" @click="closeLightbox">
+                <div class="lightbox-container" @click.stop>
+                    <button class="lightbox-close" @click="closeLightbox" aria-label="Đóng">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                    <button class="lightbox-nav lightbox-prev" @click="prevImage" aria-label="Ảnh trước">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="lightbox-nav lightbox-next" @click="nextImage" aria-label="Ảnh sau">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <div class="lightbox-image-wrapper">
+                        <img :src="feedbackImages[currentImageIndex].src" 
+                             :alt="feedbackImages[currentImageIndex].alt"
+                             class="lightbox-image">
+                    </div>
+                    <div class="lightbox-counter">
+                        {{ currentImageIndex + 1 }} / {{ feedbackImages.length }}
                     </div>
                 </div>
             </div>
