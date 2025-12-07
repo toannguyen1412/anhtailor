@@ -3,17 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anh Tailor - Veston Suit Custom Ham Tien Mui Ne</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Anh Tailor - Veston Suit Custom Ham Tien Mui Ne | May Veston Chất Lượng</title>
+    <meta name="description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày. Liên hệ: 0397417003">
+    <meta name="keywords" content="may veston mui ne, may vest ham tien, tailor mui ne, custom suit vietnam, may ao vest, bespoke suit">
+    <meta name="author" content="Anh Tailor">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anhtailor.com/">
+    <meta property="og:title" content="Anh Tailor - Veston Suit Custom Ham Tien Mui Ne">
+    <meta property="og:description" content="Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi chất lượng cao với giá hợp lý.">
     <meta property="og:image" content="images/background.jpeg">
+    <meta property="og:locale" content="vi_VN">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anh Tailor - Veston Suit Custom Ham Tien Mui Ne">
+    <meta name="twitter:description" content="Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi chất lượng cao với giá hợp lý.">
     <meta name="twitter:image" content="images/background.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Anh Tailor",
+      "image": "images/logo.jpg",
+      "description": "Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "357/1 Nguyen Dinh Chieu",
+        "addressLocality": "Ham Tien",
+        "addressRegion": "Mui Ne",
+        "addressCountry": "VN"
+      },
+      "telephone": "0397417003",
+      "url": "https://www.facebook.com/anhtailorvn/",
+      "priceRange": "$40 - $380",
+      "openingHours": "Mo-Su 08:00-20:00"
+    }
+    </script>
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">{{ t.skipToContent }}</a>
     <div id="app">
-        <div class="bio-container">
+        <div class="bio-container" id="main-content">
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button @click="switchLanguage('vi')" 
+                        :class="{ active: currentLanguage === 'vi' }"
+                        class="lang-btn"
+                        aria-label="Tiếng Việt">
+                    <span class="lang-flag" :style="{ backgroundImage: 'url(https://flagcdn.com/w20/vn.png)' }"></span>
+                    <span class="lang-code">VI</span>
+                </button>
+                <button @click="switchLanguage('en')" 
+                        :class="{ active: currentLanguage === 'en' }"
+                        class="lang-btn"
+                        aria-label="English">
+                    <span class="lang-flag" :style="{ backgroundImage: 'url(https://flagcdn.com/w20/gb.png)' }"></span>
+                    <span class="lang-code">EN</span>
+                </button>
+            </div>
+
             <!-- Profile Section -->
             <div class="profile-image">
                 <img src="images/logo.jpg" 
@@ -23,19 +91,19 @@
             </div>
             
             <h1 class="brand-name">Anh Tailor | Mui Ne</h1>
-            <p class="tagline">Professional Tailoring & Bespoke Suits</p>
+            <p class="tagline">{{ t.tagline }}</p>
 
             <!-- Services Section -->
             <div class="services-section">
-                <h3 class="services-title">Our Services & Prices</h3>
+                <h3 class="services-title">{{ t.servicesTitle }}</h3>
                 <div class="services-list">
-                    <div class="service-card" v-for="service in services" :key="service.name">
+                    <div class="service-card" v-for="service in servicesWithTranslations" :key="service.nameKey">
                         <div class="service-image-wrapper">
                             <div class="service-slide-container">
                                 <img v-for="(image, index) in service.images" 
                                      :key="index"
                                      :src="image" 
-                                     :alt="service.name" 
+                                     :alt="`${service.name} - Image ${index + 1}`" 
                                      class="service-product-image"
                                      :class="{ 'active': index === service.currentImageIndex }"
                                      @error="handleServiceImageError($event, service)">
@@ -45,12 +113,12 @@
                             </div>
                             <button class="service-slide-nav service-slide-prev" 
                                     @click="prevServiceImage(service)"
-                                    aria-label="Previous image">
+                                    :aria-label="t.prevImage">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
                             <button class="service-slide-nav service-slide-next" 
                                     @click="nextServiceImage(service)"
-                                    aria-label="Next image">
+                                    :aria-label="t.nextImage">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                             <div class="service-slide-indicators">
@@ -74,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="service-price-wrapper">
-                                <span class="service-price-label">Starting from</span>
+                                <span class="service-price-label">{{ t.priceLabel }}</span>
                                 <span class="service-price">{{ service.price }}</span>
                             </div>
                         </div>
@@ -83,11 +151,12 @@
             </div>
 
             <!-- Contact Links -->
-            <a v-for="link in contactLinks" 
-               :key="link.text"
+            <a v-for="link in contactLinksWithTranslations" 
+               :key="link.textKey"
                :href="link.href" 
                class="link-button" 
                :target="link.target"
+               :rel="link.target === '_blank' ? 'noopener noreferrer' : ''"
                @click="handleLinkClick">
                 <span class="link-icon"><i :class="link.icon"></i></span>
                 {{ link.text }}
@@ -95,7 +164,7 @@
 
             <!-- Text Feedback Section -->
             <div class="text-feedback-section">
-                <h3 class="feedback-title">Customer Reviews</h3>
+                <h3 class="feedback-title">{{ t.customerReviews }}</h3>
                 <div class="text-feedback-list vertical-scroll">
                     <div class="text-feedback-item" v-for="(feedback, index) in feedbacksWithDates" :key="index">
                         <div class="feedback-header">
@@ -121,10 +190,15 @@
 
             <!-- Feedback Images Section -->
             <div class="feedback-section">
-                <h3 class="feedback-title">Customer Photos</h3>
+                <h3 class="feedback-title">{{ t.customerPhotos }}</h3>
                 <div class="feedback-gallery vertical-scroll">
-                    <div class="feedback-item" v-for="(image, index) in feedbackImages" :key="index">
-                        <img :src="image.src" :alt="image.alt" @click="openLightbox(index)">
+                    <div class="feedback-item" v-for="(image, index) in feedbackImagesWithTranslations" :key="index">
+                        <img :src="image.src" 
+                             :alt="image.alt" 
+                             loading="lazy"
+                             @click="openLightbox(index)"
+                             @error="handleFeedbackImageError($event, index)"
+                             :aria-label="currentLanguage === 'vi' ? `Xem ảnh ${index + 1} của khách hàng` : `View customer photo ${index + 1}`">
                     </div>
                 </div>
             </div>
@@ -132,32 +206,45 @@
             <!-- Lightbox Modal -->
             <div v-if="showLightbox" class="lightbox-overlay" @click="closeLightbox">
                 <div class="lightbox-container" @click.stop>
-                    <button class="lightbox-close" @click="closeLightbox" aria-label="Đóng">
+                    <button class="lightbox-close" @click="closeLightbox" :aria-label="t.close">
                         <i class="fa-solid fa-times"></i>
                     </button>
-                    <button class="lightbox-nav lightbox-prev" @click="prevImage" aria-label="Ảnh trước">
+                    <button class="lightbox-nav lightbox-prev" @click="prevImage" :aria-label="t.prevImage">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button class="lightbox-nav lightbox-next" @click="nextImage" aria-label="Ảnh sau">
+                    <button class="lightbox-nav lightbox-next" @click="nextImage" :aria-label="t.nextImage">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                     <div class="lightbox-image-wrapper">
-                        <img :src="feedbackImages[currentImageIndex].src" 
-                             :alt="feedbackImages[currentImageIndex].alt"
-                             class="lightbox-image">
+                        <img :src="feedbackImagesWithTranslations[currentImageIndex].src" 
+                             :alt="feedbackImagesWithTranslations[currentImageIndex].alt"
+                             class="lightbox-image"
+                             @load="imageLoaded = true"
+                             @error="handleLightboxImageError">
+                        <div v-if="!imageLoaded" class="lightbox-loading">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                        </div>
                     </div>
                     <div class="lightbox-counter">
-                        {{ currentImageIndex + 1 }} / {{ feedbackImages.length }}
+                        {{ currentImageIndex + 1 }} / {{ feedbackImagesWithTranslations.length }}
                     </div>
                 </div>
             </div>
 
             <!-- Footer -->
             <div class="footer">
-                © 2025 Anh Tailor – Excellence in Every Stitch
+                {{ t.footer }}
             </div>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" 
+            @click="scrollToTop" 
+            :aria-label="t.backToTop"
+            :class="{ visible: showBackToTop }">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="main.js"></script>
 </body>

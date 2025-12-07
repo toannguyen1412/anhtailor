@@ -3,14 +3,119 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      currentLanguage: localStorage.getItem('language') || 'en',
+      translations: {
+        vi: {
+          tagline: 'May Veston Chuyên Nghiệp & Áo Vest Đo May',
+          servicesTitle: 'Dịch Vụ & Giá Cả',
+          priceLabel: 'Bắt đầu từ',
+          customerReviews: 'Đánh Giá Khách Hàng',
+          customerPhotos: 'Ảnh Khách Hàng',
+          backToTop: 'Lên đầu trang',
+          close: 'Đóng',
+          prevImage: 'Ảnh trước',
+          nextImage: 'Ảnh sau',
+          skipToContent: 'Bỏ qua đến nội dung chính',
+          footer: '© 2025 Anh Tailor – Tinh Hoa Trong Từng Đường May',
+          services: {
+            suits: {
+              name: 'Veston & Áo Vest',
+              description: 'Trong vòng 3-5 ngày',
+              detailDescription: 'Áo veston và blazer cao cấp được may đo chuyên nghiệp. Vừa vặn hoàn hảo cho đám cưới, công việc và các dịp đặc biệt.'
+            },
+            shirts: {
+              name: 'Áo Sơ Mi May Đo',
+              description: 'Trong vòng 1-2 ngày',
+              detailDescription: 'Áo sơ mi may đo thủ công theo số đo của bạn. Vải cao cấp và vừa vặn hoàn hảo cho công việc hoặc trang phục chính thức.'
+            },
+            waistcoat: {
+              name: 'Áo Ghi Lê',
+              description: 'Trong vòng 2-3 ngày',
+              detailDescription: 'Áo ghi lê và vest thanh lịch bằng vải cao cấp. Bổ sung hoàn hảo cho bộ vest chính thức của bạn.'
+            }
+          },
+          contact: {
+            address: '357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né',
+            callUs: 'Gọi: 0397417003',
+            whatsapp: 'WhatsApp: 0397417003',
+            facebook: 'Facebook'
+          },
+          timeAgo: {
+            justNow: 'Vừa xong',
+            minute: 'phút',
+            minutes: 'phút',
+            hour: 'giờ',
+            hours: 'giờ',
+            day: 'ngày',
+            days: 'ngày',
+            week: 'tuần',
+            weeks: 'tuần',
+            month: 'tháng',
+            months: 'tháng',
+            year: 'năm',
+            years: 'năm',
+            ago: 'trước'
+          }
+        },
+        en: {
+          tagline: 'Professional Tailoring & Bespoke Suits',
+          servicesTitle: 'Our Services & Prices',
+          priceLabel: 'Starting from',
+          customerReviews: 'Customer Reviews',
+          customerPhotos: 'Customer Photos',
+          backToTop: 'Back to top',
+          close: 'Close',
+          prevImage: 'Previous image',
+          nextImage: 'Next image',
+          skipToContent: 'Skip to main content',
+          footer: '© 2025 Anh Tailor – Excellence in Every Stitch',
+          services: {
+            suits: {
+              name: 'Suits & Veston',
+              description: 'Within 3-5 days',
+              detailDescription: 'Premium bespoke suits and blazers with expert tailoring. Perfect fit for weddings, business, and special occasions.'
+            },
+            shirts: {
+              name: 'Custom Shirts',
+              description: 'Within 1-2 days',
+              detailDescription: 'Handcrafted dress shirts tailored to your measurements. Premium fabrics and perfect fit for business or formal wear.'
+            },
+            waistcoat: {
+              name: 'Waistcoat',
+              description: 'Within 2-3 days',
+              detailDescription: 'Elegant waistcoats and vests in premium fabrics. Perfect complement to your formal suit.'
+            }
+          },
+          contact: {
+            address: '357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne',
+            callUs: 'Call Us: 0397417003',
+            whatsapp: 'WhatsApp: 0397417003',
+            facebook: 'Facebook'
+          },
+          timeAgo: {
+            justNow: 'Just now',
+            minute: 'minute',
+            minutes: 'minutes',
+            hour: 'hour',
+            hours: 'hours',
+            day: 'day',
+            days: 'days',
+            week: 'week',
+            weeks: 'weeks',
+            month: 'month',
+            months: 'months',
+            year: 'year',
+            years: 'years',
+            ago: 'ago'
+          }
+        }
+      },
+      exchangeRate: 25000, // 1 USD = 25,000 VNĐ
       services: [
-
         {
           icon: 'fa-solid fa-user-tie',
-          name: 'Suits & Veston',
-          description: 'Within 3-5 days',
-          detailDescription: 'Premium bespoke suits and blazers with expert tailoring. Perfect fit for weddings, business, and special occasions.',
-          price: '$350 - $380',
+          nameKey: 'suits',
+          priceUSD: { min: 350, max: 380 },
           images: [
             'https://images.unsplash.com/photo-1515736076039-a3ca66043b27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1685606867476-dc5b77a2bf3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
@@ -23,10 +128,8 @@ createApp({
         },
         {
           icon: 'fa-solid fa-shirt',
-          name: 'Custom Shirts',
-          description: 'Within 1-2 days',
-          detailDescription: 'Handcrafted dress shirts tailored to your measurements. Premium fabrics and perfect fit for business or formal wear.',
-          price: '$40 - $55',
+          nameKey: 'shirts',
+          priceUSD: { min: 40, max: 55 },
           images: [
             'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
@@ -38,10 +141,8 @@ createApp({
         },
         {
           icon: 'fa-solid fa-shirt',
-          name: 'Waistcoat',
-          description: 'Within 2-3 days',
-          detailDescription: 'Elegant waistcoats and vests in premium fabrics. Perfect complement to your formal suit.',
-          price: '$200',
+          nameKey: 'waistcoat',
+          priceUSD: { min: 200, max: 200 },
           images: [
             'https://images.unsplash.com/photo-1593032288331-711b99d4fa74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1593029762624-0c28669f2056?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
@@ -55,28 +156,37 @@ createApp({
       contactLinks: [
         {
           icon: 'fa-solid fa-location-dot',
-          text: '357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne',
+          textKey: 'address',
           href: 'https://g.co/kgs/G3Ya5nd',
           target: '_blank'
         },
         {
           icon: 'fa-solid fa-phone',
-          text: 'Call Us: 0397417003',
+          textKey: 'callUs',
           href: 'tel:0397417003'
         },
         {
+          icon: 'fa-brands fa-whatsapp',
+          textKey: 'whatsapp',
+          href: 'https://wa.me/84937417003',
+          target: '_blank'
+        },
+        {
           icon: 'fa-brands fa-facebook',
-          text: 'Facebook',
+          textKey: 'facebook',
           href: 'https://www.facebook.com/anhtailorvn/',
           target: '_blank'
         }
       ],
       feedbackImages: Array.from({ length: 23 }, (_, i) => ({
         src: `images/feedback/customer (${i + 1}).jpg`,
-        alt: `Feedback ${i + 1}`
+        altKey: 'customerPhoto',
+        index: i + 1
       })),
       showLightbox: false,
       currentImageIndex: 0,
+      imageLoaded: false,
+      showBackToTop: false,
       textFeedbacks: [
         {
           name: 'Nguyễn Văn An',
@@ -376,6 +486,32 @@ createApp({
     };
   },
   computed: {
+    t() {
+      return this.translations[this.currentLanguage];
+    },
+    servicesWithTranslations() {
+      return this.services.map(service => ({
+        ...service,
+        name: this.t.services[service.nameKey].name,
+        description: this.t.services[service.nameKey].description,
+        detailDescription: this.t.services[service.nameKey].detailDescription,
+        price: this.formatPrice(service.priceUSD)
+      }));
+    },
+    contactLinksWithTranslations() {
+      return this.contactLinks.map(link => ({
+        ...link,
+        text: this.t.contact[link.textKey]
+      }));
+    },
+    feedbackImagesWithTranslations() {
+      return this.feedbackImages.map(image => ({
+        ...image,
+        alt: this.currentLanguage === 'vi' 
+          ? `Ảnh khách hàng ${image.index} - Anh Tailor`
+          : `Customer photo ${image.index} - Anh Tailor`
+      }));
+    },
     feedbacksWithDates() {
       const now = new Date();
       
@@ -406,33 +542,77 @@ createApp({
       const diffDays = Math.floor(diffHours / 24);
       const diffMonths = Math.floor(diffDays / 30);
       const diffYears = Math.floor(diffDays / 365);
+      const t = this.t.timeAgo;
       
       if (diffYears > 0) {
         const remainingMonths = Math.floor((diffDays % 365) / 30);
         if (remainingMonths > 0) {
-          return `${diffYears} year${diffYears > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ago`;
+          return `${diffYears} ${diffYears > 1 ? t.years : t.year} ${remainingMonths} ${remainingMonths > 1 ? t.months : t.month} ${t.ago}`;
         }
-        return `${diffYears} year${diffYears > 1 ? 's' : ''} ago`;
+        return `${diffYears} ${diffYears > 1 ? t.years : t.year} ${t.ago}`;
       } else if (diffMonths > 0) {
         const remainingDays = diffDays % 30;
         if (remainingDays > 7) {
           const weeks = Math.floor(remainingDays / 7);
-          return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ${weeks} week${weeks > 1 ? 's' : ''} ago`;
+          return `${diffMonths} ${diffMonths > 1 ? t.months : t.month} ${weeks} ${weeks > 1 ? t.weeks : t.week} ${t.ago}`;
         }
-        return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ago`;
+        return `${diffMonths} ${diffMonths > 1 ? t.months : t.month} ${t.ago}`;
       } else if (diffDays > 0) {
         if (diffDays >= 7) {
           const weeks = Math.floor(diffDays / 7);
-          return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+          return `${weeks} ${weeks > 1 ? t.weeks : t.week} ${t.ago}`;
         }
-        return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+        return `${diffDays} ${diffDays > 1 ? t.days : t.day} ${t.ago}`;
       } else if (diffHours > 0) {
-        return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+        return `${diffHours} ${diffHours > 1 ? t.hours : t.hour} ${t.ago}`;
       } else if (diffMinutes > 0) {
-        return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
+        return `${diffMinutes} ${diffMinutes > 1 ? t.minutes : t.minute} ${t.ago}`;
       } else {
-        return 'Just now';
+        return t.justNow;
       }
+    },
+    formatPrice(priceUSD) {
+      if (this.currentLanguage === 'vi') {
+        // Chuyển đổi sang VNĐ
+        const minVND = Math.round(priceUSD.min * this.exchangeRate);
+        const maxVND = Math.round(priceUSD.max * this.exchangeRate);
+        
+        // Format số thành đơn vị triệu với làm tròn
+        const formatVND = (amount) => {
+          // Làm tròn đến hàng trăm nghìn (500k)
+          const rounded = Math.round(amount / 500000) * 500000;
+          
+          const trieu = Math.floor(rounded / 1000000);
+          const nghin = Math.floor((rounded % 1000000) / 1000);
+          
+          // Nếu phần nghìn >= 500, làm tròn lên 1 triệu
+          if (nghin >= 500) {
+            return `${trieu + 1}tr`;
+          } else if (nghin > 0) {
+            return `${trieu}tr${nghin}k`;
+          } else {
+            return `${trieu}tr`;
+          }
+        };
+        
+        if (priceUSD.min === priceUSD.max) {
+          return `${formatVND(minVND)} VNĐ`;
+        } else {
+          return `${formatVND(minVND)} - ${formatVND(maxVND)} VNĐ`;
+        }
+      } else {
+        // Hiển thị USD
+        if (priceUSD.min === priceUSD.max) {
+          return `$${priceUSD.min}`;
+        } else {
+          return `$${priceUSD.min} - $${priceUSD.max}`;
+        }
+      }
+    },
+    switchLanguage(lang) {
+      this.currentLanguage = lang;
+      localStorage.setItem('language', lang);
+      document.documentElement.lang = lang;
     },
     handleImageError(event) {
       const img = event.target;
@@ -471,6 +651,7 @@ createApp({
     openLightbox(index) {
       this.currentImageIndex = index;
       this.showLightbox = true;
+      this.imageLoaded = false;
       document.body.style.overflow = 'hidden';
     },
     closeLightbox() {
@@ -478,10 +659,12 @@ createApp({
       document.body.style.overflow = '';
     },
     nextImage() {
-      this.currentImageIndex = (this.currentImageIndex + 1) % this.feedbackImages.length;
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.feedbackImagesWithTranslations.length;
+      this.imageLoaded = false;
     },
     prevImage() {
-      this.currentImageIndex = (this.currentImageIndex - 1 + this.feedbackImages.length) % this.feedbackImages.length;
+      this.currentImageIndex = (this.currentImageIndex - 1 + this.feedbackImagesWithTranslations.length) % this.feedbackImagesWithTranslations.length;
+      this.imageLoaded = false;
     },
     handleKeydown(event) {
       if (!this.showLightbox) return;
@@ -493,14 +676,42 @@ createApp({
       } else if (event.key === 'ArrowLeft') {
         this.prevImage();
       }
+    },
+    handleFeedbackImageError(event, index) {
+      const img = event.target;
+      img.style.display = 'none';
+      const parent = img.parentElement;
+      if (parent) {
+        parent.innerHTML = '<div class="image-error-placeholder"><i class="fa-solid fa-image"></i><span>Không tải được ảnh</span></div>';
+      }
+    },
+    handleLightboxImageError(event) {
+      const img = event.target;
+      const wrapper = img.closest('.lightbox-image-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = '<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>Không thể tải ảnh</p></div>';
+      }
+    },
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    },
+    handleScroll() {
+      this.showBackToTop = window.scrollY > 300;
     }
   },
   mounted() {
     this.$el.style.opacity = '1';
+    document.documentElement.lang = this.currentLanguage;
     window.addEventListener('keydown', this.handleKeydown);
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); // Check initial scroll position
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.handleKeydown);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }).mount('#app');
 
