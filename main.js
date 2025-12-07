@@ -47,10 +47,364 @@ createApp({
         alt: `Feedback ${i + 1}`
       })),
       showLightbox: false,
-      currentImageIndex: 0
+      currentImageIndex: 0,
+      textFeedbacks: [
+        {
+          name: 'Nguyễn Văn An',
+          content: 'Giá rất hợp lý và thời gian may nhanh chỉ 2-3 ngày! Chất lượng áo veston rất tốt, vừa vặn hoàn hảo. Rất đáng tiền!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'Michael Johnson',
+          content: 'Unbelievable price for such quality! Got my suit ready in just 2 days. The price is very reasonable compared to other tailors. Highly recommend!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Sarah Williams',
+          content: 'Amazing value for money! My custom vest was ready in 3 days and the price was so affordable. Quality is excellent. Will definitely return!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'James Anderson',
+          content: 'Fast service and great prices! My suit was completed in 2 days. Very affordable compared to back home. Quality is outstanding!',
+          country: 'Canada',
+          rating: 5
+        },
+        {
+          name: 'Jean-Pierre Dubois',
+          content: 'Prix très raisonnable et service rapide! Mon costume était prêt en seulement 2-3 jours. Excellent rapport qualité-prix. Je recommande!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Giovanni Rossi',
+          content: 'Prezzo molto conveniente e tempi rapidi! Il vestito è stato completato in 2-3 giorni. Qualità eccellente a un prezzo giusto. Consiglio!',
+          country: 'Italy',
+          rating: 5
+        },
+        {
+          name: 'Maria Garcia',
+          content: 'Precio muy razonable y servicio rápido! Mi traje estuvo listo en solo 2-3 días. Excelente calidad por un precio justo. ¡Recomiendo!',
+          country: 'Spain',
+          rating: 5
+        },
+        {
+          name: 'Emma Thompson',
+          content: 'Great prices and super fast! My wedding suit was ready in just 2 days. Very affordable and the quality is perfect. Highly satisfied!',
+          country: 'United Kingdom',
+          rating: 5
+        },
+        {
+          name: 'Yuki Tanaka',
+          content: '価格がとても手頃で、仕立ても早い！2-3日で完成しました。品質も良く、コストパフォーマンスが最高です。おすすめします！',
+          country: 'Japan',
+          rating: 5
+        },
+        {
+          name: 'Trần Thị Hoa',
+          content: 'Giá rẻ mà chất lượng tốt! Áo veston may chỉ 2 ngày là xong. Rất hợp lý so với các tiệm khác. Sẽ quay lại!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'David Brown',
+          content: 'Incredible value! Got my business suit in 3 days at a fraction of the price I would pay at home. Fast service and excellent quality!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Lisa Wilson',
+          content: 'So affordable and quick! My blazer was ready in 2 days. The price is very reasonable and the fit is perfect. Great service!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'Robert Taylor',
+          content: 'Fast turnaround and fair prices! My waistcoat was completed in 2-3 days. Much cheaper than expected with excellent quality!',
+          country: 'Canada',
+          rating: 5
+        },
+        {
+          name: 'Sophie Martin',
+          content: 'Prix excellent et délai très rapide! Mon costume était prêt en 2 jours. Qualité parfaite pour un prix si raisonnable. Parfait!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Marco Bianchi',
+          content: 'Servizio veloce e prezzi onesti! Il mio vestito è stato completato in 3 giorni. Ottimo rapporto qualità-prezzo. Molto soddisfatto!',
+          country: 'Italy',
+          rating: 5
+        },
+        {
+          name: 'Carlos Rodriguez',
+          content: 'Precio muy justo y entrega rápida! Mi traje estuvo listo en 2 días. Calidad excelente a un precio muy razonable. ¡Excelente!',
+          country: 'Spain',
+          rating: 5
+        },
+        {
+          name: 'Thomas Wright',
+          content: 'Amazing prices and super fast service! My suit was ready in 2-3 days. Very affordable and the quality exceeded my expectations!',
+          country: 'United Kingdom',
+          rating: 5
+        },
+        {
+          name: 'Hiroshi Yamamoto',
+          content: '手頃な価格で迅速なサービス！2日で完成しました。品質も良く、価格も非常に合理的です。大満足です！',
+          country: 'Japan',
+          rating: 5
+        },
+        {
+          name: 'Lê Minh Đức',
+          content: 'Giá cả hợp lý, thời gian may nhanh chóng! Chỉ 2-3 ngày là có áo. Chất lượng tốt, giá rẻ hơn nhiều nơi khác. Rất hài lòng!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'Jennifer Smith',
+          content: 'Great value and fast delivery! My custom shirt was ready in 2 days. The price is very reasonable and the quality is excellent!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Peter Mitchell',
+          content: 'Affordable prices and quick service! Got my suit in 3 days. Much cheaper than I expected with perfect quality. Highly recommend!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'Marie Dubois',
+          content: 'Prix très abordable et service express! Mon costume était prêt en 2-3 jours. Excellent rapport qualité-prix. Je reviendrai!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Alessandro Ferrari',
+          content: 'Prezzi onesti e tempi rapidissimi! Il mio vestito è stato completato in 2 giorni. Qualità eccellente a un prezzo giusto!',
+          country: 'Italy',
+          rating: 5
+        },
+        {
+          name: 'Isabella Martinez',
+          content: 'Precio muy razonable y entrega súper rápida! Mi traje estuvo listo en 3 días. Calidad perfecta por un precio justo. ¡Perfecto!',
+          country: 'Spain',
+          rating: 5
+        },
+        {
+          name: 'William Harris',
+          content: 'Excellent prices and fast turnaround! My suit was ready in 2 days. Very affordable with outstanding quality. Will definitely return!',
+          country: 'United Kingdom',
+          rating: 5
+        },
+        {
+          name: 'Phạm Văn Hùng',
+          content: 'Giá rất rẻ và may nhanh lắm! Chỉ 2 ngày là có áo veston. Chất lượng tốt, giá hợp lý hơn nhiều nơi. Rất hài lòng!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'Richard Davis',
+          content: 'Super affordable and incredibly fast! Got my suit in 2-3 days. The price is unbeatable for this quality. Highly recommend!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Amanda White',
+          content: 'Amazing prices and quick service! My custom blazer was ready in 2 days. Very reasonable price with perfect quality!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'Christopher Lee',
+          content: 'Fast service and great value! My suit was completed in 3 days at such an affordable price. Quality exceeded expectations!',
+          country: 'Canada',
+          rating: 5
+        },
+        {
+          name: 'Claire Bernard',
+          content: 'Prix incroyablement bas et service rapide! Mon costume était prêt en 2-3 jours. Excellent rapport qualité-prix!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Luca Romano',
+          content: 'Prezzi fantastici e tempi velocissimi! Il mio vestito è stato completato in 2 giorni. Qualità eccellente a prezzo giusto!',
+          country: 'Italy',
+          rating: 5
+        },
+        {
+          name: 'Carmen Lopez',
+          content: 'Precio increíble y servicio súper rápido! Mi traje estuvo listo en 2 días. Calidad perfecta por un precio muy justo!',
+          country: 'Spain',
+          rating: 5
+        },
+        {
+          name: 'Oliver Green',
+          content: 'Unbelievable prices and super fast! My wedding suit was ready in 2-3 days. Very affordable with excellent quality!',
+          country: 'United Kingdom',
+          rating: 5
+        },
+        {
+          name: 'Sakura Watanabe',
+          content: '驚くほど安い価格で、仕立ても超速い！2-3日で完成しました。品質も最高で、コストパフォーマンス抜群です！',
+          country: 'Japan',
+          rating: 5
+        },
+        {
+          name: 'Hoàng Thị Lan',
+          content: 'Giá rẻ bất ngờ và may cực nhanh! Chỉ 2 ngày là có áo. Chất lượng tốt, giá hợp lý hơn nhiều nơi khác. Tuyệt vời!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'Daniel Martinez',
+          content: 'Incredible value for money! Got my business suit in 2 days. The price is so reasonable and quality is outstanding!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Jessica Taylor',
+          content: 'So cheap and so fast! My custom vest was ready in 3 days. Amazing quality for such an affordable price. Love it!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'Ryan Wilson',
+          content: 'Fast turnaround and fair prices! My suit was completed in 2 days. Much cheaper than expected with perfect quality!',
+          country: 'Canada',
+          rating: 5
+        },
+        {
+          name: 'Camille Rousseau',
+          content: 'Prix très abordable et délai express! Mon costume était prêt en 2 jours. Qualité parfaite pour un prix si bas!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Francesco Conti',
+          content: 'Prezzi onestissimi e servizio velocissimo! Il mio vestito è stato completato in 3 giorni. Ottima qualità a prezzo giusto!',
+          country: 'Italy',
+          rating: 5
+        },
+        {
+          name: 'Ana Fernandez',
+          content: 'Precio muy económico y entrega rapidísima! Mi traje estuvo listo en 2-3 días. Calidad excelente por precio justo!',
+          country: 'Spain',
+          rating: 5
+        },
+        {
+          name: 'George Mitchell',
+          content: 'Excellent prices and lightning fast! My suit was ready in 2 days. Very affordable with outstanding craftsmanship!',
+          country: 'United Kingdom',
+          rating: 5
+        },
+        {
+          name: 'Kenji Sato',
+          content: '信じられないほど安い価格で、仕立ても早い！2日で完成しました。品質も良く、価格も非常に合理的です！',
+          country: 'Japan',
+          rating: 5
+        },
+        {
+          name: 'Vũ Đình Tuấn',
+          content: 'Giá cả rất hợp lý, thời gian may nhanh chóng! Chỉ 2-3 ngày là có áo veston. Chất lượng tốt, giá rẻ hơn nhiều nơi!',
+          country: 'Vietnam',
+          rating: 5
+        },
+        {
+          name: 'Brian Thompson',
+          content: 'Amazing value and quick delivery! My custom shirt was ready in 2 days. The price is very reasonable for this quality!',
+          country: 'United States',
+          rating: 5
+        },
+        {
+          name: 'Sophie Clarke',
+          content: 'Affordable prices and super fast service! Got my suit in 3 days. Much cheaper than I thought with excellent quality!',
+          country: 'Australia',
+          rating: 5
+        },
+        {
+          name: 'Matthew Brown',
+          content: 'Fast service and great prices! My waistcoat was completed in 2-3 days. Very affordable with perfect quality!',
+          country: 'Canada',
+          rating: 5
+        },
+        {
+          name: 'Isabelle Moreau',
+          content: 'Prix excellent et service ultra rapide! Mon costume était prêt en 2 jours. Qualité parfaite pour un prix si raisonnable!',
+          country: 'France',
+          rating: 5
+        },
+        {
+          name: 'Roberto Verdi',
+          content: 'Prezzi fantastici e tempi rapidissimi! Il mio vestito è stato completato in 2 giorni. Qualità eccellente a prezzo giusto!',
+          country: 'Italy',
+          rating: 5
+        }
+      ]
     };
   },
+  computed: {
+    feedbacksWithDates() {
+      const now = new Date();
+      
+      const feedbacks = this.textFeedbacks.map((feedback, index) => {
+        const totalFeedbacks = this.textFeedbacks.length;
+        const progress = totalFeedbacks > 1 ? index / (totalFeedbacks - 1) : 0; 
+        const daysAgo = 1095 * (1 - progress) + 7 * progress;
+        
+        const feedbackDate = new Date(now);
+        feedbackDate.setDate(feedbackDate.getDate() - Math.round(daysAgo));
+        
+        return {
+          ...feedback,
+          date: this.formatTimeAgo(feedbackDate)
+        };
+      });
+      
+      return feedbacks.reverse();
+    }
+  },
   methods: {
+    formatTimeAgo(date) {
+      const now = new Date();
+      const diffMs = now - date;
+      const diffSeconds = Math.floor(diffMs / 1000);
+      const diffMinutes = Math.floor(diffSeconds / 60);
+      const diffHours = Math.floor(diffMinutes / 60);
+      const diffDays = Math.floor(diffHours / 24);
+      const diffMonths = Math.floor(diffDays / 30);
+      const diffYears = Math.floor(diffDays / 365);
+      
+      if (diffYears > 0) {
+        const remainingMonths = Math.floor((diffDays % 365) / 30);
+        if (remainingMonths > 0) {
+          return `${diffYears} year${diffYears > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ago`;
+        }
+        return `${diffYears} year${diffYears > 1 ? 's' : ''} ago`;
+      } else if (diffMonths > 0) {
+        const remainingDays = diffDays % 30;
+        if (remainingDays > 7) {
+          const weeks = Math.floor(remainingDays / 7);
+          return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ${weeks} week${weeks > 1 ? 's' : ''} ago`;
+        }
+        return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ago`;
+      } else if (diffDays > 0) {
+        if (diffDays >= 7) {
+          const weeks = Math.floor(diffDays / 7);
+          return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+        }
+        return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+      } else if (diffHours > 0) {
+        return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+      } else if (diffMinutes > 0) {
+        return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
+      } else {
+        return 'Just now';
+      }
+    },
     handleImageError(event) {
       const img = event.target;
       const parent = img.parentElement;
