@@ -29,17 +29,55 @@
             <div class="services-section">
                 <h3 class="services-title">Our Services & Prices</h3>
                 <div class="services-list">
-                    <div class="service-item" v-for="service in services" :key="service.name">
-                        <div class="service-info">
-                            <div class="service-image">
+                    <div class="service-card" v-for="service in services" :key="service.name">
+                        <div class="service-image-wrapper">
+                            <div class="service-slide-container">
+                                <img v-for="(image, index) in service.images" 
+                                     :key="index"
+                                     :src="image" 
+                                     :alt="service.name" 
+                                     class="service-product-image"
+                                     :class="{ 'active': index === service.currentImageIndex }"
+                                     @error="handleServiceImageError($event, service)">
+                            </div>
+                            <div class="service-image-overlay">
                                 <i :class="service.icon"></i>
                             </div>
-                            <div class="service-details">
-                                <div class="service-name">{{ service.name }}</div>
-                                <div class="service-description">{{ service.description }}</div>
+                            <button class="service-slide-nav service-slide-prev" 
+                                    @click="prevServiceImage(service)"
+                                    aria-label="Previous image">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="service-slide-nav service-slide-next" 
+                                    @click="nextServiceImage(service)"
+                                    aria-label="Next image">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            <div class="service-slide-indicators">
+                                <span v-for="(image, index) in service.images" 
+                                      :key="index"
+                                      class="service-slide-dot"
+                                      :class="{ 'active': index === service.currentImageIndex }"
+                                      @click="service.currentImageIndex = index">
+                                </span>
                             </div>
                         </div>
-                        <span class="service-price">{{ service.price }}</span>
+                        <div class="service-content">
+                            <div class="service-header">
+                                <h4 class="service-name">{{ service.name }}</h4>
+                                <div class="service-time">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>{{ service.description }}</span>
+                                </div>
+                                <div class="service-detail-description">
+                                    {{ service.detailDescription }}
+                                </div>
+                            </div>
+                            <div class="service-price-wrapper">
+                                <span class="service-price-label">Starting from</span>
+                                <span class="service-price">{{ service.price }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

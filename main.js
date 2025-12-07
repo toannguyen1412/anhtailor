@@ -4,23 +4,52 @@ createApp({
   data() {
     return {
       services: [
-        {
-          icon: 'fa-solid fa-shirt',
-          name: 'Custom Shirts',
-          description: 'Within 1-2 days',
-          price: '$40 - $55'
-        },
+
         {
           icon: 'fa-solid fa-user-tie',
           name: 'Suits & Veston',
           description: 'Within 3-5 days',
-          price: '$350 - $380'
+          detailDescription: 'Premium bespoke suits and blazers with expert tailoring. Perfect fit for weddings, business, and special occasions.',
+          price: '$350 - $380',
+          images: [
+            'https://images.unsplash.com/photo-1515736076039-a3ca66043b27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1685606867476-dc5b77a2bf3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1529635229076-82fefed713c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHZlc3RvbiUyMHN1aXR8ZW58MHx8MHx8fDA%3D',
+            'https://images.unsplash.com/photo-1647900669139-1a968c4091e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZlc3RvbiUyMHN1aXR8ZW58MHx8MHx8fDA%3D',
+            'https://images.unsplash.com/photo-1592878956815-2feeac767f7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHZlc3RvbiUyMHN1aXR8ZW58MHx8MHx8fDA%3D',
+            'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D'
+          ],
+          currentImageIndex: 0
+        },
+        {
+          icon: 'fa-solid fa-shirt',
+          name: 'Custom Shirts',
+          description: 'Within 1-2 days',
+          detailDescription: 'Handcrafted dress shirts tailored to your measurements. Premium fabrics and perfect fit for business or formal wear.',
+          price: '$40 - $55',
+          images: [
+            'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1656453260437-4f4da3ef81dc?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          ],
+          currentImageIndex: 0
         },
         {
           icon: 'fa-solid fa-shirt',
           name: 'Waistcoat',
           description: 'Within 2-3 days',
-          price: '$200'
+          detailDescription: 'Elegant waistcoats and vests in premium fabrics. Perfect complement to your formal suit.',
+          price: '$200',
+          images: [
+            'https://images.unsplash.com/photo-1593032288331-711b99d4fa74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1593029762624-0c28669f2056?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
+            'https://images.unsplash.com/photo-1662833595899-07c57d617f56?q=80&w=769&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1504791635568-fa4993808e0a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1632226390535-2f02c1a93541?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          ],
+          currentImageIndex: 0
         }
       ],
       contactLinks: [
@@ -413,6 +442,24 @@ createApp({
       parent.style.background = 'linear-gradient(135deg, #d4a574, #c19660)';
       parent.style.fontSize = '50px';
       parent.style.color = '#3c2414';
+    },
+    handleServiceImageError(event, service) {
+      const img = event.target;
+      const wrapper = img.closest('.service-image-wrapper');
+      if (wrapper) {
+        img.style.display = 'none';
+        const overlay = wrapper.querySelector('.service-image-overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.background = 'linear-gradient(135deg, #3c2414, #5d4037)';
+        }
+      }
+    },
+    nextServiceImage(service) {
+      service.currentImageIndex = (service.currentImageIndex + 1) % service.images.length;
+    },
+    prevServiceImage(service) {
+      service.currentImageIndex = (service.currentImageIndex - 1 + service.images.length) % service.images.length;
     },
     handleLinkClick(event) {
       const button = event.currentTarget;
