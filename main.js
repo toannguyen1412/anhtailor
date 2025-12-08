@@ -844,6 +844,17 @@ createApp({
         behavior: 'smooth'
       });
     },
+    debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    },
     handleScroll() {
       this.showBackToTop = window.scrollY > 300;
     },
@@ -884,13 +895,17 @@ createApp({
     this.$el.style.opacity = '1';
     document.documentElement.lang = this.currentLanguage;
     window.addEventListener('keydown', this.handleKeydown);
-    window.addEventListener('scroll', this.handleScroll);
+    // Debounce scroll handler for better performance
+    this.debouncedHandleScroll = this.debounce(this.handleScroll.bind(this), 100);
+    window.addEventListener('scroll', this.debouncedHandleScroll, { passive: true });
     this.handleScroll();
     this.startServiceAutoPlay(); 
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.handleKeydown);
-    window.removeEventListener('scroll', this.handleScroll);
+    if (this.debouncedHandleScroll) {
+      window.removeEventListener('scroll', this.debouncedHandleScroll);
+    }
     this.stopServiceAutoPlay(); 
   }
 }).mount('#app');
