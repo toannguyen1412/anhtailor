@@ -1143,6 +1143,155 @@ a:focus {
   }
 }
 
+/* FAQ Section */
+.faq-section {
+  margin-bottom: 25px;
+}
+
+.faq-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3c2414;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0d5cc;
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid #e0d5cc;
+}
+
+.faq-item:hover {
+  background: #f8f6f3;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 15px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #3c2414;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.faq-question:hover {
+  color: #5d4037;
+}
+
+.faq-question:focus {
+  outline: 2px solid #d4a574;
+  outline-offset: -2px;
+}
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #3c2414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-icon i {
+  font-size: 14px;
+  color: #3c2414;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+  background: #3c2414;
+  border-color: #3c2414;
+}
+
+.faq-icon.open i {
+  color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.faq-question-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  padding: 0 15px 18px 58px;
+}
+
+.faq-answer p {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .faq-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .faq-question {
+    padding: 15px 12px;
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .faq-icon i {
+    font-size: 12px;
+  }
+
+  .faq-answer.open {
+    padding: 0 12px 15px 48px;
+  }
+
+  .faq-answer p {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .lightbox-container {
     width: 95%;

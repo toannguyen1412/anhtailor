@@ -12,6 +12,7 @@ createApp({
           priceLabel: 'Bắt đầu từ',
           customerReviews: 'Đánh Giá Khách Hàng',
           customerPhotos: 'Ảnh Khách Hàng',
+          faqTitle: 'CÂU HỎI THƯỜNG GẶP',
           backToTop: 'Lên đầu trang',
           close: 'Đóng',
           prevImage: 'Ảnh trước',
@@ -66,6 +67,20 @@ createApp({
             year: 'năm',
             years: 'năm',
             ago: 'trước'
+          },
+          faq: {
+            question1: 'Bao lâu thì hoàn thành và giao nhận sản phẩm?',
+            answer1: 'Thời gian hoàn thành sản phẩm tùy thuộc vào loại dịch vụ: Áo sơ mi may đo trong vòng 1-2 ngày, Áo ghi lê trong vòng 2-3 ngày, và Veston & Áo Vest trong vòng 3-5 ngày. Chúng tôi sẽ thông báo cụ thể khi bạn đặt hàng.',
+            question2: 'Dịch vụ tận nhà có áp dụng cho khách ngoại thành không?',
+            answer2: 'Có, chúng tôi cung cấp dịch vụ may đo từ xa cho khách hàng ngoại thành và quốc tế. Bạn có thể tự đo kích thước và gửi cho chúng tôi. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng).',
+            question3: 'Nếu sản phẩm không ưng ý thì như thế nào?',
+            answer3: 'Khách hàng có quyền từ chối nếu sản phẩm không đạt chuẩn theo yêu cầu và được hoàn trả 100% chi phí. Chúng tôi cam kết đảm bảo chất lượng và sự hài lòng của khách hàng.',
+            question4: 'Sự khác biệt của Cao Anh Tailor với các cửa hàng khác?',
+            answer4: 'Cao Anh Tailor tự hào với hơn 20 năm kinh nghiệm trong nghề may đo. Chúng tôi chuyên về may đo thủ công, sử dụng vải cao cấp, và đảm bảo vừa vặn hoàn hảo. Giá cả hợp lý và thời gian hoàn thành nhanh chóng là điểm mạnh của chúng tôi.',
+            question5: 'Chính sách khách hàng của chúng tôi?',
+            answer5: 'Chúng tôi cam kết cung cấp dịch vụ chất lượng cao với giá cả hợp lý. Khách hàng Việt Nam có thể gọi điện trực tiếp, khách hàng quốc tế có thể liên hệ qua Facebook để được tư vấn bằng tiếng Anh. Chúng tôi đảm bảo hoàn tiền 100% nếu sản phẩm không đạt yêu cầu.',
+            question6: 'Dịch vụ của Cao Anh đảm bảo chất lượng hay không?',
+            answer6: 'Có, chúng tôi cam kết đảm bảo chất lượng 100%. Với hơn 20 năm kinh nghiệm, chúng tôi sử dụng vải cao cấp, may đo thủ công tỉ mỉ, và đảm bảo sản phẩm vừa vặn hoàn hảo. Nếu sản phẩm không đạt yêu cầu, chúng tôi sẽ hoàn trả 100% chi phí.'
           }
         },
         en: {
@@ -75,6 +90,7 @@ createApp({
           priceLabel: 'Starting from',
           customerReviews: 'Customer Reviews',
           customerPhotos: 'Customer Photos',
+          faqTitle: 'FREQUENTLY ASKED QUESTIONS',
           backToTop: 'Back to top',
           close: 'Close',
           prevImage: 'Previous image',
@@ -129,6 +145,20 @@ createApp({
             year: 'year',
             years: 'years',
             ago: 'ago'
+          },
+          faq: {
+            question1: 'How long does it take to complete and deliver the product?',
+            answer1: 'Completion time depends on the service type: Custom shirts within 1-2 days, Waistcoat within 2-3 days, and Suits & Veston within 3-5 days. We will provide specific details when you place your order.',
+            question2: 'Does home service apply to customers outside the city?',
+            answer2: 'Yes, we provide remote tailoring services for customers outside the city and international customers. You can measure yourself and send us your measurements. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront).',
+            question3: 'What if I am not satisfied with the product?',
+            answer3: 'Customers have the right to refuse if the product does not meet the required standards and will receive a 100% refund. We are committed to ensuring quality and customer satisfaction.',
+            question4: 'What makes Cao Anh Tailor different from other stores?',
+            answer4: 'Cao Anh Tailor is proud of over 20 years of experience in tailoring. We specialize in handcrafted tailoring, use premium fabrics, and ensure a perfect fit. Reasonable prices and fast completion times are our strengths.',
+            question5: 'What is our customer policy?',
+            answer5: 'We are committed to providing high-quality services at reasonable prices. Vietnamese customers can call directly, international customers can contact us via Facebook for English consultation. We guarantee a 100% refund if the product does not meet requirements.',
+            question6: 'Does Cao Anh service guarantee quality?',
+            answer6: 'Yes, we guarantee 100% quality. With over 20 years of experience, we use premium fabrics, meticulous handcrafted tailoring, and ensure a perfect fit. If the product does not meet requirements, we will provide a 100% refund.'
           }
         }
       },
@@ -232,6 +262,33 @@ createApp({
       imageLoaded: false,
       showBackToTop: false,
       serviceAutoPlayIntervals: [],
+      faqs: [
+        {
+          questionKey: 'question1',
+          answerKey: 'answer1'
+        },
+        {
+          questionKey: 'question2',
+          answerKey: 'answer2'
+        },
+        {
+          questionKey: 'question3',
+          answerKey: 'answer3'
+        },
+        {
+          questionKey: 'question4',
+          answerKey: 'answer4'
+        },
+        {
+          questionKey: 'question5',
+          answerKey: 'answer5'
+        },
+        {
+          questionKey: 'question6',
+          answerKey: 'answer6'
+        }
+      ],
+      openFaqIndex: null,
       textFeedbacks: [
         {
           name: 'Nguyễn Văn An',
@@ -581,6 +638,14 @@ createApp({
       });
       
       return feedbacks.reverse();
+    },
+    faqsWithTranslations() {
+      return this.faqs.map((faq, index) => ({
+        ...faq,
+        question: this.t.faq[faq.questionKey],
+        answer: this.t.faq[faq.answerKey] || '',
+        isOpen: this.openFaqIndex === index
+      }));
     }
   },
   methods: {
@@ -784,6 +849,13 @@ createApp({
     },
     resumeServiceAutoPlay() {
       this.startServiceAutoPlay();
+    },
+    toggleFaq(index) {
+      if (this.openFaqIndex === index) {
+        this.openFaqIndex = null;
+      } else {
+        this.openFaqIndex = index;
+      }
     }
   },
   mounted() {

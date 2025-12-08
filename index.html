@@ -232,6 +232,32 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h3 class="faq-title">{{ t.faqTitle }}</h3>
+                <div class="faq-list">
+                    <div class="faq-item" v-for="(faq, index) in faqsWithTranslations" :key="index">
+                        <button 
+                            class="faq-question" 
+                            @click="toggleFaq(index)"
+                            :aria-expanded="faq.isOpen"
+                            :aria-controls="`faq-answer-${index}`">
+                            <span class="faq-icon" :class="{ 'open': faq.isOpen }">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                            <span class="faq-question-text">{{ faq.question }}</span>
+                        </button>
+                        <div 
+                            class="faq-answer" 
+                            :id="`faq-answer-${index}`"
+                            :class="{ 'open': faq.isOpen }"
+                            v-show="faq.isOpen">
+                            <p>{{ faq.answer }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Lightbox Modal -->
             <div v-if="showLightbox" class="lightbox-overlay" @click="closeLightbox">
                 <div class="lightbox-container" @click.stop>
