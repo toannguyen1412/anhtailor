@@ -659,7 +659,7 @@ body {
   }
 
   .bio-container {
-    padding: 30px 20px;
+    padding: 30px 5px;
     margin: 0;
     border-radius: 0;
   }
@@ -687,6 +687,11 @@ body {
 
   .brand-name {
     font-size: 1.8rem;
+    padding: 0 3px;
+  }
+
+  .tagline {
+    padding: 0 3px;
   }
 
   .profile-image {
@@ -709,12 +714,13 @@ body {
   .link-button {
     padding: 12px;
     font-size: 0.9rem;
+    margin: 0 3px 15px 3px;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
-    padding: 12px;
+    padding: 5px;
   }
 
   .gallery-item {
@@ -726,7 +732,7 @@ body {
   }
 
   .service-content {
-    padding: 15px;
+    padding: 8px;
   }
 
   .service-name {
@@ -740,10 +746,11 @@ body {
   .notice-section {
     margin: 20px 0;
     gap: 12px;
+    padding: 0 3px;
   }
 
   .notice-item {
-    padding: 12px;
+    padding: 10px;
   }
 
   .notice-icon {
@@ -764,7 +771,7 @@ body {
   }
 
   .feature-card {
-    padding: 15px 12px;
+    padding: 10px 5px;
   }
 
   .feature-icon {
@@ -779,6 +786,23 @@ body {
 
   .story-section {
     margin-bottom: 25px;
+    padding: 0 3px;
+  }
+
+  .features-section {
+    padding: 0 3px;
+  }
+
+  .services-section {
+    padding: 0 3px;
+  }
+
+  .footer {
+    padding: 0 3px;
+  }
+
+  .contact-info {
+    padding: 10px;
   }
 
   .story-title {
@@ -787,7 +811,7 @@ body {
   }
 
   .story-content {
-    padding: 15px;
+    padding: 8px;
     gap: 15px;
   }
 
@@ -996,12 +1020,20 @@ body,
 }
 
 @media (max-width: 480px) {
+  .text-feedback-section {
+    padding: 0 3px;
+  }
+
   .text-feedback-list {
     max-height: 300px;
   }
 
   .text-feedback-item {
-    padding: 12px;
+    padding: 8px;
+  }
+
+  .feedback-section {
+    padding: 0 3px;
   }
 
   .feedback-name {
@@ -1399,13 +1431,17 @@ a:focus {
 }
 
 @media (max-width: 480px) {
+  .faq-section {
+    padding: 0 3px;
+  }
+
   .faq-title {
     font-size: 1rem;
     margin-bottom: 15px;
   }
 
   .faq-question {
-    padding: 15px 12px;
+    padding: 10px 5px;
     font-size: 0.9rem;
     gap: 12px;
   }
@@ -1421,8 +1457,12 @@ a:focus {
     font-size: 12px;
   }
 
+  .faq-answer {
+    padding: 0 5px;
+  }
+
   .faq-answer.open {
-    padding: 0 12px 15px 48px;
+    padding: 0 5px 10px 40px;
   }
 
   .faq-answer p {
