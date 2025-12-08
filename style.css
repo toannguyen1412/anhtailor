@@ -16,7 +16,7 @@ body {
 
 .bio-container {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 0 0 40px 0;
   width: 100%;
   max-width: 400px;
@@ -34,7 +34,7 @@ body {
   display: flex;
   gap: 5px;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 25px;
+  border-radius: 18px;
   padding: 4px;
   box-shadow: 0 4px 14px rgba(60, 36, 20, 0.2);
   z-index: 9999;
@@ -44,7 +44,7 @@ body {
   background: transparent;
   border: none;
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 14px;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.85rem;
@@ -61,7 +61,7 @@ body {
   height: 15px;
   display: inline-block;
   flex-shrink: 0;
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -146,7 +146,7 @@ body {
 
 .story-content {
   background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%);
-  border-radius: 16px;
+  border-radius: 11px;
   padding: 20px;
   box-shadow: 0 4px 16px rgba(60, 36, 20, 0.15);
   border: 2px solid #d4a574;
@@ -157,7 +157,7 @@ body {
 
 .story-image-wrapper {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(60, 36, 20, 0.2);
   background: linear-gradient(135deg, #3c2414, #5d4037);
@@ -239,7 +239,7 @@ body {
 
 .feature-card {
   background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%);
-  border-radius: 16px;
+  border-radius: 11px;
   padding: 20px 15px;
   box-shadow: 0 4px 16px rgba(60, 36, 20, 0.15);
   border: 2px solid #d4a574;
@@ -264,7 +264,7 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #3c2414, #5d4037);
-  border-radius: 12px;
+  border-radius: 5px;
   color: #d4a574;
   font-size: 28px;
   box-shadow: 0 4px 12px rgba(60, 36, 20, 0.2);
@@ -306,7 +306,7 @@ body {
 
 .service-card {
   background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%);
-  border-radius: 16px;
+  border-radius: 11px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(60, 36, 20, 0.15);
   border: 2px solid #d4a574;
@@ -435,7 +435,7 @@ body {
 .service-slide-dot.active {
   background: rgba(255, 255, 255, 1);
   width: 20px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .service-slide-dot:hover {
@@ -528,14 +528,14 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   background: #f8f6f3;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 15px;
   border: 2px solid #d4a574;
 }
 
 .gallery-item {
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 5px;
   background: linear-gradient(135deg, #3c2414, #5d4037);
   display: flex;
   align-items: center;
@@ -556,7 +556,7 @@ body {
   color: white;
   text-decoration: none;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 5px;
   margin: 0 10px 15px 10px;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -589,7 +589,7 @@ body {
 
 .notice-item {
   background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
-  border-radius: 12px;
+  border-radius: 5px;
   padding: 15px;
   border: 2px solid #d4a574;
   box-shadow: 0 4px 12px rgba(60, 36, 20, 0.15);
@@ -622,7 +622,7 @@ body {
 
 .contact-info {
   background: #f8f6f3;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 20px;
   margin-top: 20px;
   border: 2px solid #d4a574;
@@ -879,7 +879,7 @@ body {
 
 .text-feedback-item {
   background: #f8f6f3;
-  border-radius: 12px;
+  border-radius: 5px;
   padding: 15px;
   margin-bottom: 15px;
   border: 2px solid #d4a574;
@@ -968,7 +968,7 @@ body {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0 2px 8px rgba(60, 36, 20, 0.15);
   margin-bottom: 8px;
 }
@@ -1014,7 +1014,7 @@ body,
   width: 300px;
   height: 350px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0 2px 8px rgba(60, 36, 20, 0.15);
   cursor: pointer;
 }
@@ -1103,7 +1103,7 @@ body,
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   animation: zoomIn 0.3s ease;
 }
@@ -1185,7 +1185,7 @@ body,
   background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -1229,7 +1229,7 @@ body,
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #f8f6f3, #e0d5cc);
-  border-radius: 10px;
+  border-radius: 7px;
   color: #888;
   font-size: 14px;
   gap: 8px;
