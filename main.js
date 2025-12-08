@@ -176,12 +176,12 @@ createApp({
           }
         }
       },
-      exchangeRate: 25000, 
       services: [
         {
           icon: 'fa-solid fa-user-tie',
           nameKey: 'suits',
-          priceUSD: { min: 350, max: 380 },
+          priceUSD: { min: 380, max: 400 },
+          priceVND: { min: '9tr', max: '10tr' },
           images: [
             'https://images.unsplash.com/photo-1515736076039-a3ca66043b27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1685606867476-dc5b77a2bf3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVzdG9uJTIwc3VpdHxlbnwwfHwwfHx8MA%3D%3D',
@@ -195,7 +195,8 @@ createApp({
         {
           icon: 'fa-solid fa-shirt',
           nameKey: 'shirts',
-          priceUSD: { min: 40, max: 55 },
+          priceUSD: { min: 40, max: 60 },
+          priceVND: { min: '1tr500k', max: '2tr' },
           images: [
             'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fFNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D',
@@ -208,7 +209,8 @@ createApp({
         {
           icon: 'fa-solid fa-shirt',
           nameKey: 'waistcoat',
-          priceUSD: { min: 200, max: 200 },
+          priceUSD: { min: 150, max: 180 },
+          priceVND: { min: '4tr', max: '5tr' },
           images: [
             'https://images.unsplash.com/photo-1593032288331-711b99d4fa74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
             'https://images.unsplash.com/photo-1593029762624-0c28669f2056?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVzdHxlbnwwfHwwfHx8MA%3D%3D',
@@ -611,7 +613,7 @@ createApp({
         name: this.t.services[service.nameKey].name,
         description: this.t.services[service.nameKey].description,
         detailDescription: this.t.services[service.nameKey].detailDescription,
-        price: this.formatPrice(service.priceUSD)
+        price: this.formatPrice(service.priceUSD, service.priceVND)
       }));
     },
     contactLinksWithTranslations() {
@@ -701,32 +703,16 @@ createApp({
         return t.justNow;
       }
     },
-    formatPrice(priceUSD) {
+    formatPrice(priceUSD, priceVND) {
       if (this.currentLanguage === 'vi') {
-        
-        const minVND = Math.round(priceUSD.min * this.exchangeRate);
-        const maxVND = Math.round(priceUSD.max * this.exchangeRate);
-        
-        const formatVND = (amount) => {
-          const rounded = Math.round(amount / 500000) * 500000;
-          
-          const trieu = Math.floor(rounded / 1000000);
-          const nghin = Math.floor((rounded % 1000000) / 1000);
-          
-          if (nghin >= 500) {
-            return `${trieu + 1}tr`;
-          } else if (nghin > 0) {
-            return `${trieu}tr${nghin}k`;
+        if (priceVND) {
+          if (priceVND.min === priceVND.max) {
+            return `${priceVND.min} VNĐ`;
           } else {
-            return `${trieu}tr`;
+            return `${priceVND.min} - ${priceVND.max} VNĐ`;
           }
-        };
-        
-        if (priceUSD.min === priceUSD.max) {
-          return `${formatVND(minVND)} VNĐ`;
-        } else {
-          return `${formatVND(minVND)} - ${formatVND(maxVND)} VNĐ`;
         }
+        return '';
       } else {
         if (priceUSD.min === priceUSD.max) {
           return `$${priceUSD.min}`;
