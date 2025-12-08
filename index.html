@@ -97,7 +97,11 @@
             <div class="services-section">
                 <h3 class="services-title">{{ t.servicesTitle }}</h3>
                 <div class="services-list">
-                    <div class="service-card" v-for="service in servicesWithTranslations" :key="service.nameKey">
+                    <div class="service-card" 
+                         v-for="service in servicesWithTranslations" 
+                         :key="service.nameKey"
+                         @mouseenter="pauseServiceAutoPlay"
+                         @mouseleave="resumeServiceAutoPlay">
                         <div class="service-image-wrapper">
                             <div class="service-slide-container">
                                 <img v-for="(image, index) in service.images" 
@@ -126,7 +130,7 @@
                                       :key="index"
                                       class="service-slide-dot"
                                       :class="{ 'active': index === service.currentImageIndex }"
-                                      @click="service.currentImageIndex = index">
+                                      @click="setServiceImageIndex(service, index)">
                                 </span>
                             </div>
                         </div>

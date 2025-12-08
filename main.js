@@ -110,7 +110,7 @@ createApp({
           }
         }
       },
-      exchangeRate: 25000, // 1 USD = 25,000 VNĐ
+      exchangeRate: 25000, 
       services: [
         {
           icon: 'fa-solid fa-user-tie',
@@ -187,6 +187,7 @@ createApp({
       currentImageIndex: 0,
       imageLoaded: false,
       showBackToTop: false,
+      serviceAutoPlayIntervals: [],
       textFeedbacks: [
         {
           name: 'Nguyễn Văn An',
@@ -573,19 +574,16 @@ createApp({
     },
     formatPrice(priceUSD) {
       if (this.currentLanguage === 'vi') {
-        // Chuyển đổi sang VNĐ
+        
         const minVND = Math.round(priceUSD.min * this.exchangeRate);
         const maxVND = Math.round(priceUSD.max * this.exchangeRate);
         
-        // Format số thành đơn vị triệu với làm tròn
         const formatVND = (amount) => {
-          // Làm tròn đến hàng trăm nghìn (500k)
           const rounded = Math.round(amount / 500000) * 500000;
           
           const trieu = Math.floor(rounded / 1000000);
           const nghin = Math.floor((rounded % 1000000) / 1000);
           
-          // Nếu phần nghìn >= 500, làm tròn lên 1 triệu
           if (nghin >= 500) {
             return `${trieu + 1}tr`;
           } else if (nghin > 0) {
@@ -601,7 +599,6 @@ createApp({
           return `${formatVND(minVND)} - ${formatVND(maxVND)} VNĐ`;
         }
       } else {
-        // Hiển thị USD
         if (priceUSD.min === priceUSD.max) {
           return `$${priceUSD.min}`;
         } else {
@@ -636,10 +633,22 @@ createApp({
       }
     },
     nextServiceImage(service) {
-      service.currentImageIndex = (service.currentImageIndex + 1) % service.images.length;
+      const originalService = this.services.find(s => s.nameKey === service.nameKey);
+      if (originalService) {
+        originalService.currentImageIndex = (originalService.currentImageIndex + 1) % originalService.images.length;
+      }
     },
     prevServiceImage(service) {
-      service.currentImageIndex = (service.currentImageIndex - 1 + service.images.length) % service.images.length;
+      const originalService = this.services.find(s => s.nameKey === service.nameKey);
+      if (originalService) {
+        originalService.currentImageIndex = (originalService.currentImageIndex - 1 + originalService.images.length) % originalService.images.length;
+      }
+    },
+    setServiceImageIndex(service, index) {
+      const originalService = this.services.find(s => s.nameKey === service.nameKey);
+      if (originalService) {
+        originalService.currentImageIndex = index;
+      }
     },
     handleLinkClick(event) {
       const button = event.currentTarget;
@@ -700,6 +709,31 @@ createApp({
     },
     handleScroll() {
       this.showBackToTop = window.scrollY > 300;
+    },
+    startServiceAutoPlay() {
+      this.stopServiceAutoPlay();
+      
+      this.services.forEach((service) => {
+        const intervalId = setInterval(() => {
+          const originalService = this.services.find(s => s.nameKey === service.nameKey);
+          if (originalService) {
+            originalService.currentImageIndex = (originalService.currentImageIndex + 1) % originalService.images.length;
+          }
+        }, 3000); 
+        this.serviceAutoPlayIntervals.push(intervalId);
+      });
+    },
+    stopServiceAutoPlay() {
+      this.serviceAutoPlayIntervals.forEach(intervalId => {
+        clearInterval(intervalId);
+      });
+      this.serviceAutoPlayIntervals = [];
+    },
+    pauseServiceAutoPlay() {
+      this.stopServiceAutoPlay();
+    },
+    resumeServiceAutoPlay() {
+      this.startServiceAutoPlay();
     }
   },
   mounted() {
@@ -707,11 +741,13 @@ createApp({
     document.documentElement.lang = this.currentLanguage;
     window.addEventListener('keydown', this.handleKeydown);
     window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); // Check initial scroll position
+    this.handleScroll();
+    this.startServiceAutoPlay(); 
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.handleKeydown);
     window.removeEventListener('scroll', this.handleScroll);
+    this.stopServiceAutoPlay(); 
   }
 }).mount('#app');
 
