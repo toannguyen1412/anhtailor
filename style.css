@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 6px;
 }
 
 .bio-container {
@@ -116,7 +116,7 @@ body {
   font-weight: bold;
   color: #3c2414;
   margin-bottom: 10px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .tagline {
@@ -124,13 +124,13 @@ body {
   font-size: 1rem;
   margin-bottom: 30px;
   font-style: italic;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 /* Story Section */
 .story-section {
   margin-bottom: 30px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .story-title {
@@ -218,7 +218,7 @@ body {
 /* Features Section */
 .features-section {
   margin-bottom: 30px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .features-title {
@@ -287,7 +287,7 @@ body {
 
 .services-section {
   margin-bottom: 30px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .services-title {
@@ -557,7 +557,7 @@ body {
   text-decoration: none;
   padding: 15px;
   border-radius: 12px;
-  margin: 0 30px 15px 30px;
+  margin: 0 10px 15px 10px;
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(60, 36, 20, 0.3);
@@ -581,7 +581,7 @@ body {
 /* Notice Section */
 .notice-section {
   margin: 25px 0;
-  padding: 0 30px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -647,7 +647,7 @@ body {
 
 .footer {
   margin-top: 20px;
-  padding: 0 30px;
+  padding: 0 10px;
   color: #999;
   font-size: 0.8rem;
 }
@@ -693,7 +693,8 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
     max-height: 150px;
-    padding: 10px 15px;
+    padding: 0;
+    margin-bottom: 15px;
   }
 
   .logo-img {
@@ -842,7 +843,7 @@ body {
 /* Text Feedback Section */
 .text-feedback-section {
   margin-bottom: 25px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .text-feedback-list {
@@ -925,7 +926,7 @@ body {
 
 .feedback-section {
   margin-bottom: 25px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 .feedback-title {
   font-size: 1.1rem;
@@ -1282,7 +1283,7 @@ a:focus {
 /* FAQ Section */
 .faq-section {
   margin-bottom: 25px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .faq-title {
