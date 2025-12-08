@@ -52,6 +52,13 @@ createApp({
             premiumFabric: 'VẢI CAO CẤP',
             onlineOrStore: 'TRỰC TUYẾN HOẶC Ở CỬA HÀNG'
           },
+          storyTitle: 'CÂU CHUYỆN CỦA TÔI',
+          story: {
+            paragraph1: 'Chào bạn, tôi là Anh Tailor.',
+            paragraph2: 'Tôi đã gắn bó với nghề may từ năm 1996 – đến nay đã gần 30 năm miệt mài với từng đường kim mũi chỉ. Trang web này được con gái tôi xây dựng nhằm giúp tôi kết nối với bạn dễ dàng hơn và tiếp tục mang tay nghề của mình phục vụ khách hàng.',
+            paragraph3: 'Tuy khả năng ngoại ngữ của tôi còn hạn chế, nhưng tôi luôn tự tin vào chuyên môn và tình yêu dành cho nghề may. Tôi sẽ giúp bạn sở hữu những bộ trang phục đẹp nhất, thoải mái nhất và vừa vặn nhất, để bạn luôn tự tin trong công việc cũng như trong những buổi tiệc quan trọng.',
+            paragraph4: 'Rất hân hạnh được đồng hành và may đo cho bạn!'
+          },
           timeAgo: {
             justNow: 'Vừa xong',
             minute: 'phút',
@@ -75,12 +82,12 @@ createApp({
             answer2: 'Có, chúng tôi cung cấp dịch vụ may đo từ xa cho khách hàng ngoại thành và quốc tế. Bạn có thể tự đo kích thước và gửi cho chúng tôi. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng).',
             question3: 'Nếu sản phẩm không ưng ý thì như thế nào?',
             answer3: 'Khách hàng có quyền từ chối nếu sản phẩm không đạt chuẩn theo yêu cầu và được hoàn trả 100% chi phí. Chúng tôi cam kết đảm bảo chất lượng và sự hài lòng của khách hàng.',
-            question4: 'Sự khác biệt của Cao Anh Tailor với các cửa hàng khác?',
-            answer4: 'Cao Anh Tailor tự hào với hơn 20 năm kinh nghiệm trong nghề may đo. Chúng tôi chuyên về may đo thủ công, sử dụng vải cao cấp, và đảm bảo vừa vặn hoàn hảo. Giá cả hợp lý và thời gian hoàn thành nhanh chóng là điểm mạnh của chúng tôi.',
+            question4: 'Sự khác biệt của Anh Tailor với các cửa hàng khác?',
+            answer4: 'Anh Tailor tự hào với hơn 30 năm kinh nghiệm trong nghề may đo. Chúng tôi chuyên về may đo thủ công, sử dụng vải cao cấp, và đảm bảo vừa vặn hoàn hảo. Giá cả hợp lý và thời gian hoàn thành nhanh chóng là điểm mạnh của chúng tôi.',
             question5: 'Chính sách khách hàng của chúng tôi?',
             answer5: 'Chúng tôi cam kết cung cấp dịch vụ chất lượng cao với giá cả hợp lý. Khách hàng Việt Nam có thể gọi điện trực tiếp, khách hàng quốc tế có thể liên hệ qua Facebook để được tư vấn bằng tiếng Anh. Chúng tôi đảm bảo hoàn tiền 100% nếu sản phẩm không đạt yêu cầu.',
-            question6: 'Dịch vụ của Cao Anh đảm bảo chất lượng hay không?',
-            answer6: 'Có, chúng tôi cam kết đảm bảo chất lượng 100%. Với hơn 20 năm kinh nghiệm, chúng tôi sử dụng vải cao cấp, may đo thủ công tỉ mỉ, và đảm bảo sản phẩm vừa vặn hoàn hảo. Nếu sản phẩm không đạt yêu cầu, chúng tôi sẽ hoàn trả 100% chi phí.'
+            question6: 'Dịch vụ của Anh Tailor đảm bảo chất lượng hay không?',
+            answer6: 'Có, chúng tôi cam kết đảm bảo chất lượng 100%. Với hơn 30 năm kinh nghiệm, chúng tôi sử dụng vải cao cấp, may đo thủ công tỉ mỉ, và đảm bảo sản phẩm vừa vặn hoàn hảo. Nếu sản phẩm không đạt yêu cầu, chúng tôi sẽ hoàn trả 100% chi phí.'
           }
         },
         en: {
@@ -130,6 +137,13 @@ createApp({
             premiumFabric: 'PREMIUM FABRIC',
             onlineOrStore: 'ONLINE OR IN STORE'
           },
+          storyTitle: 'MY STORY',
+          story: {
+            paragraph1: 'Hello, I am Anh Tailor.',
+            paragraph2: 'I have been dedicated to tailoring since 1996 – nearly 30 years of meticulous work with every stitch. This website was built by my daughter to help me connect with you more easily and continue to serve customers with my craftsmanship.',
+            paragraph3: 'Although my foreign language skills are limited, I am always confident in my expertise and passion for tailoring. I will help you own the most beautiful, comfortable, and perfectly fitted garments, so you can always be confident in your work and at important events.',
+            paragraph4: 'I am honored to accompany and tailor for you!'
+          },
           timeAgo: {
             justNow: 'Just now',
             minute: 'minute',
@@ -153,12 +167,12 @@ createApp({
             answer2: 'Yes, we provide remote tailoring services for customers outside the city and international customers. You can measure yourself and send us your measurements. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront).',
             question3: 'What if I am not satisfied with the product?',
             answer3: 'Customers have the right to refuse if the product does not meet the required standards and will receive a 100% refund. We are committed to ensuring quality and customer satisfaction.',
-            question4: 'What makes Cao Anh Tailor different from other stores?',
-            answer4: 'Cao Anh Tailor is proud of over 20 years of experience in tailoring. We specialize in handcrafted tailoring, use premium fabrics, and ensure a perfect fit. Reasonable prices and fast completion times are our strengths.',
+            question4: 'What makes Anh Tailor different from other stores?',
+            answer4: 'Anh Tailor is proud of over 30 years of experience in tailoring. We specialize in handcrafted tailoring, use premium fabrics, and ensure a perfect fit. Reasonable prices and fast completion times are our strengths.',
             question5: 'What is our customer policy?',
             answer5: 'We are committed to providing high-quality services at reasonable prices. Vietnamese customers can call directly, international customers can contact us via Facebook for English consultation. We guarantee a 100% refund if the product does not meet requirements.',
-            question6: 'Does Cao Anh service guarantee quality?',
-            answer6: 'Yes, we guarantee 100% quality. With over 20 years of experience, we use premium fabrics, meticulous handcrafted tailoring, and ensure a perfect fit. If the product does not meet requirements, we will provide a 100% refund.'
+            question6: 'Does Anh Tailor service guarantee quality?',
+            answer6: 'Yes, we guarantee 100% quality. With over 30 years of experience, we use premium fabrics, meticulous handcrafted tailoring, and ensure a perfect fit. If the product does not meet requirements, we will provide a 100% refund.'
           }
         }
       },
@@ -814,6 +828,14 @@ createApp({
       const wrapper = img.closest('.lightbox-image-wrapper');
       if (wrapper) {
         wrapper.innerHTML = '<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>Image not loaded</p></div>';
+      }
+    },
+    handleStoryImageError(event) {
+      const img = event.target;
+      const wrapper = img.closest('.story-image-wrapper');
+      if (wrapper) {
+        img.style.display = 'none';
+        wrapper.innerHTML = '<div class="story-image-placeholder"><i class="fa-solid fa-image"></i><span>Image not loaded</span></div>';
       }
     },
     scrollToTop() {

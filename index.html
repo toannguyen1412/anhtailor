@@ -167,6 +167,25 @@
                 </div>
             </div>
 
+            <!-- Story Section -->
+            <div class="story-section">
+                <h2 class="story-title">{{ t.storyTitle }}</h2>
+                <div class="story-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story.jpg" 
+                             alt="Anh Tailor - Câu chuyện" 
+                             class="story-image"
+                             @error="handleStoryImageError">
+                    </div>
+                    <div class="story-text">
+                        <p class="story-paragraph">{{ t.story.paragraph1 }}</p>
+                        <p class="story-paragraph">{{ t.story.paragraph2 }}</p>
+                        <p class="story-paragraph">{{ t.story.paragraph3 }}</p>
+                        <p class="story-paragraph">{{ t.story.paragraph4 }}</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Contact Links -->
             <a v-for="link in contactLinksWithTranslations" 
                :key="link.textKey"

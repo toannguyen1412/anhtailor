@@ -119,6 +119,93 @@ body {
   font-style: italic;
 }
 
+/* Story Section */
+.story-section {
+  margin-bottom: 30px;
+}
+
+.story-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3c2414;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.story-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(60, 36, 20, 0.15);
+  border: 2px solid #d4a574;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story-image-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(60, 36, 20, 0.2);
+  background: linear-gradient(135deg, #3c2414, #5d4037);
+}
+
+.story-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.story-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: linear-gradient(135deg, #f8f6f3, #e0d5cc);
+  color: #888;
+  font-size: 14px;
+  gap: 8px;
+  padding: 20px;
+}
+
+.story-image-placeholder i {
+  font-size: 48px;
+  color: #c19660;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.story-paragraph {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
+}
+
+.story-paragraph:first-of-type {
+  font-weight: 600;
+  color: #3c2414;
+  font-size: 1rem;
+}
+
+.story-paragraph:last-of-type {
+  font-style: italic;
+  color: #c19660;
+  font-weight: 500;
+}
+
 /* Features Section */
 .features-section {
   margin-bottom: 30px;
@@ -663,6 +750,29 @@ body {
 
   .feature-name {
     font-size: 0.75rem;
+  }
+
+  .story-section {
+    margin-bottom: 25px;
+  }
+
+  .story-title {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .story-content {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .story-paragraph {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .story-paragraph:first-of-type {
+    font-size: 0.9rem;
   }
 }
 
