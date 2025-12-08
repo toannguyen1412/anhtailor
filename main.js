@@ -40,6 +40,10 @@ createApp({
             whatsapp: 'WhatsApp: 0397417003',
             facebook: 'Facebook'
           },
+          notice: {
+            facebookConsultation: 'Khách hàng Việt Nam có thể gọi điện trực tiếp cho tôi. Khách hàng nước ngoài vui lòng nhắn tin qua Facebook - con gái tôi sẽ hỗ trợ tư vấn bằng tiếng Anh cho quý khách (tôi không thể giao tiếp tiếng nước ngoài qua điện thoại)',
+            remoteOrdering: 'Dịch vụ may đo từ xa: Bạn có thể tự đo kích thước và gửi cho chúng tôi. Chúng tôi sẽ may theo số đo của bạn. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng)'
+          },
           timeAgo: {
             justNow: 'Vừa xong',
             minute: 'phút',
@@ -91,6 +95,10 @@ createApp({
             callUs: 'Call Us: 0397417003',
             whatsapp: 'WhatsApp: 0397417003',
             facebook: 'Facebook'
+          },
+          notice: {
+            facebookConsultation: 'Vietnamese customers can call me directly. International customers, please message us on Facebook - my daughter will assist you in English (I cannot communicate in foreign languages over the phone)',
+            remoteOrdering: 'Remote Tailoring Service: You can measure yourself and send us your measurements. We will tailor your garments accordingly. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront)'
           },
           timeAgo: {
             justNow: 'Just now',

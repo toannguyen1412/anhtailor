@@ -411,6 +411,47 @@ body {
   font-size: 1.1rem;
 }
 
+/* Notice Section */
+.notice-section {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notice-item {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+  border-radius: 12px;
+  padding: 15px;
+  border: 2px solid #d4a574;
+  box-shadow: 0 4px 12px rgba(60, 36, 20, 0.15);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notice-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(60, 36, 20, 0.2);
+}
+
+.notice-icon {
+  color: #c19660;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notice-text {
+  color: #3c2414;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+
 .contact-info {
   background: #f8f6f3;
   border-radius: 10px;
@@ -513,6 +554,23 @@ body {
 
   .service-price {
     font-size: 1.3rem;
+  }
+
+  .notice-section {
+    margin: 20px 0;
+    gap: 12px;
+  }
+
+  .notice-item {
+    padding: 12px;
+  }
+
+  .notice-icon {
+    font-size: 1.3rem;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
   }
 }
 
