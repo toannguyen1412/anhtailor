@@ -85,16 +85,16 @@ body {
 }
 
 .profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
   background: white;
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid #d4a574;
-  box-shadow: 0 10px 30px rgba(60, 36, 20, 0.3);
+  border: 2px solid #888;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -102,7 +102,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  object-position: center;
+  border-radius: 16px;
+  transform: scale(1.2);
 }
 
 .brand-name {
@@ -677,8 +679,8 @@ body {
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .logo-img {
