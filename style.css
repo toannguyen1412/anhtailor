@@ -28,7 +28,7 @@ body {
 
 /* Language Switcher */
 .language-switcher {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   display: flex;
@@ -36,8 +36,8 @@ body {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 25px;
   padding: 4px;
-  box-shadow: 0 2px 8px rgba(60, 36, 20, 0.15);
-  z-index: 10;
+  box-shadow: 0 4px 14px rgba(60, 36, 20, 0.2);
+  z-index: 9999;
 }
 
 .lang-btn {
