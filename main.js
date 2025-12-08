@@ -7,6 +7,7 @@ createApp({
       translations: {
         vi: {
           tagline: 'May Veston Chuyên Nghiệp & Áo Vest Đo May',
+          featuresTitle: 'MUA SẮM QUẦN ÁO VÀ MAY ĐO THEO YÊU CẦU',
           servicesTitle: 'Dịch Vụ & Giá Cả',
           priceLabel: 'Bắt đầu từ',
           customerReviews: 'Đánh Giá Khách Hàng',
@@ -44,6 +45,12 @@ createApp({
             facebookConsultation: 'Khách hàng Việt Nam có thể gọi điện trực tiếp cho tôi. Khách hàng nước ngoài vui lòng nhắn tin qua Facebook - con gái tôi sẽ hỗ trợ tư vấn bằng tiếng Anh cho quý khách (tôi không thể giao tiếp tiếng nước ngoài qua điện thoại)',
             remoteOrdering: 'Dịch vụ may đo từ xa: Bạn có thể tự đo kích thước và gửi cho chúng tôi. Chúng tôi sẽ may theo số đo của bạn. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng)'
           },
+          features: {
+            customDesign: 'THIẾT KẾ CỦA RIÊNG BẠN',
+            madeToOrder: 'LÀM THEO YÊU CẦU',
+            premiumFabric: 'VẢI CAO CẤP',
+            onlineOrStore: 'TRỰC TUYẾN HOẶC Ở CỬA HÀNG'
+          },
           timeAgo: {
             justNow: 'Vừa xong',
             minute: 'phút',
@@ -63,6 +70,7 @@ createApp({
         },
         en: {
           tagline: 'Professional Tailoring & Bespoke Suits',
+          featuresTitle: 'SHOP CLOTHING & CUSTOM TAILORING',
           servicesTitle: 'Our Services & Prices',
           priceLabel: 'Starting from',
           customerReviews: 'Customer Reviews',
@@ -99,6 +107,12 @@ createApp({
           notice: {
             facebookConsultation: 'Vietnamese customers can call me directly. International customers, please message us on Facebook - my daughter will assist you in English (I cannot communicate in foreign languages over the phone)',
             remoteOrdering: 'Remote Tailoring Service: You can measure yourself and send us your measurements. We will tailor your garments accordingly. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront)'
+          },
+          features: {
+            customDesign: 'YOUR OWN DESIGN',
+            madeToOrder: 'MADE TO ORDER',
+            premiumFabric: 'PREMIUM FABRIC',
+            onlineOrStore: 'ONLINE OR IN STORE'
           },
           timeAgo: {
             justNow: 'Just now',
@@ -159,6 +173,28 @@ createApp({
             'https://images.unsplash.com/photo-1632226390535-2f02c1a93541?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           ],
           currentImageIndex: 0
+        }
+      ],
+      features: [
+        {
+          key: 'customDesign',
+          icon: 'fa-solid fa-laptop',
+          nameKey: 'customDesign'
+        },
+        {
+          key: 'madeToOrder',
+          icon: 'fa-solid fa-ruler-combined',
+          nameKey: 'madeToOrder'
+        },
+        {
+          key: 'premiumFabric',
+          icon: 'fa-solid fa-th',
+          nameKey: 'premiumFabric'
+        },
+        {
+          key: 'onlineOrStore',
+          icon: 'fa-solid fa-bag-shopping',
+          nameKey: 'onlineOrStore'
         }
       ],
       contactLinks: [
@@ -513,6 +549,12 @@ createApp({
         text: this.t.contact[link.textKey]
       }));
     },
+    featuresWithTranslations() {
+      return this.features.map(feature => ({
+        ...feature,
+        name: this.t.features[feature.nameKey]
+      }));
+    },
     feedbackImagesWithTranslations() {
       return this.feedbackImages.map(image => ({
         ...image,
@@ -699,14 +741,14 @@ createApp({
       img.style.display = 'none';
       const parent = img.parentElement;
       if (parent) {
-        parent.innerHTML = '<div class="image-error-placeholder"><i class="fa-solid fa-image"></i><span>Không tải được ảnh</span></div>';
+        parent.innerHTML = '<div class="image-error-placeholder"><i class="fa-solid fa-image"></i><span>Image not loaded</span></div>';
       }
     },
     handleLightboxImageError(event) {
       const img = event.target;
       const wrapper = img.closest('.lightbox-image-wrapper');
       if (wrapper) {
-        wrapper.innerHTML = '<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>Không thể tải ảnh</p></div>';
+        wrapper.innerHTML = '<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>Image not loaded</p></div>';
       }
     },
     scrollToTop() {

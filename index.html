@@ -154,6 +154,19 @@
                 </div>
             </div>
 
+            <!-- Features Section -->
+            <div class="features-section">
+                <h2 class="features-title">{{ t.featuresTitle }}</h2>
+                <div class="features-grid">
+                    <div class="feature-card" v-for="feature in featuresWithTranslations" :key="feature.key">
+                        <div class="feature-icon">
+                            <i :class="feature.icon"></i>
+                        </div>
+                        <h3 class="feature-name">{{ feature.name }}</h3>
+                    </div>
+                </div>
+            </div>
+
             <!-- Contact Links -->
             <a v-for="link in contactLinksWithTranslations" 
                :key="link.textKey"
