@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anh Tailor - Veston Suit Custom Ham Tien Mui Ne | May Veston Chất Lượng</title>
-    <meta name="description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày. Liên hệ: 0345197864">
-    <meta name="keywords" content="may veston mui ne, may vest ham tien, tailor mui ne, custom suit vietnam, may ao vest, bespoke suit">
+    <title>Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor</title>
+    <meta name="description" content="Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices. Fast completion time 2-5 days. Contact: 0345197864">
+    <meta name="keywords" content="tailor mui ne, custom suit mui ne, tailor ham tien, custom suit vietnam, bespoke suit, tailor shop vietnam">
     <meta name="author" content="Anh Tailor">
     <meta name="robots" content="index, follow">
     
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anhtailor.vercel.app/">
-    <meta property="og:title" content="Anh Tailor - Veston Suit Custom Ham Tien Mui Ne | May Veston Chất Lượng">
-    <meta property="og:description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày.">
+    <meta property="og:title" content="Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor">
+    <meta property="og:description" content="Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices. Fast completion time 2-5 days.">
     <meta property="og:image" content="https://anhtailor.vercel.app/images/background.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né">
+    <meta property="og:image:alt" content="Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne">
     <meta property="og:site_name" content="Anh Tailor">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:locale:alternate" content="en_US">
     <meta name="google-site-verification" content="QRcJoaZ-4mPyMz7jEHGefqjtKqaii0EfFcr0MWsOT2w" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Anh Tailor - Veston Suit Custom Ham Tien Mui Ne | May Veston Chất Lượng">
-    <meta name="twitter:description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày.">
+    <meta name="twitter:title" content="Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor">
+    <meta name="twitter:description" content="Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices. Fast completion time 2-5 days.">
     <meta name="twitter:image" content="https://anhtailor.vercel.app/images/background.jpeg">
-    <meta name="twitter:image:alt" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né">
+    <meta name="twitter:image:alt" content="Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne">
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/logo-anh-tailor.jpg">
@@ -61,7 +61,7 @@
       "@type": "LocalBusiness",
       "name": "Anh Tailor",
       "image": "https://anhtailor.vercel.app/images/logo-anh-tailor.jpg",
-      "description": "Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý.",
+      "description": "Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "357/1 Nguyen Dinh Chieu",
@@ -95,6 +95,12 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" 
+            nonce="RANDOM123"></script>
+    
     <a href="#main-content" class="skip-link">{{ t.skipToContent }}</a>
     <div id="app">
         <div class="bio-container" id="main-content">
@@ -103,14 +109,14 @@
                 <button @click="switchLanguage('vi')" 
                         :class="{ active: currentLanguage === 'vi' }"
                         class="lang-btn"
-                        aria-label="Tiếng Việt">
+                        :aria-label="t.languageNames.vi">
                     <span class="lang-flag" :style="{ backgroundImage: 'url(https://flagcdn.com/w20/vn.png)' }"></span>
                     <span class="lang-code">VI</span>
                 </button>
                 <button @click="switchLanguage('en')" 
                         :class="{ active: currentLanguage === 'en' }"
                         class="lang-btn"
-                        aria-label="English">
+                        :aria-label="t.languageNames.en">
                     <span class="lang-flag" :style="{ backgroundImage: 'url(https://flagcdn.com/w20/gb.png)' }"></span>
                     <span class="lang-code">EN</span>
                 </button>
@@ -119,7 +125,7 @@
             <!-- Profile Section -->
             <div class="profile-image">
                 <img src="images/logo-anh-tailor.jpg" 
-                     alt="Anh Tailor Logo" 
+                     :alt="logoAlt" 
                      class="logo-img"
                      @error="handleImageError">
             </div>
@@ -207,7 +213,7 @@
                 <div class="story-content">
                     <div class="story-image-wrapper">
                         <img src="images/story.jpg" 
-                             alt="Anh Tailor - Câu chuyện" 
+                             :alt="storyImageAlt" 
                              class="story-image"
                              @error="handleStoryImageError">
                     </div>
@@ -242,7 +248,7 @@
                     </a>
                     <button class="link-button whatsapp-qr-btn" 
                             @click="openWhatsAppQR"
-                            :aria-label="currentLanguage === 'vi' ? 'Hiển thị mã QR WhatsApp' : 'Show WhatsApp QR Code'">
+                            :aria-label="t.showWhatsAppQR">
                         <i class="fa-solid fa-qrcode"></i>
                     </button>
                 </div>
@@ -257,6 +263,30 @@
                 <div class="notice-item">
                     <i class="fa-solid fa-ruler-combined notice-icon"></i>
                     <p class="notice-text">{{ t.notice.remoteOrdering }}</p>
+                </div>
+            </div>
+
+            <!-- Facebook Page Widget -->
+            <div class="facebook-widget-section">
+                <h3 class="facebook-widget-title">
+                    <i class="fa-brands fa-facebook" style="color: #1877F2; margin-right: 8px;"></i>
+                    {{ t.followFacebook }}
+                </h3>
+                <div class="facebook-widget-container">
+                    <div class="fb-page" 
+                         :data-href="facebookWidget.href" 
+                         :data-tabs="facebookWidget.tabs" 
+                         :data-width="facebookWidget.width" 
+                         :data-height="facebookWidget.height" 
+                         :data-small-header="facebookWidget.smallHeader" 
+                         :data-adapt-container-width="facebookWidget.adaptContainerWidth" 
+                         :data-hide-cover="facebookWidget.hideCover" 
+                         :data-show-facepile="facebookWidget.showFacepile"
+                         :data-lazy="facebookWidget.lazy">
+                        <blockquote :cite="facebookWidget.href" class="fb-xfbml-parse-ignore">
+                            <a :href="facebookWidget.href">{{ facebookWidget.pageName }}</a>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
 
@@ -296,7 +326,7 @@
                              loading="lazy"
                              @click="openLightbox(index)"
                              @error="handleFeedbackImageError($event, index)"
-                             :aria-label="currentLanguage === 'vi' ? `Xem ảnh ${index + 1} của khách hàng` : `View customer photo ${index + 1}`">
+                             :aria-label="t.viewCustomerPhoto.replace('{index}', index + 1)">
                     </div>
                 </div>
             </div>
@@ -334,23 +364,23 @@
                         <i class="fa-solid fa-times"></i>
                     </button>
                     <div class="whatsapp-qr-content">
-                        <h3 class="whatsapp-qr-title">{{ currentLanguage === 'vi' ? 'Quét mã QR để liên hệ qua WhatsApp' : 'Scan QR code to contact via WhatsApp' }}</h3>
+                        <h3 class="whatsapp-qr-title">{{ t.scanQRCode }}</h3>
                         <div class="whatsapp-qr-image-wrapper">
-                            <img src="images/whatapp.png" 
-                                 :alt="currentLanguage === 'vi' ? 'Mã QR WhatsApp của Anh Tailor' : 'Anh Tailor WhatsApp QR Code'" 
+                            <img :src="whatsAppQR.imageSrc" 
+                                 :alt="t.whatsAppQRAlt" 
                                  class="whatsapp-qr-image">
                         </div>
                         <div class="whatsapp-qr-info">
-                            <p class="whatsapp-qr-name">anhtailor</p>
-                            <p class="whatsapp-qr-subtitle">{{ currentLanguage === 'vi' ? 'Người liên hệ trên WhatsApp' : 'WhatsApp Contact' }}</p>
+                            <p class="whatsapp-qr-name">{{ whatsAppQR.contactName }}</p>
+                            <p class="whatsapp-qr-subtitle">{{ t.whatsAppContact }}</p>
                         </div>
                         <div class="whatsapp-qr-actions">
-                            <a href="https://wa.me/84345197864" 
+                            <a :href="whatsAppQR.link" 
                                target="_blank" 
                                rel="noopener noreferrer" 
                                class="whatsapp-qr-button">
                                 <i class="fa-brands fa-whatsapp"></i>
-                                {{ currentLanguage === 'vi' ? 'Mở WhatsApp' : 'Open WhatsApp' }}
+                                {{ t.openWhatsApp }}
                             </a>
                         </div>
                     </div>

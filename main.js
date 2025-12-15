@@ -19,6 +19,20 @@ createApp({
           nextImage: 'Ảnh sau',
           skipToContent: 'Bỏ qua đến nội dung chính',
           footer: '© 2025 Anh Tailor – Tinh Hoa Trong Từng Đường May',
+          languageNames: {
+            vi: 'Tiếng Việt',
+            en: 'English'
+          },
+          logoAlt: 'Logo Anh Tailor',
+          storyImageAlt: 'Anh Tailor - Câu chuyện',
+          showWhatsAppQR: 'Hiển thị mã QR WhatsApp',
+          followFacebook: 'Theo dõi chúng tôi trên Facebook',
+          scanQRCode: 'Quét mã QR để liên hệ qua WhatsApp',
+          whatsAppQRAlt: 'Mã QR WhatsApp của Anh Tailor',
+          whatsAppContact: 'Người liên hệ trên WhatsApp',
+          openWhatsApp: 'Mở WhatsApp',
+          viewCustomerPhoto: 'Xem ảnh {index} của khách hàng',
+          imageNotLoaded: 'Không tải được ảnh',
           services: {
             suits: {
               name: 'Veston & Áo Vest',
@@ -104,6 +118,20 @@ createApp({
           nextImage: 'Next image',
           skipToContent: 'Skip to main content',
           footer: '© 2025 Anh Tailor – Excellence in Every Stitch',
+          languageNames: {
+            vi: 'Vietnamese',
+            en: 'English'
+          },
+          logoAlt: 'Anh Tailor Logo',
+          storyImageAlt: 'Anh Tailor - My Story',
+          showWhatsAppQR: 'Show WhatsApp QR Code',
+          followFacebook: 'Follow us on Facebook',
+          scanQRCode: 'Scan QR code to contact via WhatsApp',
+          whatsAppQRAlt: 'Anh Tailor WhatsApp QR Code',
+          whatsAppContact: 'WhatsApp Contact',
+          openWhatsApp: 'Open WhatsApp',
+          viewCustomerPhoto: 'View customer photo {index}',
+          imageNotLoaded: 'Image not loaded',
           services: {
             suits: {
               name: 'Suits & Veston',
@@ -273,11 +301,28 @@ createApp({
         altKey: 'customerPhoto',
         index: i + 1
       })),
+      facebookWidget: {
+        href: 'https://www.facebook.com/anhtailorvn/',
+        tabs: 'timeline',
+        width: '',
+        height: '500',
+        smallHeader: false,
+        adaptContainerWidth: true,
+        hideCover: false,
+        showFacepile: true,
+        lazy: true,
+        pageName: 'Anh Tailor'
+      },
+      whatsAppQR: {
+        imageSrc: 'images/whatapp.png',
+        contactName: 'anhtailor',
+        link: 'https://wa.me/84345197864'
+      },
+      showWhatsAppQR: false,
       showLightbox: false,
       currentImageIndex: 0,
       imageLoaded: false,
       showBackToTop: false,
-      showWhatsAppQR: false,
       serviceAutoPlayIntervals: [],
       faqs: [
         {
@@ -632,10 +677,14 @@ createApp({
     feedbackImagesWithTranslations() {
       return this.feedbackImages.map(image => ({
         ...image,
-        alt: this.currentLanguage === 'vi' 
-          ? `Ảnh khách hàng ${image.index} - Anh Tailor`
-          : `Customer photo ${image.index} - Anh Tailor`
+        alt: this.t.viewCustomerPhoto.replace('{index}', image.index) + ' - Anh Tailor'
       }));
+    },
+    storyImageAlt() {
+      return this.t.storyImageAlt;
+    },
+    logoAlt() {
+      return this.t.logoAlt;
     },
     feedbacksWithDates() {
       const now = new Date();
@@ -666,14 +715,6 @@ createApp({
     }
   },
   methods: {
-    openWhatsAppQR() {
-      this.showWhatsAppQR = true;
-      document.body.style.overflow = 'hidden';
-    },
-    closeWhatsAppQR() {
-      this.showWhatsAppQR = false;
-      document.body.style.overflow = '';
-    },
     formatTimeAgo(date) {
       const now = new Date();
       const diffMs = now - date;
@@ -815,14 +856,14 @@ createApp({
       img.style.display = 'none';
       const parent = img.parentElement;
       if (parent) {
-        parent.innerHTML = '<div class="image-error-placeholder"><i class="fa-solid fa-image"></i><span>Image not loaded</span></div>';
+        parent.innerHTML = `<div class="image-error-placeholder"><i class="fa-solid fa-image"></i><span>${this.t.imageNotLoaded}</span></div>`;
       }
     },
     handleLightboxImageError(event) {
       const img = event.target;
       const wrapper = img.closest('.lightbox-image-wrapper');
       if (wrapper) {
-        wrapper.innerHTML = '<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>Image not loaded</p></div>';
+        wrapper.innerHTML = `<div class="lightbox-error"><i class="fa-solid fa-exclamation-triangle"></i><p>${this.t.imageNotLoaded}</p></div>`;
       }
     },
     handleStoryImageError(event) {
@@ -830,7 +871,7 @@ createApp({
       const wrapper = img.closest('.story-image-wrapper');
       if (wrapper) {
         img.style.display = 'none';
-        wrapper.innerHTML = '<div class="story-image-placeholder"><i class="fa-solid fa-image"></i><span>Image not loaded</span></div>';
+        wrapper.innerHTML = `<div class="story-image-placeholder"><i class="fa-solid fa-image"></i><span>${this.t.imageNotLoaded}</span></div>`;
       }
     },
     scrollToTop() {
@@ -884,6 +925,14 @@ createApp({
       } else {
         this.openFaqIndex = index;
       }
+    },
+    openWhatsAppQR() {
+      this.showWhatsAppQR = true;
+      document.body.style.overflow = 'hidden';
+    },
+    closeWhatsAppQR() {
+      this.showWhatsAppQR = false;
+      document.body.style.overflow = '';
     }
   },
   mounted() {
