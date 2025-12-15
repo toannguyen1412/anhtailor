@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anh Tailor - Veston Suit Custom Ham Tien Mui Ne | May Veston Chất Lượng</title>
-    <meta name="description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày. Liên hệ: 0397417003">
+    <meta name="description" content="Anh Tailor - Tiệm may veston chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may veston, áo sơ mi, áo vest chất lượng cao với giá hợp lý. Thời gian hoàn thành nhanh 2-5 ngày. Liên hệ: 0345197864">
     <meta name="keywords" content="may veston mui ne, may vest ham tien, tailor mui ne, custom suit vietnam, may ao vest, bespoke suit">
     <meta name="author" content="Anh Tailor">
     <meta name="robots" content="index, follow">
@@ -75,7 +75,7 @@
         "latitude": "10.9381",
         "longitude": "108.2778"
       },
-      "telephone": "+84397417003",
+      "telephone": "+84345197864",
       "url": "https://anhtailor.vercel.app/",
       "sameAs": [
         "https://www.facebook.com/anhtailorvn/"
@@ -221,16 +221,32 @@
             </div>
 
             <!-- Contact Links -->
-            <a v-for="link in contactLinksWithTranslations" 
-               :key="link.textKey"
-               :href="link.href" 
-               class="link-button" 
-               :target="link.target"
-               :rel="link.target === '_blank' ? 'noopener noreferrer' : ''"
-               @click="handleLinkClick">
-                <span class="link-icon"><i :class="link.icon"></i></span>
-                {{ link.text }}
-            </a>
+            <template v-for="link in contactLinksWithTranslations" :key="link.textKey">
+                <a v-if="link.textKey !== 'whatsapp'"
+                   :href="link.href" 
+                   class="link-button" 
+                   :target="link.target"
+                   :rel="link.target === '_blank' ? 'noopener noreferrer' : ''"
+                   @click="handleLinkClick">
+                    <span class="link-icon"><i :class="link.icon"></i></span>
+                    {{ link.text }}
+                </a>
+                <div v-else class="whatsapp-button-group">
+                    <a :href="link.href" 
+                       class="link-button whatsapp-main" 
+                       :target="link.target"
+                       :rel="link.target === '_blank' ? 'noopener noreferrer' : ''"
+                       @click="handleLinkClick">
+                        <span class="link-icon"><i :class="link.icon"></i></span>
+                        {{ link.text }}
+                    </a>
+                    <button class="link-button whatsapp-qr-btn" 
+                            @click="openWhatsAppQR"
+                            :aria-label="currentLanguage === 'vi' ? 'Hiển thị mã QR WhatsApp' : 'Show WhatsApp QR Code'">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </button>
+                </div>
+            </template>
 
             <!-- Notice Section -->
             <div class="notice-section">
@@ -306,6 +322,36 @@
                             :class="{ 'open': faq.isOpen }"
                             v-show="faq.isOpen">
                             <p>{{ faq.answer }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp QR Modal -->
+            <div v-if="showWhatsAppQR" class="whatsapp-qr-overlay" @click="closeWhatsAppQR">
+                <div class="whatsapp-qr-container" @click.stop>
+                    <button class="whatsapp-qr-close" @click="closeWhatsAppQR" :aria-label="t.close">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                    <div class="whatsapp-qr-content">
+                        <h3 class="whatsapp-qr-title">{{ currentLanguage === 'vi' ? 'Quét mã QR để liên hệ qua WhatsApp' : 'Scan QR code to contact via WhatsApp' }}</h3>
+                        <div class="whatsapp-qr-image-wrapper">
+                            <img src="images/whatapp.png" 
+                                 :alt="currentLanguage === 'vi' ? 'Mã QR WhatsApp của Anh Tailor' : 'Anh Tailor WhatsApp QR Code'" 
+                                 class="whatsapp-qr-image">
+                        </div>
+                        <div class="whatsapp-qr-info">
+                            <p class="whatsapp-qr-name">anhtailor</p>
+                            <p class="whatsapp-qr-subtitle">{{ currentLanguage === 'vi' ? 'Người liên hệ trên WhatsApp' : 'WhatsApp Contact' }}</p>
+                        </div>
+                        <div class="whatsapp-qr-actions">
+                            <a href="https://wa.me/84345197864" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="whatsapp-qr-button">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                {{ currentLanguage === 'vi' ? 'Mở WhatsApp' : 'Open WhatsApp' }}
+                            </a>
                         </div>
                     </div>
                 </div>

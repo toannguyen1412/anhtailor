@@ -38,8 +38,8 @@ createApp({
           },
           contact: {
             address: '357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né',
-            callUs: 'Gọi: 0397417003',
-            whatsapp: 'WhatsApp: 0397417003',
+            callUs: 'Gọi: 0345197864',
+            whatsapp: 'WhatsApp: 0345197864',
             facebook: 'Facebook'
           },
           notice: {
@@ -123,8 +123,8 @@ createApp({
           },
           contact: {
             address: '357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne',
-            callUs: 'Call Us: 0397417003',
-            whatsapp: 'WhatsApp: 0397417003',
+            callUs: 'Call Us: 0345197864',
+            whatsapp: 'WhatsApp: 0345197864',
             facebook: 'Facebook'
           },
           notice: {
@@ -253,12 +253,12 @@ createApp({
         {
           icon: 'fa-solid fa-phone',
           textKey: 'callUs',
-          href: 'tel:0397417003'
+          href: 'tel:0345197864'
         },
         {
           icon: 'fa-brands fa-whatsapp',
           textKey: 'whatsapp',
-          href: 'https://wa.me/84937417003',
+          href: 'https://wa.me/84345197864',
           target: '_blank'
         },
         {
@@ -277,6 +277,7 @@ createApp({
       currentImageIndex: 0,
       imageLoaded: false,
       showBackToTop: false,
+      showWhatsAppQR: false,
       serviceAutoPlayIntervals: [],
       faqs: [
         {
@@ -665,6 +666,14 @@ createApp({
     }
   },
   methods: {
+    openWhatsAppQR() {
+      this.showWhatsAppQR = true;
+      document.body.style.overflow = 'hidden';
+    },
+    closeWhatsAppQR() {
+      this.showWhatsAppQR = false;
+      document.body.style.overflow = '';
+    },
     formatTimeAgo(date) {
       const now = new Date();
       const diffMs = now - date;

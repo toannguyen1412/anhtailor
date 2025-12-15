@@ -1504,3 +1504,220 @@ a:focus {
     padding: 8px 16px;
   }
 }
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(60, 36, 20, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(60, 36, 20, 0.4);
+}
+
+/* WhatsApp Button Group */
+.whatsapp-button-group {
+  display: flex;
+  gap: 8px;
+  margin: 10px 20px;
+}
+
+.whatsapp-button-group .whatsapp-main {
+  flex: 1;
+  margin: 0;
+}
+
+.whatsapp-button-group .whatsapp-qr-btn {
+  width: 50px;
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button-group .whatsapp-qr-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* WhatsApp QR Modal */
+.whatsapp-qr-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+.whatsapp-qr-container {
+  background: white;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-qr-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.whatsapp-qr-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: rotate(90deg);
+}
+
+.whatsapp-qr-content {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.whatsapp-qr-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.whatsapp-qr-image-wrapper {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto 20px;
+  max-width: 280px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-qr-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.whatsapp-qr-info {
+  margin-bottom: 25px;
+}
+
+.whatsapp-qr-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #075E54;
+  margin-bottom: 5px;
+}
+
+.whatsapp-qr-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.whatsapp-qr-actions {
+  margin-top: 20px;
+}
+
+.whatsapp-qr-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-qr-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-qr-button i {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for WhatsApp QR Modal */
+@media (max-width: 480px) {
+  .whatsapp-qr-container {
+    max-width: 95%;
+  }
+  
+  .whatsapp-qr-image-wrapper {
+    max-width: 240px;
+  }
+  
+  .whatsapp-qr-title {
+    font-size: 1rem;
+  }
+}
