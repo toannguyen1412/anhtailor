@@ -4,19 +4,18 @@
     
     <!-- Language Switcher -->
     <div class="language-switcher">
-      <button 
+      <NuxtLink 
         v-for="lang in availableLocales" 
         :key="lang.code"
-        @click="changeLocale(lang.code)"
+        :to="getLocalePath(lang.code)"
         :class="{ active: locale === lang.code }"
         class="lang-btn"
-        :aria-label="lang.name"
-        type="button">
+        :aria-label="lang.name">
         <span 
           class="lang-flag" 
           :style="{ backgroundImage: `url(https://flagcdn.com/w20/${getFlagCode(lang.code)}.png)` }">
         </span>
-      </button>
+      </NuxtLink>
     </div>
 
     <!-- Profile Section -->
@@ -406,10 +405,9 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale, locales, setLocale } = useI18n()
+const { t, locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const route = useRoute()
-const router = useRouter()
 const { services: baseServices, servicesWithTranslations } = useServices()
 const { featuresWithTranslations } = useFeatures()
 const { contactLinksWithTranslations } = useContactLinks()
@@ -495,37 +493,23 @@ const getFlagCode = (code: string) => {
   return flagMap[code] || code
 }
 
-const changeLocale = (code: string) => {
-  // Prevent if already on this locale
-  if (locale.value === code) {
-    console.log('Already on locale:', code)
-    return
+const getLocalePath = (code: string) => {
+  // Use switchLocalePath to get the correct path for the locale
+  const path = switchLocalePath(code)
+  if (path) {
+    return path
   }
   
-  // Always use window.location.href for guaranteed navigation
-  // Construct the path based on current route
+  // Fallback: construct path manually
   const currentPath = route.path
-  console.log('Current path:', currentPath, 'Switching to:', code)
-  
   // Remove current locale prefix if exists
-  let pathWithoutLocale = currentPath.replace(/^\/(vi|en|de|fr|es)/, '')
-  if (!pathWithoutLocale || pathWithoutLocale === '') {
-    pathWithoutLocale = '/'
-  }
+  const pathWithoutLocale = currentPath.replace(/^\/(vi|en|de|fr|es)/, '') || '/'
   
   // Build new path: default locale (en) has no prefix
-  let newPath = ''
   if (code === 'en') {
-    newPath = pathWithoutLocale === '/' ? '/' : pathWithoutLocale
+    return pathWithoutLocale === '/' ? '/' : pathWithoutLocale
   } else {
-    newPath = pathWithoutLocale === '/' ? `/${code}` : `/${code}${pathWithoutLocale}`
-  }
-  
-  console.log('Navigating to:', newPath)
-  
-  // Navigate using window.location
-  if (typeof window !== 'undefined') {
-    window.location.href = newPath
+    return pathWithoutLocale === '/' ? `/${code}` : `/${code}${pathWithoutLocale}`
   }
 }
 
