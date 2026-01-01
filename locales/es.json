@@ -1,0 +1,105 @@
+{
+  "tagline": "Sastrería Profesional & Trajes a Medida",
+  "featuresTitle": "COMPRAR ROPA & Sastrería A MEDIDA",
+  "servicesTitle": "Nuestros Servicios & Precios",
+  "priceLabel": "Desde",
+  "customerReviews": "Reseñas de Clientes",
+  "customerPhotos": "Fotos de Clientes",
+  "faqTitle": "PREGUNTAS FRECUENTES",
+  "backToTop": "Volver arriba",
+  "close": "Cerrar",
+  "prevImage": "Imagen anterior",
+  "nextImage": "Imagen siguiente",
+  "skipToContent": "Saltar al contenido principal",
+  "footer": "© 2025 Anh Tailor – Excelencia en Cada Puntada",
+  "languageNames": {
+    "vi": "Vietnamita",
+    "en": "Inglés",
+    "de": "Alemán",
+    "fr": "Francés",
+    "es": "Español"
+  },
+  "logoAlt": "Logo Anh Tailor",
+  "storyImageAlt": "Anh Tailor - Mi Historia",
+  "showWhatsAppQR": "Mostrar código QR de WhatsApp",
+  "followFacebook": "Síguenos en Facebook",
+  "scanQRCode": "Escanee el código QR para contactar vía WhatsApp",
+  "whatsAppQRAlt": "Código QR de WhatsApp Anh Tailor",
+  "whatsAppContact": "Contacto de WhatsApp",
+  "openWhatsApp": "Abrir WhatsApp",
+  "viewCustomerPhoto": "Ver foto del cliente {index}",
+  "imageNotLoaded": "Imagen no cargada",
+  "mapTitle": "Ubicación de la tienda",
+  "openInGoogleMaps": "Abrir en Google Maps",
+  "services": {
+    "suits": {
+      "name": "Trajes & Veston",
+      "description": "En 3-5 días",
+      "detailDescription": "Trajes a medida y blazers de alta gama con sastrería experta. Ajuste perfecto para bodas, negocios y ocasiones especiales."
+    },
+    "shirts": {
+      "name": "Camisas a Medida",
+      "description": "En 1-2 días",
+      "detailDescription": "Camisas de vestir hechas a mano según sus medidas. Telas de alta gama y ajuste perfecto para negocios o vestimenta formal."
+    },
+    "waistcoat": {
+      "name": "Chaleco",
+      "description": "En 2-3 días",
+      "detailDescription": "Chalecos y chaquetas elegantes en telas de alta gama. Complemento perfecto para su traje formal."
+    }
+  },
+  "contact": {
+    "address": "357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne",
+    "callUs": "Llámenos: 0345197864",
+    "whatsapp": "WhatsApp: 0345197864",
+    "facebook": "Facebook",
+    "reviewUs": "Reseñenos"
+  },
+  "notice": {
+    "facebookConsultation": "Los clientes vietnamitas pueden llamarme directamente. Los clientes internacionales, por favor contáctenos a través de Facebook - mi hija les ayudará en inglés (no puedo comunicarme en idiomas extranjeros por teléfono)",
+    "remoteOrdering": "Servicio de sastrería remota: Puede tomarse las medidas usted mismo y enviárnoslas. Confeccionaremos sus prendas en consecuencia. Cuando llegue a Vietnam, simplemente recoja sus artículos y pague el saldo restante (se requiere un depósito del 30% por adelantado)"
+  },
+  "features": {
+    "customDesign": "SU PROPIO DISEÑO",
+    "madeToOrder": "HECHO A MEDIDA",
+    "premiumFabric": "TELA PREMIUM",
+    "onlineOrStore": "EN LÍNEA O EN TIENDA"
+  },
+  "storyTitle": "MI HISTORIA",
+  "story": {
+    "paragraph1": "Hola, soy Anh Tailor.",
+    "paragraph2": "Me he dedicado a la sastrería desde 1996 – casi 30 años de trabajo meticuloso con cada puntada. Este sitio web fue construido por mi hija para ayudarme a conectarme con ustedes más fácilmente y continuar sirviendo a los clientes con mi artesanía.",
+    "paragraph3": "Aunque mis habilidades en idiomas extranjeros son limitadas, siempre tengo confianza en mi experiencia y pasión por la sastrería. Le ayudaré a poseer las prendas más hermosas, cómodas y perfectamente ajustadas, para que siempre pueda estar seguro en su trabajo y en eventos importantes.",
+    "paragraph4": "¡Es un honor acompañarle y confeccionar para usted!"
+  },
+  "timeAgo": {
+    "justNow": "Ahora mismo",
+    "minute": "minuto",
+    "minutes": "minutos",
+    "hour": "hora",
+    "hours": "horas",
+    "day": "día",
+    "days": "días",
+    "week": "semana",
+    "weeks": "semanas",
+    "month": "mes",
+    "months": "meses",
+    "year": "año",
+    "years": "años",
+    "ago": "hace"
+  },
+  "faq": {
+    "question1": "¿Cuánto tiempo se tarda en completar y entregar el producto?",
+    "answer1": "El tiempo de finalización depende del tipo de servicio: Camisas a medida en 1-2 días, Chaleco en 2-3 días, y Trajes & Veston en 3-5 días. Le proporcionaremos detalles específicos cuando realice su pedido.",
+    "question2": "¿El servicio a domicilio se aplica a clientes fuera de la ciudad?",
+    "answer2": "Sí, proporcionamos servicios de sastrería remota para clientes fuera de la ciudad y clientes internacionales. Puede tomarse las medidas usted mismo y enviárnoslas. Cuando llegue a Vietnam, simplemente recoja sus artículos y pague el saldo restante (se requiere un depósito del 30% por adelantado).",
+    "question3": "¿Qué pasa si no estoy satisfecho con el producto?",
+    "answer3": "Los clientes tienen derecho a rechazar si el producto no cumple con los estándares requeridos y recibirán un reembolso del 100%. Nos comprometemos a garantizar la calidad y la satisfacción del cliente.",
+    "question4": "¿Qué hace diferente a Anh Tailor de otras tiendas?",
+    "answer4": "Anh Tailor se enorgullece de más de 30 años de experiencia en sastrería. Nos especializamos en sastrería hecha a mano, usamos telas de alta gama y garantizamos un ajuste perfecto. Precios razonables y tiempos de finalización rápidos son nuestras fortalezas.",
+    "question5": "¿Cuál es nuestra política de clientes?",
+    "answer5": "Nos comprometemos a proporcionar servicios de alta calidad a precios razonables. Los clientes vietnamitas pueden llamar directamente, los clientes internacionales pueden contactarnos a través de Facebook para consultas en inglés. Garantizamos un reembolso del 100% si el producto no cumple con los requisitos.",
+    "question6": "¿El servicio de Anh Tailor garantiza la calidad?",
+    "answer6": "Sí, garantizamos una calidad del 100%. Con más de 30 años de experiencia, usamos telas de alta gama, sastrería hecha a mano meticulosa y garantizamos un ajuste perfecto. Si el producto no cumple con los requisitos, proporcionaremos un reembolso del 100%."
+  }
+}

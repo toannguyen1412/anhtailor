@@ -1,0 +1,105 @@
+{
+  "tagline": "Couture Professionnelle & Costumes Sur Mesure",
+  "featuresTitle": "ACHAT DE VÊTEMENTS & COUTURE SUR MESURE",
+  "servicesTitle": "Nos Services & Tarifs",
+  "priceLabel": "À partir de",
+  "customerReviews": "Avis Clients",
+  "customerPhotos": "Photos Clients",
+  "faqTitle": "QUESTIONS FRÉQUENTES",
+  "backToTop": "Retour en haut",
+  "close": "Fermer",
+  "prevImage": "Image précédente",
+  "nextImage": "Image suivante",
+  "skipToContent": "Aller au contenu principal",
+  "footer": "© 2025 Anh Tailor – Excellence dans Chaque Point",
+  "languageNames": {
+    "vi": "Vietnamien",
+    "en": "Anglais",
+    "de": "Allemand",
+    "fr": "Français",
+    "es": "Espagnol"
+  },
+  "logoAlt": "Logo Anh Tailor",
+  "storyImageAlt": "Anh Tailor - Mon Histoire",
+  "showWhatsAppQR": "Afficher le code QR WhatsApp",
+  "followFacebook": "Suivez-nous sur Facebook",
+  "scanQRCode": "Scannez le code QR pour nous contacter via WhatsApp",
+  "whatsAppQRAlt": "Code QR WhatsApp Anh Tailor",
+  "whatsAppContact": "Contact WhatsApp",
+  "openWhatsApp": "Ouvrir WhatsApp",
+  "viewCustomerPhoto": "Voir la photo client {index}",
+  "imageNotLoaded": "Image non chargée",
+  "mapTitle": "Emplacement du magasin",
+  "openInGoogleMaps": "Ouvrir dans Google Maps",
+  "services": {
+    "suits": {
+      "name": "Costumes & Veston",
+      "description": "Sous 3-5 jours",
+      "detailDescription": "Costumes sur mesure et blazers haut de gamme avec une couture experte. Coupe parfaite pour les mariages, le travail et les occasions spéciales."
+    },
+    "shirts": {
+      "name": "Chemises Sur Mesure",
+      "description": "Sous 1-2 jours",
+      "detailDescription": "Chemises de cérémonie faites à la main selon vos mesures. Tissus haut de gamme et coupe parfaite pour le travail ou les tenues formelles."
+    },
+    "waistcoat": {
+      "name": "Gilet",
+      "description": "Sous 2-3 jours",
+      "detailDescription": "Gilets et vestes élégants en tissus haut de gamme. Complément parfait pour votre costume formel."
+    }
+  },
+  "contact": {
+    "address": "357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne",
+    "callUs": "Appelez-nous : 0345197864",
+    "whatsapp": "WhatsApp : 0345197864",
+    "facebook": "Facebook",
+    "reviewUs": "Évaluez-nous"
+  },
+  "notice": {
+    "facebookConsultation": "Les clients vietnamiens peuvent m'appeler directement. Les clients internationaux, veuillez nous contacter via Facebook - ma fille vous assistera en anglais (je ne peux pas communiquer en langues étrangères au téléphone)",
+    "remoteOrdering": "Service de couture à distance : Vous pouvez prendre vos mesures vous-même et nous les envoyer. Nous coudrons vos vêtements en conséquence. Lorsque vous arrivez au Vietnam, venez simplement récupérer vos articles et payer le solde restant (acompte de 30% requis à l'avance)"
+  },
+  "features": {
+    "customDesign": "VOTRE PROPRE DESIGN",
+    "madeToOrder": "FAIT SUR COMMANDE",
+    "premiumFabric": "TISSUS HAUT DE GAMME",
+    "onlineOrStore": "EN LIGNE OU EN MAGASIN"
+  },
+  "storyTitle": "MON HISTOIRE",
+  "story": {
+    "paragraph1": "Bonjour, je suis Anh Tailor.",
+    "paragraph2": "Je me consacre à la couture depuis 1996 – près de 30 ans de travail méticuleux avec chaque point. Ce site web a été créé par ma fille pour m'aider à me connecter plus facilement avec vous et continuer à servir les clients avec mon savoir-faire.",
+    "paragraph3": "Bien que mes compétences en langues étrangères soient limitées, je suis toujours confiant dans mon expertise et ma passion pour la couture. Je vous aiderai à posséder les vêtements les plus beaux, les plus confortables et les mieux ajustés, afin que vous puissiez toujours être confiant dans votre travail et lors d'événements importants.",
+    "paragraph4": "C'est un honneur de vous accompagner et de coudre pour vous !"
+  },
+  "timeAgo": {
+    "justNow": "À l'instant",
+    "minute": "minute",
+    "minutes": "minutes",
+    "hour": "heure",
+    "hours": "heures",
+    "day": "jour",
+    "days": "jours",
+    "week": "semaine",
+    "weeks": "semaines",
+    "month": "mois",
+    "months": "mois",
+    "year": "an",
+    "years": "ans",
+    "ago": "il y a"
+  },
+  "faq": {
+    "question1": "Combien de temps faut-il pour terminer et livrer le produit ?",
+    "answer1": "Le temps de réalisation dépend du type de service : Chemises sur mesure sous 1-2 jours, Gilet sous 2-3 jours, et Costumes & Veston sous 3-5 jours. Nous vous fournirons des détails spécifiques lors de votre commande.",
+    "question2": "Le service à domicile s'applique-t-il aux clients hors de la ville ?",
+    "answer2": "Oui, nous proposons des services de couture à distance pour les clients hors de la ville et les clients internationaux. Vous pouvez prendre vos mesures vous-même et nous les envoyer. Lorsque vous arrivez au Vietnam, venez simplement récupérer vos articles et payer le solde restant (acompte de 30% requis à l'avance).",
+    "question3": "Que se passe-t-il si je ne suis pas satisfait du produit ?",
+    "answer3": "Les clients ont le droit de refuser si le produit ne répond pas aux normes requises et recevront un remboursement à 100%. Nous nous engageons à assurer la qualité et la satisfaction du client.",
+    "question4": "Qu'est-ce qui différencie Anh Tailor des autres magasins ?",
+    "answer4": "Anh Tailor est fier de plus de 30 ans d'expérience en couture. Nous nous spécialisons dans la couture faite à la main, utilisons des tissus haut de gamme et garantissons une coupe parfaite. Des prix raisonnables et des délais de réalisation rapides sont nos forces.",
+    "question5": "Quelle est notre politique client ?",
+    "answer5": "Nous nous engageons à fournir des services de haute qualité à des prix raisonnables. Les clients vietnamiens peuvent appeler directement, les clients internationaux peuvent nous contacter via Facebook pour une consultation en anglais. Nous garantissons un remboursement à 100% si le produit ne répond pas aux exigences.",
+    "question6": "Le service d'Anh Tailor garantit-il la qualité ?",
+    "answer6": "Oui, nous garantissons une qualité à 100%. Avec plus de 30 ans d'expérience, nous utilisons des tissus haut de gamme, une couture faite à la main méticuleuse et garantissons une coupe parfaite. Si le produit ne répond pas aux exigences, nous fournirons un remboursement à 100%."
+  }
+}
