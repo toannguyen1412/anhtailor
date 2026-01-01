@@ -4,8 +4,19 @@ const { createApp } = Vue;
 
 createApp({
   data() {
+    // Get language from URL parameter or localStorage or default to 'en'
+    const urlParams = new URLSearchParams(window.location.search);
+    const langFromUrl = urlParams.get('lang');
+    const langFromStorage = localStorage.getItem('language');
+    const defaultLang = langFromUrl || langFromStorage || 'en';
+    
+    // Update URL if language is in URL but different from current
+    if (langFromUrl && langFromUrl !== langFromStorage) {
+      localStorage.setItem('language', langFromUrl);
+    }
+    
     return {
-      currentLanguage: localStorage.getItem('language') || 'en',
+      currentLanguage: defaultLang,
       translations: translations,
       services: [
         {
@@ -584,6 +595,96 @@ createApp({
       this.currentLanguage = lang;
       localStorage.setItem('language', lang);
       document.documentElement.lang = lang;
+      
+      // Update URL with language parameter for SEO
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.pushState({ lang }, '', url);
+      
+      // Update meta tags dynamically
+      this.updateMetaTags(lang);
+    },
+    updateMetaTags(lang) {
+      const t = this.translations[lang];
+      const baseUrl = 'https://anhtailor.vn/';
+      
+      // Update page title
+      if (lang === 'vi') {
+        document.title = 'Anh Tailor - May Veston Chuyên Nghiệp & Áo Vest Đo May | Ham Tien Mui Ne';
+      } else if (lang === 'en') {
+        document.title = 'Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor';
+      } else if (lang === 'de') {
+        document.title = 'Anh Tailor - Professionelles Maßschneidern & Maßanzüge | Ham Tien Mui Ne';
+      } else if (lang === 'fr') {
+        document.title = 'Anh Tailor - Couture Professionnelle & Costumes Sur Mesure | Ham Tien Mui Ne';
+      } else if (lang === 'es') {
+        document.title = 'Anh Tailor - Sastrería Profesional & Trajes a Medida | Ham Tien Mui Ne';
+      }
+      
+      // Update meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      
+      if (lang === 'vi') {
+        metaDescription.setAttribute('content', 'Anh Tailor - Tiệm may chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may đo veston, áo vest và áo sơ mi chất lượng cao với giá cả hợp lý. Thời gian hoàn thành nhanh 2-5 ngày. Liên hệ: 0345197864');
+      } else {
+        metaDescription.setAttribute('content', t.servicesTitle + ' - ' + t.tagline + '. ' + (lang === 'en' ? 'Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices. Fast completion time 2-5 days. Contact: 0345197864' : ''));
+      }
+      
+      // Update canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', baseUrl + '?lang=' + lang);
+      
+      // Update Open Graph tags
+      let ogUrl = document.querySelector('meta[property="og:url"]');
+      if (!ogUrl) {
+        ogUrl = document.createElement('meta');
+        ogUrl.setAttribute('property', 'og:url');
+        document.head.appendChild(ogUrl);
+      }
+      ogUrl.setAttribute('content', baseUrl + '?lang=' + lang);
+      
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.setAttribute('content', document.title);
+      
+      let ogDescription = document.querySelector('meta[property="og:description"]');
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta');
+        ogDescription.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDescription);
+      }
+      ogDescription.setAttribute('content', metaDescription.getAttribute('content'));
+      
+      // Update og:locale
+      const localeMap = {
+        'vi': 'vi_VN',
+        'en': 'en_US',
+        'de': 'de_DE',
+        'fr': 'fr_FR',
+        'es': 'es_ES'
+      };
+      
+      let ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (!ogLocale) {
+        ogLocale = document.createElement('meta');
+        ogLocale.setAttribute('property', 'og:locale');
+        document.head.appendChild(ogLocale);
+      }
+      ogLocale.setAttribute('content', localeMap[lang] || 'en_US');
     },
     handleImageError(event) {
       const img = event.target;
@@ -747,6 +848,38 @@ createApp({
   mounted() {
     this.$el.style.opacity = '1';
     document.documentElement.lang = this.currentLanguage;
+    
+    // Ensure URL has lang parameter for SEO
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has('lang')) {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', this.currentLanguage);
+      window.history.replaceState({ lang: this.currentLanguage }, '', url);
+    }
+    
+    // Update meta tags on initial load
+    this.updateMetaTags(this.currentLanguage);
+    
+    // Listen for browser back/forward button
+    window.addEventListener('popstate', (event) => {
+      if (event.state && event.state.lang) {
+        this.currentLanguage = event.state.lang;
+        localStorage.setItem('language', event.state.lang);
+        document.documentElement.lang = event.state.lang;
+        this.updateMetaTags(event.state.lang);
+      } else {
+        // Get language from URL if available
+        const urlParams = new URLSearchParams(window.location.search);
+        const langFromUrl = urlParams.get('lang');
+        if (langFromUrl && this.translations[langFromUrl]) {
+          this.currentLanguage = langFromUrl;
+          localStorage.setItem('language', langFromUrl);
+          document.documentElement.lang = langFromUrl;
+          this.updateMetaTags(langFromUrl);
+        }
+      }
+    });
+    
     window.addEventListener('keydown', this.handleKeydown);
     // Debounce scroll handler for better performance
     this.debouncedHandleScroll = this.debounce(this.handleScroll.bind(this), 100);

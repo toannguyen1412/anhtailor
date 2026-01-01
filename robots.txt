@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anhtailor.vercel.app/sitemap.xml
+Sitemap: https://anhtailor.vn/sitemap.xml
