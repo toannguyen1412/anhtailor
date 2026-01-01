@@ -6,12 +6,27 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #3c2414 0%, #5d4037 50%, #2c1810 100%);
+  background-color: #3c2414; /* Fallback color */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/background.jpeg") center center/cover no-repeat;
+  z-index: -1;
+  opacity: 0.9;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
 }
 
 .bio-container {
@@ -979,20 +994,6 @@ body {
   }
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  /* background: url("images/background.jpeg") center center/cover no-repeat; */
-  background: linear-gradient(135deg, #3c2414 0%, #5d4037 50%, #2c1810 100%);
-  opacity: 0.25;
-  pointer-events: none;
-}
-
 body,
 .bio-container {
   position: relative;
@@ -1557,7 +1558,7 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
   color: white;
   border: none;
   cursor: pointer;
@@ -1652,7 +1653,7 @@ a:focus {
 .whatsapp-qr-name {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #075E54;
+  color: #075e54;
   margin-bottom: 5px;
 }
 
@@ -1669,7 +1670,7 @@ a:focus {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
   color: white;
   padding: 12px 30px;
   border-radius: 25px;
@@ -1713,11 +1714,11 @@ a:focus {
   .whatsapp-qr-container {
     max-width: 95%;
   }
-  
+
   .whatsapp-qr-image-wrapper {
     max-width: 240px;
   }
-  
+
   .whatsapp-qr-title {
     font-size: 1rem;
   }
@@ -1768,11 +1769,11 @@ a:focus {
     margin: 20px 10px;
     padding: 20px 0;
   }
-  
+
   .facebook-widget-container {
     min-height: 450px;
   }
-  
+
   .facebook-widget-title {
     font-size: 1rem;
   }
