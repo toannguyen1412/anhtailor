@@ -170,7 +170,22 @@ export const useFeedbacks = () => {
     const diffDays = Math.floor(diffHours / 24)
     const diffMonths = Math.floor(diffDays / 30)
     const diffYears = Math.floor(diffDays / 365)
-    const timeAgo = t('timeAgo') as any
+    const timeAgo = {
+      justNow: t('timeAgo.justNow'),
+      minute: t('timeAgo.minute'),
+      minutes: t('timeAgo.minutes'),
+      hour: t('timeAgo.hour'),
+      hours: t('timeAgo.hours'),
+      day: t('timeAgo.day'),
+      days: t('timeAgo.days'),
+      week: t('timeAgo.week'),
+      weeks: t('timeAgo.weeks'),
+      month: t('timeAgo.month'),
+      months: t('timeAgo.months'),
+      year: t('timeAgo.year'),
+      years: t('timeAgo.years'),
+      ago: t('timeAgo.ago')
+    }
 
     if (diffYears > 0) {
       const remainingMonths = Math.floor((diffDays % 365) / 30)
