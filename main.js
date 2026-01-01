@@ -1,209 +1,12 @@
+import { translations } from './translations.js';
+
 const { createApp } = Vue;
 
 createApp({
   data() {
     return {
       currentLanguage: localStorage.getItem('language') || 'en',
-      translations: {
-        vi: {
-          tagline: 'May Veston Chuyên Nghiệp & Áo Vest Đo May',
-          featuresTitle: 'MUA SẮM QUẦN ÁO VÀ MAY ĐO THEO YÊU CẦU',
-          servicesTitle: 'Dịch Vụ & Giá Cả',
-          priceLabel: 'Bắt đầu từ',
-          customerReviews: 'Đánh Giá Khách Hàng',
-          customerPhotos: 'Ảnh Khách Hàng',
-          faqTitle: 'CÂU HỎI THƯỜNG GẶP',
-          backToTop: 'Lên đầu trang',
-          close: 'Đóng',
-          prevImage: 'Ảnh trước',
-          nextImage: 'Ảnh sau',
-          skipToContent: 'Bỏ qua đến nội dung chính',
-          footer: '© 2025 Anh Tailor – Tinh Hoa Trong Từng Đường May',
-          languageNames: {
-            vi: 'Tiếng Việt',
-            en: 'English'
-          },
-          logoAlt: 'Logo Anh Tailor',
-          storyImageAlt: 'Anh Tailor - Câu chuyện',
-          showWhatsAppQR: 'Hiển thị mã QR WhatsApp',
-          followFacebook: 'Theo dõi chúng tôi trên Facebook',
-          scanQRCode: 'Quét mã QR để liên hệ qua WhatsApp',
-          whatsAppQRAlt: 'Mã QR WhatsApp của Anh Tailor',
-          whatsAppContact: 'Người liên hệ trên WhatsApp',
-          openWhatsApp: 'Mở WhatsApp',
-          viewCustomerPhoto: 'Xem ảnh {index} của khách hàng',
-          imageNotLoaded: 'Không tải được ảnh',
-          services: {
-            suits: {
-              name: 'Veston & Áo Vest',
-              description: 'Trong vòng 3-5 ngày',
-              detailDescription: 'Áo veston và blazer cao cấp được may đo chuyên nghiệp. Vừa vặn hoàn hảo cho đám cưới, công việc và các dịp đặc biệt.'
-            },
-            shirts: {
-              name: 'Áo Sơ Mi May Đo',
-              description: 'Trong vòng 1-2 ngày',
-              detailDescription: 'Áo sơ mi may đo thủ công theo số đo của bạn. Vải cao cấp và vừa vặn hoàn hảo cho công việc hoặc trang phục chính thức.'
-            },
-            waistcoat: {
-              name: 'Áo Ghi Lê',
-              description: 'Trong vòng 2-3 ngày',
-              detailDescription: 'Áo ghi lê và vest thanh lịch bằng vải cao cấp. Bổ sung hoàn hảo cho bộ vest chính thức của bạn.'
-            }
-          },
-          contact: {
-            address: '357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né',
-            callUs: 'Gọi: 0345197864',
-            whatsapp: 'WhatsApp: 0345197864',
-            facebook: 'Facebook'
-          },
-          notice: {
-            facebookConsultation: 'Khách hàng Việt Nam có thể gọi điện trực tiếp cho tôi. Khách hàng nước ngoài vui lòng nhắn tin qua Facebook - con gái tôi sẽ hỗ trợ tư vấn bằng tiếng Anh cho quý khách (tôi không thể giao tiếp tiếng nước ngoài qua điện thoại)',
-            remoteOrdering: 'Dịch vụ may đo từ xa: Bạn có thể tự đo kích thước và gửi cho chúng tôi. Chúng tôi sẽ may theo số đo của bạn. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng)'
-          },
-          features: {
-            customDesign: 'THIẾT KẾ CỦA RIÊNG BẠN',
-            madeToOrder: 'LÀM THEO YÊU CẦU',
-            premiumFabric: 'VẢI CAO CẤP',
-            onlineOrStore: 'TRỰC TUYẾN HOẶC Ở CỬA HÀNG'
-          },
-          storyTitle: 'CÂU CHUYỆN CỦA TÔI',
-          story: {
-            paragraph1: 'Chào bạn, tôi là Anh Tailor.',
-            paragraph2: 'Tôi đã gắn bó với nghề may từ năm 1996 – đến nay đã gần 30 năm miệt mài với từng đường kim mũi chỉ. Trang web này được con gái tôi xây dựng nhằm giúp tôi kết nối với bạn dễ dàng hơn và tiếp tục mang tay nghề của mình phục vụ khách hàng.',
-            paragraph3: 'Tuy khả năng ngoại ngữ của tôi còn hạn chế, nhưng tôi luôn tự tin vào chuyên môn và tình yêu dành cho nghề may. Tôi sẽ giúp bạn sở hữu những bộ trang phục đẹp nhất, thoải mái nhất và vừa vặn nhất, để bạn luôn tự tin trong công việc cũng như trong những buổi tiệc quan trọng.',
-            paragraph4: 'Rất hân hạnh được đồng hành và may đo cho bạn!'
-          },
-          timeAgo: {
-            justNow: 'Vừa xong',
-            minute: 'phút',
-            minutes: 'phút',
-            hour: 'giờ',
-            hours: 'giờ',
-            day: 'ngày',
-            days: 'ngày',
-            week: 'tuần',
-            weeks: 'tuần',
-            month: 'tháng',
-            months: 'tháng',
-            year: 'năm',
-            years: 'năm',
-            ago: 'trước'
-          },
-          faq: {
-            question1: 'Bao lâu thì hoàn thành và giao nhận sản phẩm?',
-            answer1: 'Thời gian hoàn thành sản phẩm tùy thuộc vào loại dịch vụ: Áo sơ mi may đo trong vòng 1-2 ngày, Áo ghi lê trong vòng 2-3 ngày, và Veston & Áo Vest trong vòng 3-5 ngày. Chúng tôi sẽ thông báo cụ thể khi bạn đặt hàng.',
-            question2: 'Dịch vụ tận nhà có áp dụng cho khách ngoại thành không?',
-            answer2: 'Có, chúng tôi cung cấp dịch vụ may đo từ xa cho khách hàng ngoại thành và quốc tế. Bạn có thể tự đo kích thước và gửi cho chúng tôi. Khi đến Việt Nam, bạn chỉ cần đến nhận hàng và thanh toán phần còn lại (đặt cọc trước 30% giá trị đơn hàng).',
-            question3: 'Nếu sản phẩm không ưng ý thì như thế nào?',
-            answer3: 'Khách hàng có quyền từ chối nếu sản phẩm không đạt chuẩn theo yêu cầu và được hoàn trả 100% chi phí. Chúng tôi cam kết đảm bảo chất lượng và sự hài lòng của khách hàng.',
-            question4: 'Sự khác biệt của Anh Tailor với các cửa hàng khác?',
-            answer4: 'Anh Tailor tự hào với hơn 30 năm kinh nghiệm trong nghề may đo. Chúng tôi chuyên về may đo thủ công, sử dụng vải cao cấp, và đảm bảo vừa vặn hoàn hảo. Giá cả hợp lý và thời gian hoàn thành nhanh chóng là điểm mạnh của chúng tôi.',
-            question5: 'Chính sách khách hàng của chúng tôi?',
-            answer5: 'Chúng tôi cam kết cung cấp dịch vụ chất lượng cao với giá cả hợp lý. Khách hàng Việt Nam có thể gọi điện trực tiếp, khách hàng quốc tế có thể liên hệ qua Facebook để được tư vấn bằng tiếng Anh. Chúng tôi đảm bảo hoàn tiền 100% nếu sản phẩm không đạt yêu cầu.',
-            question6: 'Dịch vụ của Anh Tailor đảm bảo chất lượng hay không?',
-            answer6: 'Có, chúng tôi cam kết đảm bảo chất lượng 100%. Với hơn 30 năm kinh nghiệm, chúng tôi sử dụng vải cao cấp, may đo thủ công tỉ mỉ, và đảm bảo sản phẩm vừa vặn hoàn hảo. Nếu sản phẩm không đạt yêu cầu, chúng tôi sẽ hoàn trả 100% chi phí.'
-          }
-        },
-        en: {
-          tagline: 'Professional Tailoring & Bespoke Suits',
-          featuresTitle: 'SHOP CLOTHING & CUSTOM TAILORING',
-          servicesTitle: 'Our Services & Prices',
-          priceLabel: 'Starting from',
-          customerReviews: 'Customer Reviews',
-          customerPhotos: 'Customer Photos',
-          faqTitle: 'FREQUENTLY ASKED QUESTIONS',
-          backToTop: 'Back to top',
-          close: 'Close',
-          prevImage: 'Previous image',
-          nextImage: 'Next image',
-          skipToContent: 'Skip to main content',
-          footer: '© 2025 Anh Tailor – Excellence in Every Stitch',
-          languageNames: {
-            vi: 'Vietnamese',
-            en: 'English'
-          },
-          logoAlt: 'Anh Tailor Logo',
-          storyImageAlt: 'Anh Tailor - My Story',
-          showWhatsAppQR: 'Show WhatsApp QR Code',
-          followFacebook: 'Follow us on Facebook',
-          scanQRCode: 'Scan QR code to contact via WhatsApp',
-          whatsAppQRAlt: 'Anh Tailor WhatsApp QR Code',
-          whatsAppContact: 'WhatsApp Contact',
-          openWhatsApp: 'Open WhatsApp',
-          viewCustomerPhoto: 'View customer photo {index}',
-          imageNotLoaded: 'Image not loaded',
-          services: {
-            suits: {
-              name: 'Suits & Veston',
-              description: 'Within 3-5 days',
-              detailDescription: 'Premium bespoke suits and blazers with expert tailoring. Perfect fit for weddings, business, and special occasions.'
-            },
-            shirts: {
-              name: 'Custom Shirts',
-              description: 'Within 1-2 days',
-              detailDescription: 'Handcrafted dress shirts tailored to your measurements. Premium fabrics and perfect fit for business or formal wear.'
-            },
-            waistcoat: {
-              name: 'Waistcoat',
-              description: 'Within 2-3 days',
-              detailDescription: 'Elegant waistcoats and vests in premium fabrics. Perfect complement to your formal suit.'
-            }
-          },
-          contact: {
-            address: '357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne',
-            callUs: 'Call Us: 0345197864',
-            whatsapp: 'WhatsApp: 0345197864',
-            facebook: 'Facebook'
-          },
-          notice: {
-            facebookConsultation: 'Vietnamese customers can call me directly. International customers, please message us on Facebook - my daughter will assist you in English (I cannot communicate in foreign languages over the phone)',
-            remoteOrdering: 'Remote Tailoring Service: You can measure yourself and send us your measurements. We will tailor your garments accordingly. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront)'
-          },
-          features: {
-            customDesign: 'YOUR OWN DESIGN',
-            madeToOrder: 'MADE TO ORDER',
-            premiumFabric: 'PREMIUM FABRIC',
-            onlineOrStore: 'ONLINE OR IN STORE'
-          },
-          storyTitle: 'MY STORY',
-          story: {
-            paragraph1: 'Hello, I am Anh Tailor.',
-            paragraph2: 'I have been dedicated to tailoring since 1996 – nearly 30 years of meticulous work with every stitch. This website was built by my daughter to help me connect with you more easily and continue to serve customers with my craftsmanship.',
-            paragraph3: 'Although my foreign language skills are limited, I am always confident in my expertise and passion for tailoring. I will help you own the most beautiful, comfortable, and perfectly fitted garments, so you can always be confident in your work and at important events.',
-            paragraph4: 'I am honored to accompany and tailor for you!'
-          },
-          timeAgo: {
-            justNow: 'Just now',
-            minute: 'minute',
-            minutes: 'minutes',
-            hour: 'hour',
-            hours: 'hours',
-            day: 'day',
-            days: 'days',
-            week: 'week',
-            weeks: 'weeks',
-            month: 'month',
-            months: 'months',
-            year: 'year',
-            years: 'years',
-            ago: 'ago'
-          },
-          faq: {
-            question1: 'How long does it take to complete and deliver the product?',
-            answer1: 'Completion time depends on the service type: Custom shirts within 1-2 days, Waistcoat within 2-3 days, and Suits & Veston within 3-5 days. We will provide specific details when you place your order.',
-            question2: 'Does home service apply to customers outside the city?',
-            answer2: 'Yes, we provide remote tailoring services for customers outside the city and international customers. You can measure yourself and send us your measurements. When you arrive in Vietnam, simply pick up your items and pay the remaining balance (30% deposit required upfront).',
-            question3: 'What if I am not satisfied with the product?',
-            answer3: 'Customers have the right to refuse if the product does not meet the required standards and will receive a 100% refund. We are committed to ensuring quality and customer satisfaction.',
-            question4: 'What makes Anh Tailor different from other stores?',
-            answer4: 'Anh Tailor is proud of over 30 years of experience in tailoring. We specialize in handcrafted tailoring, use premium fabrics, and ensure a perfect fit. Reasonable prices and fast completion times are our strengths.',
-            question5: 'What is our customer policy?',
-            answer5: 'We are committed to providing high-quality services at reasonable prices. Vietnamese customers can call directly, international customers can contact us via Facebook for English consultation. We guarantee a 100% refund if the product does not meet requirements.',
-            question6: 'Does Anh Tailor service guarantee quality?',
-            answer6: 'Yes, we guarantee 100% quality. With over 30 years of experience, we use premium fabrics, meticulous handcrafted tailoring, and ensure a perfect fit. If the product does not meet requirements, we will provide a 100% refund.'
-          }
-        }
-      },
+      translations: translations,
       services: [
         {
           icon: 'fa-solid fa-user-tie',
@@ -293,6 +96,12 @@ createApp({
           icon: 'fa-brands fa-facebook',
           textKey: 'facebook',
           href: 'https://www.facebook.com/anhtailorvn/',
+          target: '_blank'
+        },
+        {
+          icon: 'fa-brands fa-google',
+          textKey: 'reviewUs',
+          href: 'https://g.page/r/Ca9pQceWoUdEEBE/review',
           target: '_blank'
         }
       ],
@@ -765,9 +574,9 @@ createApp({
         return '';
       } else {
         if (priceUSD.min === priceUSD.max) {
-          return `$${priceUSD.min}`;
+          return `$${priceUSD.min} (USD)`;
         } else {
-          return `$${priceUSD.min} - $${priceUSD.max}`;
+          return `$${priceUSD.min} - $${priceUSD.max} (USD)`;
         }
       }
     },
