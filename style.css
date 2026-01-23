@@ -14,6 +14,12 @@ body {
   padding: 6px;
 }
 
+#__nuxt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .bio-container {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 14px;
@@ -987,7 +993,7 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  background: url("images/background.jpeg") center center/cover no-repeat;
+  background: url("/images/background.jpeg") center center/cover no-repeat;
   opacity: 0.25;
   pointer-events: none;
 }

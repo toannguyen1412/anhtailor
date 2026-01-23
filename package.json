@@ -2,11 +2,12 @@
   "name": "anhtailor-website",
   "version": "1.0.0",
   "description": "Anh Tailor - Veston Suit Custom Ham Tien Mui Ne Website",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "live-server --port=3000 --open=/index.html",
-    "dev": "live-server --port=3000 --open=/index.html --watch=.",
-    "serve": "http-server -p 3000 -o"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "preview": "nuxt preview"
   },
   "keywords": [
     "tailor",
@@ -15,11 +16,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "http-server": "^14.1.1",
-    "live-server": "^1.2.2"
-  },
   "dependencies": {
-    "vue": "^3.5.25"
+    "nuxt": "^4.3.0"
   }
 }
