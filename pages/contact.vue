@@ -1,8 +1,8 @@
 <template>
   <div>
     <ContactLinks @show-qr="showWhatsAppQR = true" />
-    <MapSection />
     <NoticeSection />
+    <MapSection />
     <WhatsAppQRModal v-model="showWhatsAppQR" />
   </div>
 </template>
