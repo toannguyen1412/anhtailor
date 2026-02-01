@@ -3,7 +3,7 @@
     <NuxtLink
       v-for="lang in availableLocales"
       :key="lang.code"
-      :to="getLocalePath(lang.code)"
+      :to="switchLocalePath(lang.code)"
       :class="{ active: locale === lang.code }"
       class="lang-btn"
       :aria-label="lang.name">
@@ -15,22 +15,12 @@
 </template>
 
 <script setup lang="ts">
-const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-const route = useRoute()
+import { LOCALES } from '~/config/site.config'
 
-const availableLocales = computed(() => {
-  if (!locales.value || locales.value.length === 0) {
-    return [
-      { code: 'vi', name: 'Tiếng Việt' },
-      { code: 'en', name: 'English' },
-      { code: 'de', name: 'Deutsch' },
-      { code: 'fr', name: 'Français' },
-      { code: 'es', name: 'Español' }
-    ]
-  }
-  return locales.value
-})
+const { locale } = useI18n()
+const availableLocales = computed(() =>
+  LOCALES.map((l) => ({ code: l.code, name: l.name }))
+)
 
 const getFlagCode = (code: string) => {
   const flagMap: Record<string, string> = {
@@ -43,19 +33,5 @@ const getFlagCode = (code: string) => {
   return flagMap[code] || code
 }
 
-import { LOCALE_CODES } from '~/config/site.config'
-
-function pathWithoutLocale(path: string): string {
-  const parts = path.split('/').filter(Boolean)
-  if (parts.length > 0 && LOCALE_CODES.includes(parts[0] as any)) parts.shift()
-  return parts.length ? '/' + parts.join('/') : '/'
-}
-
-const getLocalePath = (code: string) => {
-  const path = switchLocalePath(code)
-  if (path) return path
-  const basePath = pathWithoutLocale(route.path)
-  const pathSuffix = basePath === '/' ? '' : basePath
-  return `/${code}${pathSuffix}`
-}
+const switchLocalePath = useSwitchLocalePath()
 </script>
