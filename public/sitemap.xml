@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home + all locale pages -->
+  <url>
+    <loc>https://anhtailor.vn/</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/vi</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/de</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/fr</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/es</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/"/>
+  </url>
+  <!-- About -->
+  <url>
+    <loc>https://anhtailor.vn/about</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/about"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/vi/about</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/about"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/de/about</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/about"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/fr/about</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/about"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/es/about</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/about"/>
+  </url>
+  <!-- Contact -->
+  <url>
+    <loc>https://anhtailor.vn/contact</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/contact"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/vi/contact</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/contact"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/de/contact</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/contact"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/fr/contact</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/contact"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/es/contact</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/contact"/>
+  </url>
+  <!-- Service -->
+  <url>
+    <loc>https://anhtailor.vn/service</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/service"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/service"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/service"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/vi/service</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/service"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/service"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/service"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/de/service</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/service"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/service"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/service"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/fr/service</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/service"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/service"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/service"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/es/service</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/service"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/service"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/service"/>
+  </url>
+  <!-- Post -->
+  <url>
+    <loc>https://anhtailor.vn/post</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/post"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/post"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/vi/post</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/post"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/post"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/de/post</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/post"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/post"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/fr/post</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/post"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/post"/>
+  </url>
+  <url>
+    <loc>https://anhtailor.vn/es/post</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://anhtailor.vn/vi/post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anhtailor.vn/post"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://anhtailor.vn/de/post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anhtailor.vn/fr/post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://anhtailor.vn/es/post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anhtailor.vn/post"/>
+  </url>
+</urlset>
