@@ -28,6 +28,7 @@
 import { NAV_ITEMS, LOCALE_CODES } from '~/config/site.config'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const route = useRoute()
 
 const pathWithoutLocale = computed(() => {
