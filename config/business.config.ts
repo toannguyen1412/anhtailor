@@ -13,6 +13,15 @@ export const BUSINESS = {
     postalCode: '800000',
     addressCountry: 'VN',
   },
+  /** Địa chỉ thứ 2 – nhà riêng nhận may đo */
+  address2: {
+    streetAddress: '238 Le Thi Hong Gam',
+    addressLocality: 'Phu Tai',
+    addressRegion: 'Phan Thiet, Binh Thuan',
+    addressCountry: 'VN',
+  },
+  /** Link Google Maps cho địa chỉ 2 (tìm kiếm) */
+  googleMapsSearchUrl2: 'https://www.google.com/maps/search/?api=1&query=238+Le+Thi+Hong+Gam+Phu+Tai+Phan+Thiet+Binh+Thuan',
   /** Số điện thoại hiển thị (tel: link) */
   phoneDisplay: '0345197864',
   /** Số điện thoại E.164 (WhatsApp, schema) */
