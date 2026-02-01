@@ -1,22 +1,24 @@
-export const useContactLinks = () => {
+import { BUSINESS } from '~/config/business.config'
+
+export function useContactLinks() {
   const { t } = useI18n()
 
   const contactLinks = [
     {
       icon: 'fa-solid fa-location-dot',
       textKey: 'address',
-      href: 'https://g.co/kgs/G3Ya5nd',
+      href: BUSINESS.googleMapsPlaceUrl,
       target: '_blank'
     },
     {
       icon: 'fa-solid fa-phone',
       textKey: 'callUs',
-      href: 'tel:0345197864'
+      href: `tel:${BUSINESS.phoneDisplay}`
     },
     {
       icon: 'fa-brands fa-whatsapp',
       textKey: 'whatsapp',
-      href: 'https://wa.me/84345197864',
+      href: BUSINESS.whatsappUrl,
       target: '_blank'
     },
     {
@@ -28,7 +30,7 @@ export const useContactLinks = () => {
     {
       icon: 'fa-brands fa-google',
       textKey: 'reviewUs',
-      href: 'https://g.page/r/Ca9pQceWoUdEEBE/review',
+      href: BUSINESS.googleMapsReviewUrl,
       target: '_blank'
     }
   ]
@@ -42,7 +44,7 @@ export const useContactLinks = () => {
 
   return {
     contactLinks,
-    contactLinksWithTranslations
+    contactLinksWithTranslations,
   }
 }
 

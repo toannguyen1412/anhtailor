@@ -8,6 +8,9 @@
 </template>
 
 <script setup lang="ts">
+import { BUSINESS } from '~/config/business.config'
+import { localeUrl } from '~/utils/route'
+
 const { t, locale } = useI18n()
 const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl as string
@@ -17,31 +20,20 @@ const jsonLd = computed(() => ({
   '@type': 'ContactPage',
   name: t('meta.contact.title'),
   description: t('meta.contact.description'),
-  url: `${baseUrl}/${locale.value}/contact`,
+  url: localeUrl(baseUrl, locale.value, '/contact'),
   mainEntity: {
     '@type': 'LocalBusiness',
-    name: 'Anh Tailor',
+    name: BUSINESS.name,
     image: `${baseUrl}/images/logo-anh-tailor.jpg`,
-    telephone: '+84345197864',
+    telephone: BUSINESS.phoneE164,
     url: baseUrl,
-    sameAs: ['https://www.facebook.com/anhtailorvn/'],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '357/1 Nguyen Dinh Chieu',
-      addressLocality: 'Ham Tien',
-      addressRegion: 'Mui Ne',
-      postalCode: '800000',
-      addressCountry: 'VN',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '10.9381',
-      longitude: '108.2778',
-    },
-    openingHours: 'Mo-Su 08:00-20:00',
+    sameAs: [...BUSINESS.sameAs],
+    address: { '@type': 'PostalAddress', ...BUSINESS.address },
+    geo: { '@type': 'GeoCoordinates', ...BUSINESS.geo },
+    openingHours: BUSINESS.openingHours,
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+84345197864',
+      telephone: BUSINESS.phoneE164,
       contactType: 'customer service',
       areaServed: 'VN',
       availableLanguage: ['Vietnamese', 'English'],

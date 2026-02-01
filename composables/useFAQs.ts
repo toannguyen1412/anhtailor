@@ -1,4 +1,4 @@
-export const useFAQs = () => {
+export function useFAQs() {
   const { t } = useI18n()
 
   const faqs = [
@@ -39,7 +39,7 @@ export const useFAQs = () => {
 
   return {
     faqs,
-    faqsWithTranslations
+    faqsWithTranslations,
   }
 }
 

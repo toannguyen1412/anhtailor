@@ -1,4 +1,4 @@
-export const useFeatures = () => {
+export function useFeatures() {
   const { t } = useI18n()
 
   const features = [
@@ -33,7 +33,7 @@ export const useFeatures = () => {
 
   return {
     features,
-    featuresWithTranslations
+    featuresWithTranslations,
   }
 }
 

@@ -1,24 +1,12 @@
 import type { PageKey } from '~/config/site.config'
 import { DEFAULT_LOCALE, LOCALE_CODES } from '~/config/site.config'
+import { pathWithoutLocale, localeUrl } from '~/utils/route'
 
 export interface PageSeoOptions {
   /** OG image URL (absolute). Mặc định dùng logo site. */
   image?: string
   /** JSON-LD structured data. Có thể truyền computed() để reactive theo locale. */
   jsonLd?: MaybeRef<Record<string, unknown>>
-}
-
-/** Path hiện tại không chứa prefix locale (vd: /, /about). /vi -> /, /vi/about -> /about */
-function pathWithoutLocale(path: string): string {
-  const parts = path.split('/').filter(Boolean)
-  if (parts.length > 0 && LOCALE_CODES.includes(parts[0] as any)) parts.shift()
-  return parts.length ? '/' + parts.join('/') : '/'
-}
-
-/** Build URL cho locale: strategy prefix → mọi locale có /vi, /en: baseUrl/{code}{path} */
-function localeUrl(baseUrl: string, localeCode: string, pathNoLocale: string): string {
-  const path = pathNoLocale === '/' ? '' : pathNoLocale
-  return `${baseUrl}/${localeCode}${path}`
 }
 
 /**

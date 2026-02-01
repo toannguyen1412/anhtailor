@@ -6,6 +6,9 @@
 </template>
 
 <script setup lang="ts">
+import { BUSINESS } from '~/config/business.config'
+import { localeUrl } from '~/utils/route'
+
 const { t, locale } = useI18n()
 const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl as string
@@ -15,23 +18,13 @@ const jsonLd = computed(() => ({
   '@type': 'CollectionPage',
   name: t('meta.post.title'),
   description: t('meta.post.description'),
-  url: `${baseUrl}/${locale.value}/post`,
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'Anh Tailor',
-    url: baseUrl,
-  },
+  url: localeUrl(baseUrl, locale.value, '/post'),
+  isPartOf: { '@type': 'WebSite', name: BUSINESS.name, url: baseUrl },
   about: {
     '@type': 'LocalBusiness',
-    name: 'Anh Tailor',
+    name: BUSINESS.name,
     url: baseUrl,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '30',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    aggregateRating: { '@type': 'AggregateRating', ...BUSINESS.aggregateRating },
   },
 }))
 

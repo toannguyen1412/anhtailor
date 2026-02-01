@@ -1,3 +1,4 @@
+import type { LocaleCode } from '~/config/site.config'
 import { LOCALE_CODES, DEFAULT_LOCALE } from '~/config/site.config'
 
 /**
@@ -11,8 +12,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const updateStoreFromRoute = () => {
     const pathLocale = route.path.split('/')[1]
-    if (pathLocale && LOCALE_CODES.includes(pathLocale as any)) {
-      localeStore.setLocale(pathLocale as any)
+    if (pathLocale && LOCALE_CODES.includes(pathLocale as LocaleCode)) {
+      localeStore.setLocale(pathLocale as LocaleCode)
     } else {
       localeStore.setLocale(DEFAULT_LOCALE)
     }
@@ -31,7 +32,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     watch(
       () => i18n.global.locale.value,
       (newLocale) => {
-        localeStore.setLocale(newLocale as any)
+        localeStore.setLocale(newLocale as LocaleCode)
       }
     )
   }

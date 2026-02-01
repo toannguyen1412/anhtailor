@@ -4,13 +4,19 @@ Tài liệu mô tả cách dự án được tổ chức để dễ mở rộng 
 
 > **Lưu ý build:** Nếu gặp lỗi `getActiveHead is not exported by unhead` khi build, đây là lỗi tương thích giữa @nuxtjs/i18n 8.x và unhead v2. Có thể thử thêm `unhead: { legacy: true }` trong `nuxt.config.ts` (đã có sẵn) hoặc nâng cấp @nuxtjs/i18n lên bản tương thích khi có.
 
-## 1. Cấu hình tập trung (`config/site.config.ts`)
+## 1. Cấu hình tập trung
+
+### `config/site.config.ts`
 
 **Single source of truth** cho:
 
 - **Locales**: danh sách ngôn ngữ (code, name, language, file), locale mặc định, mảng mã locale.
 - **Pages**: page keys (`home`, `about`, …), dùng cho SEO và prerender.
 - **Nav**: mục menu (path, i18nKey, pageKey) cho header.
+
+### `config/business.config.ts`
+
+**Thông tin doanh nghiệp** dùng chung cho JSON-LD, contact, map: địa chỉ, SĐT, tọa độ, giờ mở cửa, sameAs, aggregateRating. Tránh lặp dữ liệu giữa các trang và composables.
 
 Khi **thêm ngôn ngữ mới**:
 

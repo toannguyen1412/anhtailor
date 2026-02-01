@@ -1,4 +1,7 @@
-export const useServices = () => {
+import type { LocaleCode } from '~/config/site.config'
+import { formatPrice } from '~/utils/format'
+
+export function useServices() {
   const services = [
     {
       icon: "fa-solid fa-user-tie",
@@ -42,40 +45,20 @@ export const useServices = () => {
     },
   ];
 
-  const { t, locale } = useI18n();
+  const { t, locale } = useI18n()
 
-  const servicesWithTranslations = computed(() => {
-    return services.map((service) => ({
+  const servicesWithTranslations = computed(() =>
+    services.map((service) => ({
       ...service,
       name: t(`services.${service.nameKey}.name`),
       description: t(`services.${service.nameKey}.description`),
       detailDescription: t(`services.${service.nameKey}.detailDescription`),
-      price: formatPrice(service.priceUSD, service.priceVND, locale.value),
-    }));
-  });
-
-  const formatPrice = (
-    priceUSD: { min: number; max: number },
-    priceVND: { min: string; max: string },
-    lang: string
-  ) => {
-    if (lang === "vi") {
-      if (priceVND.min === priceVND.max) {
-        return `${priceVND.min} VNĐ`;
-      } else {
-        return `${priceVND.min} - ${priceVND.max} VNĐ`;
-      }
-    } else {
-      if (priceUSD.min === priceUSD.max) {
-        return `$${priceUSD.min} (USD)`;
-      } else {
-        return `$${priceUSD.min} - $${priceUSD.max} (USD)`;
-      }
-    }
-  };
+      price: formatPrice(service.priceUSD, service.priceVND, locale.value as LocaleCode),
+    }))
+  )
 
   return {
     services,
     servicesWithTranslations,
-  };
-};
+  }
+}

@@ -1,4 +1,4 @@
-export const useFeedbacks = () => {
+export function useFeedbacks() {
   const { t } = useI18n()
 
   const feedbackImages = Array.from({ length: 23 }, (_, i) => ({
@@ -239,7 +239,7 @@ export const useFeedbacks = () => {
     feedbackImages,
     feedbackImagesWithTranslations,
     textFeedbacks,
-    feedbacksWithDates
+    feedbacksWithDates,
   }
 }
 

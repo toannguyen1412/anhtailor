@@ -10,6 +10,9 @@
 </template>
 
 <script setup lang="ts">
+import { BUSINESS } from '~/config/business.config'
+import { localeUrl } from '~/utils/route'
+
 const { t, locale } = useI18n()
 const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl as string
@@ -19,22 +22,16 @@ const jsonLd = computed(() => ({
   '@type': 'AboutPage',
   name: t('meta.about.title'),
   description: t('meta.about.description'),
-  url: `${baseUrl}/${locale.value}/about`,
+  url: localeUrl(baseUrl, locale.value, '/about'),
   mainEntity: {
     '@type': 'Organization',
-    name: 'Anh Tailor',
+    name: BUSINESS.name,
     description: t('storyTitle') + ' – ' + t('story.paragraph1'),
     url: baseUrl,
     image: `${baseUrl}/images/logo-anh-tailor.jpg`,
-    sameAs: ['https://www.facebook.com/anhtailorvn/'],
-    foundingDate: '1996',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '357/1 Nguyen Dinh Chieu',
-      addressLocality: 'Ham Tien',
-      addressRegion: 'Mui Ne',
-      addressCountry: 'VN',
-    },
+    sameAs: [...BUSINESS.sameAs],
+    foundingDate: BUSINESS.foundingDate,
+    address: { '@type': 'PostalAddress', ...BUSINESS.address },
   },
 }))
 

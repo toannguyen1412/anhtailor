@@ -43,6 +43,7 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { path: '/', i18nKey: 'nav.home', pageKey: 'home' },
+  { path: '/about', i18nKey: 'nav.about', pageKey: 'about' },
   { path: '/contact', i18nKey: 'nav.contact', pageKey: 'contact' },
   { path: '/service', i18nKey: 'nav.service', pageKey: 'service' },
   { path: '/post', i18nKey: 'nav.post', pageKey: 'post' },

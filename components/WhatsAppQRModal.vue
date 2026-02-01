@@ -38,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+import { BUSINESS } from '~/config/business.config'
+
 const { t } = useI18n()
 
 defineProps<{
@@ -50,8 +52,8 @@ const emit = defineEmits<{
 
 const whatsAppQR = {
   imageSrc: '/images/whatapp.png',
-  contactName: 'anhtailor',
-  link: 'https://wa.me/84345197864'
+  contactName: BUSINESS.name.toLowerCase(),
+  link: BUSINESS.whatsappUrl,
 }
 
 const close = () => {
