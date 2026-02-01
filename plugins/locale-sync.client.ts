@@ -1,3 +1,5 @@
+import { LOCALE_CODES, DEFAULT_LOCALE } from '~/config/site.config'
+
 /**
  * Plugin đồng bộ locale giữa Pinia và i18n khi route thay đổi
  */
@@ -6,14 +8,12 @@ export default defineNuxtPlugin(() => {
   const { locale } = useI18n()
   const route = useRoute()
 
-  // Đồng bộ locale từ route sang store khi init
   const updateStoreFromRoute = () => {
     const pathLocale = route.path.split('/')[1]
-    const validLocales = ['vi', 'en', 'de', 'fr', 'es']
-    if (pathLocale && validLocales.includes(pathLocale)) {
+    if (pathLocale && LOCALE_CODES.includes(pathLocale as any)) {
       localeStore.setLocale(pathLocale as any)
     } else {
-      localeStore.setLocale('en')
+      localeStore.setLocale(DEFAULT_LOCALE)
     }
   }
 

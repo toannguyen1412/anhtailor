@@ -1,6 +1,9 @@
 <template>
   <div class="bio-container" id="main-content">
-    <slot />
+    <AppHeader />
+    <main class="layout-main">
+      <slot />
+    </main>
   </div>
 </template>
 
@@ -16,6 +19,9 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+}
+.layout-main {
+  text-align: center;
 }
 </style>
 

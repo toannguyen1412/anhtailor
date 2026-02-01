@@ -43,14 +43,19 @@ const getFlagCode = (code: string) => {
   return flagMap[code] || code
 }
 
+import { LOCALE_CODES, DEFAULT_LOCALE } from '~/config/site.config'
+
+function pathWithoutLocale(path: string): string {
+  const parts = path.split('/').filter(Boolean)
+  if (parts.length > 0 && LOCALE_CODES.includes(parts[0] as any)) parts.shift()
+  return parts.length ? '/' + parts.join('/') : '/'
+}
+
 const getLocalePath = (code: string) => {
   const path = switchLocalePath(code)
   if (path) return path
-  const currentPath = route.path
-  const pathWithoutLocale = currentPath.replace(/^\/(vi|en|de|fr|es)/, '') || '/'
-  if (code === 'en') {
-    return pathWithoutLocale === '/' ? '/' : pathWithoutLocale
-  }
-  return pathWithoutLocale === '/' ? `/${code}` : `/${code}${pathWithoutLocale}`
+  const basePath = pathWithoutLocale(route.path)
+  if (code === DEFAULT_LOCALE) return basePath === '/' ? '/' : basePath
+  return basePath === '/' ? `/${code}` : `/${code}${basePath}`
 }
 </script>

@@ -97,7 +97,7 @@ export default defineNuxtConfig({
     },
     vueI18n: './i18n.config.ts',
     lazy: true,
-    langDir: 'locales',
+    langDir: 'i18n/locales',
   },
 
   // Runtime config
@@ -105,6 +105,11 @@ export default defineNuxtConfig({
     public: {
       baseUrl: "https://anhtailor.vn",
     },
+  },
+
+  // Tương thích @nuxtjs/i18n với unhead v2 (getActiveHead)
+  unhead: {
+    legacy: true,
   },
 
   nitro: {

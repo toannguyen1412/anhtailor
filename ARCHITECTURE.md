@@ -2,6 +2,8 @@
 
 Tài liệu mô tả cách dự án được tổ chức để dễ mở rộng đa ngôn ngữ và thêm nhiều trang.
 
+> **Lưu ý build:** Nếu gặp lỗi `getActiveHead is not exported by unhead` khi build, đây là lỗi tương thích giữa @nuxtjs/i18n 8.x và unhead v2. Có thể thử thêm `unhead: { legacy: true }` trong `nuxt.config.ts` (đã có sẵn) hoặc nâng cấp @nuxtjs/i18n lên bản tương thích khi có.
+
 ## 1. Cấu hình tập trung (`config/site.config.ts`)
 
 **Single source of truth** cho:

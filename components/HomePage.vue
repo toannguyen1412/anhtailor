@@ -2,8 +2,6 @@
   <div>
     <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
 
-    <LanguageSwitcher />
-
     <HeroProfile />
 
     <ServicesSection />

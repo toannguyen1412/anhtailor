@@ -1,40 +1,35 @@
 import { defineStore } from 'pinia'
+import type { LocaleCode } from '~/config/site.config'
+import { LOCALES, DEFAULT_LOCALE } from '~/config/site.config'
 
-export type LocaleCode = 'vi' | 'en' | 'de' | 'fr' | 'es'
+export type { LocaleCode }
 
 export interface LocaleInfo {
   code: LocaleCode
   name: string
 }
 
-const LOCALES: LocaleInfo[] = [
-  { code: 'vi', name: 'Tiếng Việt' },
-  { code: 'en', name: 'English' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'fr', name: 'Français' },
-  { code: 'es', name: 'Español' }
-]
+const localeList: LocaleInfo[] = LOCALES.map((l) => ({ code: l.code, name: l.name }))
 
 export const useLocaleStore = defineStore('locale', {
   state: () => ({
-    locales: LOCALES,
-    /** Locale đã chọn (đồng bộ với i18n qua nuxt) */
-    currentLocale: 'en' as LocaleCode
+    locales: localeList,
+    currentLocale: DEFAULT_LOCALE as LocaleCode,
   }),
   getters: {
     availableLocales: (state) => state.locales,
-    currentLocaleName: (state) => 
-      state.locales.find(l => l.code === state.currentLocale)?.name ?? 'English'
+    currentLocaleName: (state) =>
+      state.locales.find((l) => l.code === state.currentLocale)?.name ?? 'English',
   },
   actions: {
     setLocale(code: LocaleCode) {
       this.currentLocale = code
     },
     getLocalePath(localeCode: string, basePath = '/') {
-      if (localeCode === 'en') {
+      if (localeCode === DEFAULT_LOCALE) {
         return basePath === '/' ? '/' : basePath
       }
       return basePath === '/' ? `/${localeCode}` : `/${localeCode}${basePath}`
-    }
-  }
+    },
+  },
 })
