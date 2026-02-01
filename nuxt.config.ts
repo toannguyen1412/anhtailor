@@ -1,18 +1,33 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { LOCALES, DEFAULT_LOCALE, LOCALE_CODES, NAV_ITEMS } from './config/site.config'
+
+/** Routes cho prerender: mỗi locale × mỗi page (path). prefix_except_default: en không prefix */
+function getPrerenderRoutes(): string[] {
+  const pathsByPage = NAV_ITEMS.map((item) => item.path)
+  const routes: string[] = []
+  for (const locale of LOCALE_CODES) {
+    for (const path of pathsByPage) {
+      const pathNorm = path === '/' ? '' : path
+      if (locale === DEFAULT_LOCALE) {
+        routes.push(pathNorm || '/')
+      } else {
+        routes.push(`/${locale}${pathNorm}`)
+      }
+    }
+  }
+  return [...new Set(routes)]
+}
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  
-  // Compatibility date
-  compatibilityDate: '2026-01-01',
 
-  // SSR enabled
+  compatibilityDate: '2026-01-01',
   ssr: true,
 
-  // App configuration
   app: {
     head: {
       htmlAttrs: {
-        lang: "vi",
+        lang: 'vi',
       },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
@@ -70,51 +85,19 @@ export default defineNuxtConfig({
   // Modules
   modules: ["@pinia/nuxt", "@nuxtjs/i18n"],
 
-  // i18n configuration
   i18n: {
-    locales: [
-      {
-        code: "vi",
-        language: "vi-VN",
-        name: "Tiếng Việt",
-        file: "vi.json",
-      },
-      {
-        code: "en",
-        language: "en-US",
-        name: "English",
-        file: "en.json",
-      },
-      {
-        code: "de",
-        language: "de-DE",
-        name: "Deutsch",
-        file: "de.json",
-      },
-      {
-        code: "fr",
-        language: "fr-FR",
-        name: "Français",
-        file: "fr.json",
-      },
-      {
-        code: "es",
-        language: "es-ES",
-        name: "Español",
-        file: "es.json",
-      },
-    ],
-    defaultLocale: "en",
-    strategy: "prefix_except_default",
+    locales: LOCALES,
+    defaultLocale: DEFAULT_LOCALE,
+    strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: "i18n_redirected",
-      redirectOn: "root",
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
       alwaysRedirect: false,
     },
-    vueI18n: "./i18n.config.ts",
+    vueI18n: './i18n.config.ts',
     lazy: true,
-    langDir: "locales",
+    langDir: 'locales',
   },
 
   // Runtime config
@@ -124,11 +107,10 @@ export default defineNuxtConfig({
     },
   },
 
-  // Nitro configuration for SSR
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/vi", "/en", "/de", "/fr", "/es"],
+      routes: getPrerenderRoutes(),
     },
   },
-});
+})
