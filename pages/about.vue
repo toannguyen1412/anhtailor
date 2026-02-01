@@ -1,17 +1,11 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <div class="page-about">
-        <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
-        <section class="about-content">
-          <h1 class="about-title">{{ t('storyTitle') }}</h1>
-          <div class="about-story">
-            <p v-for="(_, key) in storyKeys" :key="key">{{ t(`story.${key}`) }}</p>
-          </div>
-        </section>
-        <AppFooter />
+  <div class="page-about">
+    <section class="about-content">
+      <h1 class="about-title">{{ t('storyTitle') }}</h1>
+      <div class="about-story">
+        <p v-for="(_, key) in storyKeys" :key="key">{{ t(`story.${key}`) }}</p>
       </div>
-    </NuxtLayout>
+    </section>
   </div>
 </template>
 

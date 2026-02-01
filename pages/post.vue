@@ -1,16 +1,8 @@
 <template>
-  <NuxtLayout>
-    <div>
-      <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
-
-      <TextFeedbackSection />
-
-      <FeedbackGallery />
-
-      <AppFooter />
-
-    </div>
-  </NuxtLayout>
+  <div>
+    <TextFeedbackSection />
+    <FeedbackGallery />
+  </div>
 </template>
 
 <script setup lang="ts">

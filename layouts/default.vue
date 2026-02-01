@@ -1,13 +1,22 @@
 <template>
-  <div class="bio-container" id="main-content">
-    <AppHeader />
-    <HeroProfile />
+  <div>
+    <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
 
-    <main class="layout-main">
-      <slot />
-    </main>
+    <div class="bio-container" id="main-content">
+      <AppHeader />
+      <HeroProfile />
+
+      <main class="layout-main">
+        <slot />
+        <AppFooter />
+      </main>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .bio-container {
