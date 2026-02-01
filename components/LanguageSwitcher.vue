@@ -43,7 +43,7 @@ const getFlagCode = (code: string) => {
   return flagMap[code] || code
 }
 
-import { LOCALE_CODES, DEFAULT_LOCALE } from '~/config/site.config'
+import { LOCALE_CODES } from '~/config/site.config'
 
 function pathWithoutLocale(path: string): string {
   const parts = path.split('/').filter(Boolean)
@@ -55,7 +55,7 @@ const getLocalePath = (code: string) => {
   const path = switchLocalePath(code)
   if (path) return path
   const basePath = pathWithoutLocale(route.path)
-  if (code === DEFAULT_LOCALE) return basePath === '/' ? '/' : basePath
-  return basePath === '/' ? `/${code}` : `/${code}${basePath}`
+  const pathSuffix = basePath === '/' ? '' : basePath
+  return `/${code}${pathSuffix}`
 }
 </script>

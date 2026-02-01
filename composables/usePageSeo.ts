@@ -15,10 +15,9 @@ function pathWithoutLocale(path: string): string {
   return parts.length ? '/' + parts.join('/') : '/'
 }
 
-/** Build URL cho locale: baseUrl + path (en = không prefix, khác = /{code}{path}) */
+/** Build URL cho locale: strategy prefix → mọi locale có /vi, /en: baseUrl/{code}{path} */
 function localeUrl(baseUrl: string, localeCode: string, pathNoLocale: string): string {
   const path = pathNoLocale === '/' ? '' : pathNoLocale
-  if (localeCode === DEFAULT_LOCALE) return `${baseUrl}${path}`
   return `${baseUrl}/${localeCode}${path}`
 }
 

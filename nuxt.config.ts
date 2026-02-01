@@ -1,18 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { LOCALES, DEFAULT_LOCALE, LOCALE_CODES, NAV_ITEMS } from './config/site.config'
 
-/** Routes cho prerender: mỗi locale × mỗi page (path). prefix_except_default: en không prefix */
+/** Routes cho prerender: mỗi locale × mỗi page. strategy prefix: mọi locale có /vi, /en, ... */
 function getPrerenderRoutes(): string[] {
   const pathsByPage = NAV_ITEMS.map((item) => item.path)
   const routes: string[] = []
   for (const locale of LOCALE_CODES) {
     for (const path of pathsByPage) {
       const pathNorm = path === '/' ? '' : path
-      if (locale === DEFAULT_LOCALE) {
-        routes.push(pathNorm || '/')
-      } else {
-        routes.push(`/${locale}${pathNorm}`)
-      }
+      routes.push(`/${locale}${pathNorm}`)
     }
   }
   return [...new Set(routes)]
@@ -88,12 +84,12 @@ export default defineNuxtConfig({
   i18n: {
     locales: LOCALES,
     defaultLocale: DEFAULT_LOCALE,
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
-      alwaysRedirect: false,
+      fallbackLocale: 'en',
     },
     vueI18n: './i18n.config.ts',
     lazy: true,

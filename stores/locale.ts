@@ -26,10 +26,8 @@ export const useLocaleStore = defineStore('locale', {
       this.currentLocale = code
     },
     getLocalePath(localeCode: string, basePath = '/') {
-      if (localeCode === DEFAULT_LOCALE) {
-        return basePath === '/' ? '/' : basePath
-      }
-      return basePath === '/' ? `/${localeCode}` : `/${localeCode}${basePath}`
+      const path = basePath === '/' ? '' : basePath
+      return `/${localeCode}${path}`
     },
   },
 })

@@ -22,7 +22,7 @@ export const LOCALES: LocaleItem[] = [
   { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
 ]
 
-/** Locale mặc định (prefix_except_default: en không có prefix trong URL) */
+/** Locale mặc định và fallback khi redirect / theo ngôn ngữ trình duyệt */
 export const DEFAULT_LOCALE: LocaleCode = 'en'
 
 /** Mảng mã locale – dùng cho validation (plugin, LanguageSwitcher) */
