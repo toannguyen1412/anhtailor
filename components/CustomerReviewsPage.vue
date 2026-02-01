@@ -36,7 +36,7 @@
           </div>
           <p class="review-content">{{ review.content }}</p>
           <footer class="card-footer">
-            <span v-if="review.country && review.countryCode" class="review-country" :title="review.country">
+            <span v-if="false && review.country && review.countryCode" class="review-country" :title="review.country" ->
               <span class="review-flag" aria-hidden="true">{{ countryCodeToFlag(review.countryCode) }}</span>
               {{ review.country }}
             </span>
