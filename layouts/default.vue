@@ -1,6 +1,8 @@
 <template>
   <div class="bio-container" id="main-content">
     <AppHeader />
+        <HeroProfile />
+
     <main class="layout-main">
       <slot />
     </main>

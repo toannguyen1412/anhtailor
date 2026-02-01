@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
+  <NuxtLayout>
+    <div>
+      <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
 
-    <ContactLinks @show-qr="showWhatsAppQR = true" />
+      <ContactLinks @show-qr="showWhatsAppQR = true" />
 
-    <MapSection />
+      <MapSection />
 
-    <NoticeSection />
+      <NoticeSection />
 
-    <AppFooter />
+      <AppFooter />
 
-    <BackToTop />
+      <BackToTop />
 
-    <WhatsAppQRModal v-model="showWhatsAppQR" />
-  </div>
+      <WhatsAppQRModal v-model="showWhatsAppQR" />
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

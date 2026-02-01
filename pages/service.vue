@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
+  <NuxtLayout>
+    <div>
+      <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
 
-    <ServicesSection />
+      <ServicesSection />
 
-    <AppFooter />
+      <AppFooter />
 
-    <BackToTop />
-  </div>
+      <BackToTop />
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
