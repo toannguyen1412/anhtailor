@@ -29,10 +29,10 @@ export const DEFAULT_LOCALE: LocaleCode = 'en'
 export const LOCALE_CODES: LocaleCode[] = LOCALES.map((l) => l.code)
 
 /** Page keys – mỗi trang có meta trong locales: meta.{pageKey}.title, meta.{pageKey}.description */
-export type PageKey = 'home' | 'about' | 'contact' | 'service' | 'post'
+export type PageKey = 'home' | 'contact' | 'service' | 'post'
 
 /** Danh sách page keys – dùng cho prerender và SEO */
-export const PAGE_KEYS: PageKey[] = ['home', 'about', 'contact', 'service', 'post']
+export const PAGE_KEYS: PageKey[] = ['home', 'contact', 'service', 'post']
 
 /** Cấu hình nav: route path (không prefix locale) và key dịch cho label */
 export interface NavItem {
@@ -43,7 +43,6 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { path: '/', i18nKey: 'nav.home', pageKey: 'home' },
-  { path: '/about', i18nKey: 'nav.about', pageKey: 'about' },
   { path: '/contact', i18nKey: 'nav.contact', pageKey: 'contact' },
   { path: '/service', i18nKey: 'nav.service', pageKey: 'service' },
   { path: '/post', i18nKey: 'nav.post', pageKey: 'post' },
