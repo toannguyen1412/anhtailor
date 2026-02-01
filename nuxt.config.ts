@@ -94,6 +94,11 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
     lazy: true,
     langDir: 'i18n/locales',
+    // Giữ cách resolve path như v8 (tương thích khi nâng từ v8 lên v9)
+    restructureDir: false,
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   // Runtime config
@@ -103,15 +108,10 @@ export default defineNuxtConfig({
     },
   },
 
-  // Tương thích @nuxtjs/i18n với unhead v2 (getActiveHead)
-  unhead: {
-    legacy: true,
-  },
-
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: getPrerenderRoutes(),
+      crawlLinks: false,
+      routes: [], // Tạm tắt prerender (đang 500); bật lại: routes: getPrerenderRoutes()
     },
   },
 })
