@@ -7,18 +7,37 @@
     "about": {
       "title": "À propos d'Anh Tailor | Notre Histoire - Ham Tien Mui Ne",
       "description": "Découvrez Anh Tailor - plus de 30 ans d'expérience en couture à Ham Tien, Mui Ne. Notre histoire et notre engagement pour la qualité."
+    },
+    "contact": {
+      "title": "Contact - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Contactez Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Appelez le 0345197864 ou contactez via WhatsApp, Facebook."
+    },
+    "service": {
+      "title": "Services & Tarifs - Anh Tailor | Costumes, Chemises, Gilets",
+      "description": "Services de couture Anh Tailor : Costumes, chemises sur mesure, gilets. Tarifs et délais détaillés."
+    },
+    "post": {
+      "title": "Avis Clients - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Lisez les avis et découvrez les photos clients d'Anh Tailor. Retours réels de clients locaux et internationaux."
     }
   },
   "nav": {
     "home": "Accueil",
-    "about": "À propos"
+    "about": "À propos",
+    "contact": "Contact",
+    "service": "Services",
+    "post": "Avis",
+    "openMenu": "Ouvrir le menu"
   },
   "tagline": "Couture Professionnelle & Costumes Sur Mesure",
   "featuresTitle": "ACHAT DE VÊTEMENTS & COUTURE SUR MESURE",
   "servicesTitle": "Nos Services & Tarifs",
   "priceLabel": "À partir de",
   "customerReviews": "Avis Clients",
+  "customerReviewsSubtitle": "Ce que disent nos clients",
   "customerPhotos": "Photos Clients",
+  "customerPhotosSubtitle": "Photos clients réelles",
+  "view": "Voir",
   "faqTitle": "QUESTIONS FRÉQUENTES",
   "backToTop": "Retour en haut",
   "close": "Fermer",

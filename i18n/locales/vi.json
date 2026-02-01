@@ -7,18 +7,37 @@
     "about": {
       "title": "Về Anh Tailor | Câu Chuyện Của Chúng Tôi - Ham Tien Mui Ne",
       "description": "Tìm hiểu về Anh Tailor - hơn 30 năm kinh nghiệm may đo tại Hàm Tiến, Mũi Né. Câu chuyện và cam kết chất lượng của chúng tôi."
+    },
+    "contact": {
+      "title": "Liên Hệ - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Liên hệ Anh Tailor - Địa chỉ 357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né. Gọi 0345197864 hoặc nhắn tin qua WhatsApp, Facebook."
+    },
+    "service": {
+      "title": "Dịch Vụ & Giá Cả - Anh Tailor | Veston, Áo Sơ Mi, Áo Ghi Lê",
+      "description": "Xem danh sách dịch vụ may đo của Anh Tailor: Veston, áo sơ mi, áo ghi lê. Bảng giá và thời gian hoàn thành chi tiết."
+    },
+    "post": {
+      "title": "Đánh Giá Khách Hàng - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Đọc đánh giá và xem ảnh khách hàng đã may tại Anh Tailor. Nhận xét thực tế từ khách trong nước và quốc tế."
     }
   },
   "nav": {
     "home": "Trang chủ",
-    "about": "Về chúng tôi"
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "service": "Dịch vụ",
+    "post": "Đánh giá",
+    "openMenu": "Mở menu"
   },
   "tagline": "May Veston Chuyên Nghiệp & Áo Vest Đo May",
   "featuresTitle": "MUA SẮM QUẦN ÁO VÀ MAY ĐO THEO YÊU CẦU",
   "servicesTitle": "Dịch Vụ & Giá Cả",
   "priceLabel": "Bắt đầu từ",
   "customerReviews": "Đánh Giá Khách Hàng",
+  "customerReviewsSubtitle": "Nhận xét từ khách hàng",
   "customerPhotos": "Ảnh Khách Hàng",
+  "customerPhotosSubtitle": "Ảnh khách hàng thực tế",
+  "view": "Xem",
   "faqTitle": "CÂU HỎI THƯỜNG GẶP",
   "backToTop": "Lên đầu trang",
   "close": "Đóng",

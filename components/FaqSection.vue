@@ -1,31 +1,41 @@
 <template>
-  <div class="faq-section">
-    <h3 class="faq-title">{{ t('faqTitle') }}</h3>
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <header class="faq-header">
+      <h2 id="faq-heading" class="faq-title">{{ t('faqTitle') }}</h2>
+      <span class="faq-title-line" aria-hidden="true" />
+    </header>
     <div class="faq-list">
-      <div
-        v-for="(faq, index) in faqs"
+      <article
+        v-for="(faq, index) in faqsWithTranslations"
         :key="index"
-        class="faq-item">
+        class="faq-card"
+        :class="{ open: openFaqIndex === index }">
         <button
-          class="faq-question"
-          @click="toggleFaq(index)"
-          :aria-expanded="faq.isOpen"
-          :aria-controls="`faq-answer-${index}`">
-          <span class="faq-icon" :class="{ open: faq.isOpen }">
-            <i class="fa-solid fa-plus" />
+          type="button"
+          class="faq-trigger"
+          :aria-expanded="openFaqIndex === index"
+          :aria-controls="`faq-answer-${index}`"
+          :id="`faq-question-${index}`"
+          @click.stop="toggleFaq(index)">
+          <span class="faq-trigger-text">{{ faq.question }}</span>
+          <span class="faq-chevron" aria-hidden="true">
+            <i class="fa-solid fa-chevron-down" />
           </span>
-          <span class="faq-question-text">{{ faq.question }}</span>
         </button>
         <div
-          class="faq-answer"
+          class="faq-content"
           :id="`faq-answer-${index}`"
-          :class="{ open: faq.isOpen }"
-          v-show="faq.isOpen">
-          <p>{{ faq.answer }}</p>
+          :class="{ open: openFaqIndex === index }"
+          :aria-labelledby="`faq-question-${index}`"
+          :aria-hidden="openFaqIndex !== index"
+          role="region">
+          <div class="faq-content-inner">
+            <p>{{ faq.answer }}</p>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -34,14 +44,7 @@ const { faqsWithTranslations } = useFAQs()
 
 const openFaqIndex = ref<number | null>(null)
 
-const faqs = computed(() => {
-  return faqsWithTranslations.value.map((faq, index) => ({
-    ...faq,
-    isOpen: openFaqIndex.value === index
-  }))
-})
-
-const toggleFaq = (index: number) => {
+function toggleFaq(index: number) {
   openFaqIndex.value = openFaqIndex.value === index ? null : index
 }
 </script>

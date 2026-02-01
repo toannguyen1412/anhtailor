@@ -7,18 +7,37 @@
     "about": {
       "title": "Sobre Anh Tailor | Nuestra Historia - Ham Tien Mui Ne",
       "description": "Conozca Anh Tailor - más de 30 años de experiencia en sastrería en Ham Tien, Mui Ne. Nuestra historia y compromiso con la calidad."
+    },
+    "contact": {
+      "title": "Contacto - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Contacte a Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Llame al 0345197864 o contacte por WhatsApp, Facebook."
+    },
+    "service": {
+      "title": "Servicios y Precios - Anh Tailor | Trajes, Camisas, Chalecos",
+      "description": "Servicios de sastrería Anh Tailor: Trajes, camisas a medida, chalecos. Precios y plazos detallados."
+    },
+    "post": {
+      "title": "Reseñas de Clientes - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Lea reseñas y vea fotos de clientes de Anh Tailor. Comentarios reales de clientes locales e internacionales."
     }
   },
   "nav": {
     "home": "Inicio",
-    "about": "Nosotros"
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "service": "Servicios",
+    "post": "Reseñas",
+    "openMenu": "Abrir menú"
   },
   "tagline": "Sastrería Profesional & Trajes a Medida",
   "featuresTitle": "COMPRAR ROPA & Sastrería A MEDIDA",
   "servicesTitle": "Nuestros Servicios & Precios",
   "priceLabel": "Desde",
   "customerReviews": "Reseñas de Clientes",
+  "customerReviewsSubtitle": "Lo que dicen nuestros clientes",
   "customerPhotos": "Fotos de Clientes",
+  "customerPhotosSubtitle": "Fotos reales de clientes",
+  "view": "Ver",
   "faqTitle": "PREGUNTAS FRECUENTES",
   "backToTop": "Volver arriba",
   "close": "Cerrar",

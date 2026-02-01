@@ -1,67 +1,71 @@
 <template>
-  <div class="services-section">
-    <h3 class="services-title">{{ t('servicesTitle') }}</h3>
+  <section class="services-section" aria-labelledby="services-heading">
+    <header class="services-header">
+      <h2 id="services-heading" class="services-title">{{ t('servicesTitle') }}</h2>
+      <span class="services-title-line" aria-hidden="true" />
+    </header>
     <div class="services-list">
-      <div
+      <article
         v-for="service in services"
         :key="service.nameKey"
         class="service-card"
         @mouseenter="pauseServiceAutoPlay"
         @mouseleave="resumeServiceAutoPlay">
-        <div class="service-image-wrapper">
-          <div class="service-slide-container">
+        <div class="service-media">
+          <div class="service-slide-wrap">
             <img
               v-for="(image, index) in service.images"
               :key="index"
               :src="image"
               :alt="`${service.name} - Image ${index + 1}`"
-              class="service-product-image"
+              class="service-img"
               :class="{ active: index === service.currentImageIndex }"
               :loading="index === 0 ? 'eager' : 'lazy'"
               @error="handleServiceImageError($event, service)">
           </div>
-          <div class="service-image-overlay">
+          <div class="service-icon-badge" aria-hidden="true">
             <i :class="service.icon" />
           </div>
           <button
-            class="service-slide-nav service-slide-prev"
-            @click="prevServiceImage(service)"
+            type="button"
+            class="service-nav service-nav-prev"
+            @click.stop="prevServiceImage(service)"
             :aria-label="t('prevImage')">
             <i class="fa-solid fa-chevron-left" />
           </button>
           <button
-            class="service-slide-nav service-slide-next"
-            @click="nextServiceImage(service)"
+            type="button"
+            class="service-nav service-nav-next"
+            @click.stop="nextServiceImage(service)"
             :aria-label="t('nextImage')">
             <i class="fa-solid fa-chevron-right" />
           </button>
-          <div class="service-slide-indicators">
-            <span
-              v-for="(image, index) in service.images"
+          <div class="service-dots">
+            <button
+              v-for="(img, index) in service.images"
               :key="index"
-              class="service-slide-dot"
+              type="button"
+              class="service-dot"
               :class="{ active: index === service.currentImageIndex }"
-              @click="setServiceImageIndex(service, index)" />
+              :aria-label="`Slide ${index + 1}`"
+              :aria-current="index === service.currentImageIndex ? 'true' : undefined"
+              @click.stop="setServiceImageIndex(service, index)" />
           </div>
         </div>
-        <div class="service-content">
-          <div class="service-header">
-            <h4 class="service-name">{{ service.name }}</h4>
-            <div class="service-time">
-              <i class="fa-solid fa-clock" />
-              <span>{{ service.description }}</span>
-            </div>
-            <div class="service-detail-description">
-              {{ service.detailDescription }}
-            </div>
-          </div>
-          <div class="service-price-wrapper">
+        <div class="service-body">
+          <h3 class="service-name">{{ service.name }}</h3>
+          <p class="service-meta">
+            <i class="fa-solid fa-clock" aria-hidden="true" />
+            <span>{{ service.description }}</span>
+          </p>
+          <p class="service-desc">{{ service.detailDescription }}</p>
+          <div class="service-price-block">
             <span class="service-price">{{ service.price }}</span>
           </div>
         </div>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -82,29 +86,43 @@ const services = computed(() => {
   }))
 })
 
+const updateServiceImageIndex = (nameKey: string, updater: (current: number) => number) => {
+  const current = serviceImageIndices.value[nameKey] ?? 0
+  serviceImageIndices.value = {
+    ...serviceImageIndices.value,
+    [nameKey]: updater(current)
+  }
+}
+
 const nextServiceImage = (service: { nameKey: string; images: unknown[] }) => {
-  const currentIndex = serviceImageIndices.value[service.nameKey] ?? 0
-  serviceImageIndices.value[service.nameKey] = (currentIndex + 1) % service.images.length
+  const len = service.images.length
+  if (len === 0) return
+  updateServiceImageIndex(service.nameKey, (current) => (current + 1) % len)
 }
 
 const prevServiceImage = (service: { nameKey: string; images: unknown[] }) => {
-  const currentIndex = serviceImageIndices.value[service.nameKey] ?? 0
-  serviceImageIndices.value[service.nameKey] = (currentIndex - 1 + service.images.length) % service.images.length
+  const len = service.images.length
+  if (len === 0) return
+  updateServiceImageIndex(service.nameKey, (current) => (current - 1 + len) % len)
 }
 
 const setServiceImageIndex = (service: { nameKey: string }, index: number) => {
-  serviceImageIndices.value[service.nameKey] = index
+  serviceImageIndices.value = {
+    ...serviceImageIndices.value,
+    [service.nameKey]: index
+  }
 }
 
 const handleServiceImageError = (event: Event, _service: unknown) => {
   const img = event.target as HTMLImageElement
-  const wrapper = img.closest('.service-image-wrapper')
+  const wrapper = img.closest('.service-media')
   if (wrapper) {
     img.style.display = 'none'
-    const overlay = wrapper.querySelector('.service-image-overlay')
-    if (overlay) {
-      (overlay as HTMLElement).style.display = 'flex'
-      ;(overlay as HTMLElement).style.background = 'linear-gradient(135deg, #3c2414, #5d4037)'
+    const badge = wrapper.querySelector('.service-icon-badge')
+    if (badge) {
+      const el = badge as HTMLElement
+      el.style.display = 'flex'
+      el.style.background = 'linear-gradient(135deg, #3c2414, #5d4037)'
     }
   }
 }
@@ -114,8 +132,7 @@ const startServiceAutoPlay = () => {
   serviceAutoPlayIntervals.value = []
   baseServices.forEach((service) => {
     const intervalId = setInterval(() => {
-      const currentIndex = serviceImageIndices.value[service.nameKey] ?? 0
-      serviceImageIndices.value[service.nameKey] = (currentIndex + 1) % service.images.length
+      nextServiceImage(service)
     }, 3000)
     serviceAutoPlayIntervals.value.push(intervalId)
   })

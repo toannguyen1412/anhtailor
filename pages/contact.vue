@@ -2,30 +2,24 @@
   <div>
     <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
 
-    <HeroProfile />
+    <ContactLinks @show-qr="showWhatsAppQR = true" />
 
-    <FeaturesSection />
+    <MapSection />
 
-    <StorySection />
-
-    <FacebookWidget />
-
-    <FaqSection />
-
-    <WhatsAppQRModal v-model="showWhatsAppQR" />
+    <NoticeSection />
 
     <AppFooter />
 
     <BackToTop />
+
+    <WhatsAppQRModal v-model="showWhatsAppQR" />
   </div>
 </template>
 
 <script setup lang="ts">
 const { t } = useI18n()
 
+usePageSeo('contact')
+
 const showWhatsAppQR = ref(false)
 </script>
-
-<style scoped>
-/* Component styles are in global CSS */
-</style>

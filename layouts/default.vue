@@ -22,6 +22,7 @@
 }
 .layout-main {
   text-align: center;
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
 }
 </style>
 

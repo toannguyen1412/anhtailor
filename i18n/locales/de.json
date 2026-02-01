@@ -7,18 +7,37 @@
     "about": {
       "title": "Über Anh Tailor | Unsere Geschichte - Ham Tien Mui Ne",
       "description": "Erfahren Sie mehr über Anh Tailor - über 30 Jahre Maßschneider-Erfahrung in Ham Tien, Mui Ne. Unsere Geschichte und unser Engagement für Qualität."
+    },
+    "contact": {
+      "title": "Kontakt - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Kontaktieren Sie Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Rufen Sie 0345197864 an oder schreiben Sie über WhatsApp, Facebook."
+    },
+    "service": {
+      "title": "Dienstleistungen & Preise - Anh Tailor | Anzüge, Hemden, Westen",
+      "description": "Anh Tailor Maßschneider-Dienstleistungen: Anzüge, Maßhemden, Westen. Detaillierte Preise und Lieferzeiten."
+    },
+    "post": {
+      "title": "Kundenbewertungen - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Kundenbewertungen und Fotos von Anh Tailor. Echte Bewertungen von einheimischen und internationalen Kunden."
     }
   },
   "nav": {
     "home": "Start",
-    "about": "Über uns"
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "service": "Dienstleistungen",
+    "post": "Bewertungen",
+    "openMenu": "Menü öffnen"
   },
   "tagline": "Professionelles Maßschneidern & Maßanzüge",
   "featuresTitle": "KLEIDUNG KAUFEN & MAßSCHNEIDERN",
   "servicesTitle": "Unsere Dienstleistungen & Preise",
   "priceLabel": "Ab",
   "customerReviews": "Kundenbewertungen",
+  "customerReviewsSubtitle": "Was unsere Kunden sagen",
   "customerPhotos": "Kundenfotos",
+  "customerPhotosSubtitle": "Echte Kundenfotos",
+  "view": "Ansehen",
   "faqTitle": "HÄUFIG GESTELLTE FRAGEN",
   "backToTop": "Nach oben",
   "close": "Schließen",

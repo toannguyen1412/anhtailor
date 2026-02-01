@@ -7,18 +7,37 @@
     "about": {
       "title": "About Anh Tailor | Our Story - Ham Tien Mui Ne",
       "description": "Learn about Anh Tailor - over 30 years of tailoring experience in Ham Tien, Mui Ne. Our story and commitment to quality craftsmanship."
+    },
+    "contact": {
+      "title": "Contact - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Contact Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Call 0345197864 or message via WhatsApp, Facebook."
+    },
+    "service": {
+      "title": "Services & Prices - Anh Tailor | Suits, Shirts, Waistcoat",
+      "description": "View Anh Tailor tailoring services: Suits, custom shirts, waistcoat. Detailed pricing and completion times."
+    },
+    "post": {
+      "title": "Customer Reviews - Anh Tailor | Ham Tien Mui Ne",
+      "description": "Read reviews and see customer photos from Anh Tailor. Real feedback from local and international customers."
     }
   },
   "nav": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "contact": "Contact",
+    "service": "Services",
+    "post": "Reviews",
+    "openMenu": "Open menu"
   },
   "tagline": "Professional Tailoring & Bespoke Suits",
   "featuresTitle": "SHOP CLOTHING & CUSTOM TAILORING",
   "servicesTitle": "Our Services & Prices",
   "priceLabel": "Starting from",
   "customerReviews": "Customer Reviews",
+  "customerReviewsSubtitle": "What our customers say",
   "customerPhotos": "Customer Photos",
+  "customerPhotosSubtitle": "Real customer photos",
+  "view": "View",
   "faqTitle": "FREQUENTLY ASKED QUESTIONS",
   "backToTop": "Back to top",
   "close": "Close",
