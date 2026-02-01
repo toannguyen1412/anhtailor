@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TextFeedbackSection />
+    <CustomerReviewsPage />
     <FeedbackGallery />
   </div>
 </template>
