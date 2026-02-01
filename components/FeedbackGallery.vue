@@ -113,13 +113,6 @@ const handleFeedbackImageError = (event: Event, _index: number) => {
   max-width: 100%;
 }
 
-@media (min-width: 500px) {
-  .feedback-gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-}
-
 .feedback-gallery-card {
   position: relative;
   padding: 0;
