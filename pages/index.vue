@@ -1,7 +1,21 @@
 <template>
   <div>
     <NuxtLayout>
-      <HomePage />
+  <div>
+    <a href="#main-content" class="skip-link">{{ t('skipToContent') }}</a>
+
+
+    <FeaturesSection />
+
+    <StorySection />
+
+    <FacebookWidget />
+
+    <FaqSection />
+
+    <AppFooter />
+
+  </div>
     </NuxtLayout>
   </div>
 </template>
