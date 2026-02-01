@@ -9,7 +9,6 @@
 
       <AppFooter />
 
-      <BackToTop />
     </div>
   </NuxtLayout>
 </template>

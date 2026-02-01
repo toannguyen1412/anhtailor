@@ -15,7 +15,6 @@
 
     <AppFooter />
 
-    <BackToTop />
   </div>
 </template>
 

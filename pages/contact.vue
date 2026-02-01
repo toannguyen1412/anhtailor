@@ -11,8 +11,6 @@
 
       <AppFooter />
 
-      <BackToTop />
-
       <WhatsAppQRModal v-model="showWhatsAppQR" />
     </div>
   </NuxtLayout>

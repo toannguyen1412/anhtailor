@@ -44,6 +44,7 @@ npm install
 Bạn cần convert file `translations.js` thành các file JSON trong thư mục `locales/`:
 
 **locales/vi.json:**
+
 ```json
 {
   "tagline": "May Veston Chuyên Nghiệp & Áo Vest Đo May",
@@ -53,6 +54,7 @@ Bạn cần convert file `translations.js` thành các file JSON trong thư mụ
 ```
 
 **locales/en.json:**
+
 ```json
 {
   "tagline": "Professional Tailoring & Bespoke Suits",
@@ -80,7 +82,6 @@ Chuyển đổi các components từ `index.html` sang Vue components:
 - `components/FAQSection.vue`
 - `components/WhatsAppQRModal.vue`
 - `components/LightboxModal.vue`
-- `components/BackToTop.vue`
 
 ### 4. Migrate CSS
 
@@ -104,7 +105,7 @@ Tôi có thể tạo script để tự động convert `translations.js` sang JS
 ✅ **Performance**: Load nhanh hơn  
 ✅ **Đa ngôn ngữ**: Routing tự động (`/vi`, `/en`, `/de`, `/fr`, `/es`)  
 ✅ **Meta tags**: Tự động cập nhật theo ngôn ngữ  
-✅ **Structured Data**: Tự động generate  
+✅ **Structured Data**: Tự động generate
 
 ## Chạy Development Server
 
@@ -124,6 +125,7 @@ npm run generate  # Nếu muốn static site
 ## Deploy
 
 Nuxt SSR có thể deploy lên:
+
 - **Vercel** (recommended)
 - **Netlify**
 - **Cloudflare Pages**
@@ -139,10 +141,10 @@ Nuxt SSR có thể deploy lên:
 ## Cần Giúp Đỡ?
 
 Nếu bạn muốn tôi:
+
 1. ✅ Tạo script convert translations.js → JSON files
 2. ✅ Migrate toàn bộ components
 3. ✅ Tạo HomePage component hoàn chỉnh
 4. ✅ Setup deployment config
 
 Hãy cho tôi biết!
-

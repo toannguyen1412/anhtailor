@@ -10,7 +10,6 @@
           </div>
         </section>
         <AppFooter />
-        <BackToTop />
       </div>
     </NuxtLayout>
   </div>

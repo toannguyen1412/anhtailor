@@ -6,8 +6,6 @@
       <ServicesSection />
 
       <AppFooter />
-
-      <BackToTop />
     </div>
   </NuxtLayout>
 </template>
