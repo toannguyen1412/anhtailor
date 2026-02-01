@@ -68,7 +68,7 @@ export default defineNuxtConfig({
   css: ["@/assets/css/style.css"],
 
   // Modules
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@pinia/nuxt", "@nuxtjs/i18n"],
 
   // i18n configuration
   i18n: {
