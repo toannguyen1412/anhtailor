@@ -13,7 +13,7 @@ export interface LocaleItem {
   file: string
 }
 
-/** Danh sách locale – đồng bộ với thư mục locales/*.json */
+/** Danh sách locale – đồng bộ với thư mục i18n/locales/*.json */
 export const LOCALES: LocaleItem[] = [
   { code: 'vi', language: 'vi-VN', name: 'Tiếng Việt', file: 'vi.json' },
   { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
