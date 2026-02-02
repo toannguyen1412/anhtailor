@@ -24,7 +24,7 @@ const jsonLd = computed(() => ({
   mainEntity: {
     '@type': 'LocalBusiness',
     name: BUSINESS.name,
-    image: `${baseUrl}/images/logo-anh-tailor.jpg`,
+    image: `${baseUrl}/images/thumbnail.jpg`,
     telephone: BUSINESS.phoneE164,
     url: baseUrl,
     sameAs: [...BUSINESS.sameAs],

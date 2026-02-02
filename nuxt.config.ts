@@ -1,29 +1,34 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { LOCALES, DEFAULT_LOCALE, LOCALE_CODES, NAV_ITEMS } from './config/site.config'
+import {
+  LOCALES,
+  DEFAULT_LOCALE,
+  LOCALE_CODES,
+  NAV_ITEMS,
+} from "./config/site.config";
 
 /** Routes cho prerender: mỗi locale × mỗi page. strategy prefix: mọi locale có /vi, /en, ... */
 function getPrerenderRoutes(): string[] {
-  const pathsByPage = NAV_ITEMS.map((item) => item.path)
-  const routes: string[] = []
+  const pathsByPage = NAV_ITEMS.map((item) => item.path);
+  const routes: string[] = [];
   for (const locale of LOCALE_CODES) {
     for (const path of pathsByPage) {
-      const pathNorm = path === '/' ? '' : path
-      routes.push(`/${locale}${pathNorm}`)
+      const pathNorm = path === "/" ? "" : path;
+      routes.push(`/${locale}${pathNorm}`);
     }
   }
-  return [...new Set(routes)]
+  return [...new Set(routes)];
 }
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  compatibilityDate: '2026-01-01',
+  compatibilityDate: "2026-01-01",
   ssr: true,
 
   app: {
     head: {
       htmlAttrs: {
-        lang: 'vi',
+        lang: "vi",
       },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
@@ -46,6 +51,17 @@ export default defineNuxtConfig({
         {
           name: "google-site-verification",
           content: "QRcJoaZ-4mPyMz7jEHGefqjtKqaii0EfFcr0MWsOT2w",
+        },
+        // Thumbnail mạng xã hội & SEO (Open Graph, Twitter Card)
+        {
+          property: "og:image",
+          content: "https://anhtailor.vn/images/thumbnail.jpg",
+        },
+        { property: "og:image:type", content: "image/jpeg" },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image",
+          content: "https://anhtailor.vn/images/thumbnail.jpg",
         },
       ],
       link: [
@@ -84,16 +100,16 @@ export default defineNuxtConfig({
   i18n: {
     locales: LOCALES,
     defaultLocale: DEFAULT_LOCALE,
-    strategy: 'prefix',
+    strategy: "prefix",
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      fallbackLocale: 'en',
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+      fallbackLocale: "en",
     },
-    vueI18n: './i18n.config.ts',
+    vueI18n: "./i18n.config.ts",
     lazy: true,
-    langDir: 'i18n/locales',
+    langDir: "i18n/locales",
     // Giữ cách resolve path như v8 (tương thích khi nâng từ v8 lên v9)
     restructureDir: false,
     bundle: {
@@ -114,4 +130,4 @@ export default defineNuxtConfig({
       routes: [], // Tạm tắt prerender (đang 500); bật lại: routes: getPrerenderRoutes()
     },
   },
-})
+});

@@ -18,7 +18,7 @@ const jsonLd = computed(() => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS.name,
-  image: `${baseUrl}/images/logo-anh-tailor.jpg`,
+  image: `${baseUrl}/images/thumbnail.jpg`,
   description: t('servicesTitle') + ' - ' + t('tagline'),
   address: { '@type': 'PostalAddress', ...BUSINESS.address },
   geo: { '@type': 'GeoCoordinates', ...BUSINESS.geo },
