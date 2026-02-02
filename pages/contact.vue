@@ -43,5 +43,20 @@ const jsonLd = computed(() => ({
 
 usePageSeo('contact', { jsonLd })
 
+const breadcrumbLd = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t('nav.home'), item: localeUrl(baseUrl, locale.value, '/') },
+    { '@type': 'ListItem', position: 2, name: t('nav.contact'), item: localeUrl(baseUrl, locale.value, '/contact') },
+  ],
+}))
+const breadcrumbLdString = computed(() => JSON.stringify(breadcrumbLd.value))
+useHead({
+  script: [
+    { type: 'application/ld+json', children: breadcrumbLdString },
+  ],
+})
+
 const showWhatsAppQR = ref(false)
 </script>

@@ -1,6 +1,12 @@
 import type { PageKey } from "~/config/site.config";
-import { DEFAULT_LOCALE, LOCALE_CODES } from "~/config/site.config";
+import { DEFAULT_LOCALE, LOCALE_CODES, LOCALES } from "~/config/site.config";
 import { pathWithoutLocale, localeUrl } from "~/utils/route";
+
+/** Chuyển locale code sang định dạng og:locale (vd: en -> en_US). */
+function toOgLocale(localeCode: string): string {
+  const item = LOCALES.find((l) => l.code === localeCode);
+  return item ? item.language.replace("-", "_") : "en_US";
+}
 
 export interface PageSeoOptions {
   /** OG image URL (absolute). Mặc định dùng logo site. */
@@ -28,6 +34,10 @@ export function usePageSeo(pageKey: PageKey, options: PageSeoOptions = {}) {
   const canonicalUrl = computed(() =>
     localeUrl(baseUrl, locale.value, pathNoLocale.value)
   );
+  const ogLocale = computed(() => toOgLocale(locale.value));
+  const ogLocaleAlternate = computed(() =>
+    LOCALE_CODES.filter((code) => code !== locale.value).map(toOgLocale)
+  );
 
   const linkAlternates = computed(() => [
     { rel: "canonical" as const, href: canonicalUrl.value },
@@ -49,14 +59,20 @@ export function usePageSeo(pageKey: PageKey, options: PageSeoOptions = {}) {
     link: linkAlternates,
   });
 
-  // Open Graph & Twitter
+  // Open Graph & Twitter (og:locale giúp Facebook/social hiểu đúng ngôn ngữ trang)
   useSeoMeta({
     ogTitle: title,
     ogDescription: description,
     ogImage,
+    ogImageAlt: "Anh Tailor - Professional tailor, Ham Tien Mui Ne",
     ogUrl: canonicalUrl,
     ogType: "website",
+    ogLocale,
+    ogLocaleAlternate,
     twitterCard: "summary_large_image",
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterImage: ogImage,
   });
 
   // JSON-LD (optional, reactive)

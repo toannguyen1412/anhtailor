@@ -63,6 +63,10 @@ export default defineNuxtConfig({
           name: "twitter:image",
           content: "https://anhtailor.vn/images/thumbnail.jpg",
         },
+        {
+          property: "og:image:alt",
+          content: "Anh Tailor - Professional tailor at work, Ham Tien Mui Ne",
+        },
       ],
       link: [
         {
