@@ -11,6 +11,8 @@
         <AppFooter />
       </main>
     </div>
+
+    <AppFloatButton />
   </div>
 </template>
 
