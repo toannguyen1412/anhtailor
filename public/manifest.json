@@ -1,0 +1,23 @@
+{
+  "name": "Anh Tailor - May Veston Ham Tien Mui Ne",
+  "short_name": "Anh Tailor",
+  "description": "Professional tailor shop in Ham Tien, Mui Ne. Custom suit, vest, and shirt tailoring.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f6f3",
+  "theme_color": "#3c2414",
+  "icons": [
+    {
+      "src": "/images/logo-anh-tailor.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logo-anh-tailor.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
