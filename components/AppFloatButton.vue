@@ -4,19 +4,25 @@
       :href="BUSINESS.googleMapsReviewUrl"
       target="_blank"
       rel="noopener noreferrer"
-      class="float-btn float-btn-map"
+      class="float-btn-wrap"
       :aria-label="t('openInGoogleMaps')"
       title="Google Maps - Xem đánh giá">
-      <i class="fa-solid fa-map-location-dot" />
+      <span class="float-btn-label">{{ t('openInGoogleMaps') }}</span>
+      <span class="float-btn float-btn-map">
+        <i class="fa-solid fa-map-location-dot" />
+      </span>
     </a>
     <a
       :href="BUSINESS.whatsappUrl"
       target="_blank"
       rel="noopener noreferrer"
-      class="float-btn float-btn-whatsapp"
+      class="float-btn-wrap"
       :aria-label="t('openWhatsApp')"
       title="WhatsApp">
-      <i class="fa-brands fa-whatsapp" />
+      <span class="float-btn-label">{{ t('openWhatsApp') }}</span>
+      <span class="float-btn float-btn-whatsapp">
+        <i class="fa-brands fa-whatsapp" />
+      </span>
     </a>
   </div>
 </template>
@@ -36,6 +42,38 @@ const { t } = useI18n()
   flex-direction: column;
   gap: 8px;
   z-index: 9999;
+}
+
+.float-btn-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: inherit;
+}
+
+.float-btn-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #3c2414;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.float-btn-wrap:hover .float-btn-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 .float-btn {
