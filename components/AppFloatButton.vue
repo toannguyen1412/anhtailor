@@ -31,7 +31,7 @@ const { t } = useI18n()
 .app-float-buttons {
   position: fixed;
   right: 12px;
-  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -42,19 +42,20 @@ const { t } = useI18n()
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: white;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 480px) {
   .app-float-buttons {
     right: 10px;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
     gap: 6px;
   }
   .float-btn {
@@ -66,24 +67,22 @@ const { t } = useI18n()
 
 .float-btn:hover {
   transform: scale(1.08);
-  color: white;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
 }
 
 .float-btn-whatsapp {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  color: #25d366;
 }
 
 .float-btn-whatsapp:hover {
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+  color: #128c7e;
 }
 
 .float-btn-map {
-  background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
-  box-shadow: 0 4px 20px rgba(66, 133, 244, 0.45);
+  color: #4285f4;
 }
 
 .float-btn-map:hover {
-  box-shadow: 0 6px 28px rgba(66, 133, 244, 0.5);
+  color: #1a73e8;
 }
 </style>
