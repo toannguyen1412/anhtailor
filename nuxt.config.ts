@@ -46,8 +46,8 @@ export default defineNuxtConfig({
         },
         { name: "author", content: "Anh Tailor" },
         { name: "robots", content: "index, follow" },
-        { name: "theme-color", content: "#3c2414" },
-        { name: "msapplication-TileColor", content: "#3c2414" },
+        { name: "theme-color", content: "#2c2c2c" },
+        { name: "msapplication-TileColor", content: "#2c2c2c" },
         {
           name: "google-site-verification",
           content: "QRcJoaZ-4mPyMz7jEHGefqjtKqaii0EfFcr0MWsOT2w",
@@ -76,6 +76,12 @@ export default defineNuxtConfig({
         },
         { rel: "apple-touch-icon", href: "/images/logo-anh-tailor.jpg" },
         { rel: "manifest", href: "/manifest.json" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
+        },
         { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
         { rel: "preconnect", href: "https://unpkg.com" },
         { rel: "dns-prefetch", href: "https://images.unsplash.com" },

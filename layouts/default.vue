@@ -22,12 +22,13 @@ const { t } = useI18n()
 
 <style scoped>
 .bio-container {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 14px;
+  background: var(--color-paper);
+  border-radius: var(--radius-lg);
   padding: 0 0 40px 0;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
   text-align: center;
   position: relative;
   overflow: hidden;

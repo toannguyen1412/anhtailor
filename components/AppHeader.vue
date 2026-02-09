@@ -61,7 +61,7 @@ function getIcon(path: string): string {
   min-height: 1px;
 }
 
-/* Bottom Nav - sticky kiểu mobile app */
+/* Bottom Nav - refined luxury */
 .app-bottom-nav {
   position: fixed;
   bottom: 0;
@@ -74,13 +74,24 @@ function getIcon(path: string): string {
   align-items: stretch;
   justify-content: space-around;
   gap: 2px;
-  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(60, 36, 20, 0.08);
-  box-shadow: 0 -4px 20px rgba(60, 36, 20, 0.08);
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: var(--color-paper);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -2px 24px rgba(31, 31, 31, 0.05);
   border-radius: 14px 14px 0 0;
+}
+
+.app-bottom-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  opacity: 0.6;
 }
 
 .bottom-nav-item {
@@ -89,25 +100,26 @@ function getIcon(path: string): string {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 6px 4px;
-  color: #666;
+  gap: 5px;
+  padding: 8px 6px;
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: 0.7rem;
   font-weight: 500;
-  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.04em;
+  transition: color 0.22s ease, background 0.22s ease;
   border-radius: 10px;
   min-width: 0;
 }
 
 .bottom-nav-item:hover {
-  color: #3c2414;
-  background: rgba(60, 36, 20, 0.04);
+  color: var(--color-primary);
+  background: rgba(31, 31, 31, 0.04);
 }
 
 .bottom-nav-item.active {
-  color: #3c2414;
-  background: rgba(212, 165, 116, 0.2);
+  color: var(--color-primary);
+  background: rgba(31, 31, 31, 0.06);
 }
 
 .bottom-nav-icon {
@@ -122,7 +134,7 @@ function getIcon(path: string): string {
 }
 
 .bottom-nav-item.active .bottom-nav-icon :deep(svg) {
-  stroke: #3c2414;
+  stroke: var(--color-primary);
 }
 
 .bottom-nav-label {

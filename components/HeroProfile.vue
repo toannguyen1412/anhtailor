@@ -1,6 +1,6 @@
 <template>
   <div id="main-content">
-    <div class="profile-image">
+    <div class="profile-image" style="margin-top: 10px;">
       <img
         src="/images/logo-anh-tailor.jpg"
         :alt="t('logoAlt')"
@@ -21,9 +21,9 @@ const handleImageError = (event: Event) => {
   if (parent) {
     img.style.display = 'none'
     parent.innerHTML = '✂️'
-    parent.style.background = 'linear-gradient(135deg, #d4a574, #c19660)'
+    parent.style.background = '#2c2c2c'
     parent.style.fontSize = '50px'
-    parent.style.color = '#3c2414'
+    parent.style.color = '#c4a574'
   }
 }
 </script>
