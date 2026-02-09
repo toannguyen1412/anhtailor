@@ -5,6 +5,7 @@ import {
   LOCALE_CODES,
   NAV_ITEMS,
 } from "./config/site.config";
+import { BUSINESS } from "./config/business.config";
 
 /** Routes cho prerender: mỗi locale × mỗi page. strategy prefix: mọi locale có /vi, /en, ... */
 function getPrerenderRoutes(): string[] {
@@ -32,7 +33,7 @@ export default defineNuxtConfig({
       },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      title: "Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor",
+      title: `${BUSINESS.name} - ${BUSINESS.address.addressRegion}`,
       meta: [
         {
           name: "description",
@@ -44,7 +45,7 @@ export default defineNuxtConfig({
           content:
             "tailor mui ne, custom suit mui ne, tailor ham tien, custom suit vietnam, bespoke suit",
         },
-        { name: "author", content: "Anh Tailor" },
+        { name: "author", content: BUSINESS.name },
         { name: "robots", content: "index, follow" },
         { name: "theme-color", content: "#2c2c2c" },
         { name: "msapplication-TileColor", content: "#2c2c2c" },
@@ -78,6 +79,11 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/manifest.json" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        {
+          rel: "preload",
+          href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
+          as: "style",
+        },
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",

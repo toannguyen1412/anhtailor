@@ -5,6 +5,9 @@
         src="/images/logo-anh-tailor.jpg"
         :alt="t('logoAlt')"
         class="logo-img"
+        width="160"
+        height="160"
+        fetchpriority="high"
         @error="handleImageError">
     </div>
     <h1 class="brand-name hero-reveal">{{ brandHeading }}</h1>
