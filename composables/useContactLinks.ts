@@ -34,6 +34,12 @@ export function useContactLinks() {
       target: "_blank",
     },
     {
+      icon: "fa-brands fa-tripadvisor",
+      textKey: "tripadvisor",
+      href: BUSINESS.tripadvisorReviewUrl,
+      target: "_blank",
+    },
+    {
       icon: "fa-solid fa-location-dot",
       textKey: "address2",
       href: BUSINESS.googleMapsSearchUrl2,

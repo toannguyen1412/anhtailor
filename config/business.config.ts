@@ -36,9 +36,11 @@ export const BUSINESS = {
   /** Năm thành lập (schema) */
   foundingDate: '1996',
   /** URL mạng xã hội (schema sameAs, link) */
-  sameAs: ['https://www.facebook.com/anhtailorvn/'],
+  sameAs: ['https://www.facebook.com/anhtailorvn/', 'https://www.tripadvisor.com/Attraction_Review-g1009804-d34102605-Reviews-Anh_Tailor-Mui_Ne_Phan_Thiet_Binh_Thuan_Province.html'],
   /** Link Google Maps */
   googleMapsReviewUrl: 'https://g.page/r/Ca9pQceWoUdEEBE/review',
+  /** Link TripAdvisor */
+  tripadvisorReviewUrl: 'https://www.tripadvisor.com/Attraction_Review-g1009804-d34102605-Reviews-Anh_Tailor-Mui_Ne_Phan_Thiet_Binh_Thuan_Province.html',
   googleMapsPlaceUrl: 'https://g.co/kgs/G3Ya5nd',
   whatsappUrl: 'https://wa.me/84345197864',
   /** Schema rating mặc định */
