@@ -3,6 +3,7 @@
     <header class="services-header">
       <h2 id="services-heading" class="services-title">{{ t('servicesTitle') }}</h2>
       <span class="services-title-line" aria-hidden="true" />
+      <p class="services-intro">{{ t('serviceIntro') }}</p>
     </header>
     <div class="services-list">
       <article
@@ -12,6 +13,12 @@
         @mouseenter="pauseServiceAutoPlay"
         @mouseleave="resumeServiceAutoPlay">
         <div class="service-media">
+          <div
+            class="service-skeleton"
+            :class="{ 'is-hidden': serviceMediaLoaded[service.nameKey] }"
+            aria-hidden="true">
+            <span class="service-skeleton-shine" />
+          </div>
           <div class="service-slide-wrap">
             <img
               v-for="(image, index) in service.images"
@@ -21,6 +28,7 @@
               class="service-img"
               :class="{ active: index === service.currentImageIndex }"
               :loading="index === 0 ? 'eager' : 'lazy'"
+              @load="onServiceImageLoad(service.nameKey)"
               @error="handleServiceImageError($event, service)">
           </div>
           <div class="service-icon-badge" aria-hidden="true">
@@ -77,7 +85,18 @@ const serviceImageIndices = ref<Record<string, number>>({
   shirts: 0,
   waistcoat: 0
 })
+const serviceMediaLoaded = ref<Record<string, boolean>>({
+  suits: false,
+  shirts: false,
+  waistcoat: false
+})
 const serviceAutoPlayIntervals = ref<NodeJS.Timeout[]>([])
+
+const onServiceImageLoad = (nameKey: string) => {
+  if (!serviceMediaLoaded.value[nameKey]) {
+    serviceMediaLoaded.value = { ...serviceMediaLoaded.value, [nameKey]: true }
+  }
+}
 
 const services = computed(() => {
   return servicesWithTranslations.value.map(service => ({

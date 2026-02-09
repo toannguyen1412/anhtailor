@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Anh Tailor - Custom Suit Veston Ham Tien Mui Ne | Quality Tailor",
-      "description": "Anh Tailor - Professional tailor shop in Ham Tien, Mui Ne. High-quality custom suit, vest, and shirt tailoring services at reasonable prices."
+      "description": "Anh Tailor – Professional tailor in Ham Tien, Mui Ne. Custom suits, vests and shirts, quality fabrics, fair prices. Over 25 years of experience."
     },
     "about": {
       "title": "About Anh Tailor | Our Story - Ham Tien Mui Ne",
@@ -10,15 +10,15 @@
     },
     "contact": {
       "title": "Contact - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Contact Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Call 0345197864 or message via WhatsApp, Facebook."
+      "description": "Contact Anh Tailor: 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Call 0345197864, WhatsApp or Facebook. Remote ordering available."
     },
     "service": {
       "title": "Services & Prices - Anh Tailor | Suits, Shirts, Waistcoat",
-      "description": "View Anh Tailor tailoring services: Suits, custom shirts, waistcoat. Detailed pricing and completion times."
+      "description": "Anh Tailor services and prices: bespoke suits, shirts and waistcoats. Completion in 1–5 days, quality fabrics, clear pricing."
     },
     "post": {
       "title": "Customer Reviews - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Read reviews and see customer photos from Anh Tailor. Real feedback from local and international customers."
+      "description": "Customer reviews and real photos from Anh Tailor. Feedback from local and international clients in Mui Ne."
     }
   },
   "nav": {
@@ -32,6 +32,7 @@
   "tagline": "Professional Tailoring & Bespoke Suits",
   "featuresTitle": "SHOP CLOTHING & CUSTOM TAILORING",
   "servicesTitle": "Our Services & Prices",
+  "serviceIntro": "We tailor suits, shirts and waistcoats to your measurements with quality fabrics and clear delivery times. See pricing and completion times below.",
   "priceLabel": "Starting from",
   "customerReviews": "Customer Reviews",
   "customerReviewsSubtitle": "What our customers say",

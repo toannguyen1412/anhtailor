@@ -17,11 +17,18 @@
         @click="openLightbox(index)"
         :aria-label="t('viewCustomerPhoto').replace('{index}', (index + 1).toString())">
         <span class="feedback-gallery-card-inner">
+          <span
+            class="feedback-gallery-skeleton"
+            :class="{ 'is-hidden': galleryImageLoaded[index] === true }"
+            aria-hidden="true">
+            <span class="feedback-gallery-skeleton-shine" />
+          </span>
           <img
             :src="image.src"
             :alt="image.alt"
             loading="lazy"
             class="feedback-gallery-img"
+            @load="onGalleryImageLoad(index)"
             @error="handleFeedbackImageError($event, index)">
           <span class="feedback-gallery-card-overlay">
             <i class="fa-solid fa-expand" />
@@ -44,6 +51,11 @@ const { feedbackImagesWithTranslations } = useFeedbacks()
 
 const showLightbox = ref(false)
 const currentImageIndex = ref(0)
+const galleryImageLoaded = ref<Record<number, boolean>>({})
+
+const onGalleryImageLoad = (index: number) => {
+  galleryImageLoaded.value = { ...galleryImageLoaded.value, [index]: true }
+}
 
 const openLightbox = (index: number) => {
   currentImageIndex.value = index
@@ -147,7 +159,36 @@ const handleFeedbackImageError = (event: Event, _index: number) => {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(60, 36, 20, 0.12);
-  background: #f0ebe3;
+  background: var(--color-bg, #f0ebe3);
+}
+
+.feedback-gallery-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-bg-card, #faf7f2);
+  transition: opacity 0.35s ease;
+}
+
+.feedback-gallery-skeleton.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.feedback-gallery-skeleton-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    var(--color-bg-card, #faf7f2) 0%,
+    var(--color-bg-card, #faf7f2) 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    var(--color-bg-card, #faf7f2) 60%,
+    var(--color-bg-card, #faf7f2) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShine 1.4s ease-in-out infinite;
 }
 
 .feedback-gallery-card:hover .feedback-gallery-card-inner {
@@ -160,6 +201,8 @@ const handleFeedbackImageError = (event: Event, _index: number) => {
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .feedback-gallery-card:hover .feedback-gallery-img {

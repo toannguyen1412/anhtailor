@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Anh Tailor - Sastrería Profesional & Trajes a Medida | Ham Tien Mui Ne",
-      "description": "Anh Tailor - Sastrería profesional en Ham Tien, Mui Ne. Servicios de sastrería a medida de alta calidad a precios razonables."
+      "description": "Anh Tailor – Sastrería en Ham Tien, Mui Ne. Trajes, chalecos y camisas a medida, buenos tejidos, precios justos. Más de 25 años de experiencia."
     },
     "about": {
       "title": "Sobre Anh Tailor | Nuestra Historia - Ham Tien Mui Ne",
@@ -10,15 +10,15 @@
     },
     "contact": {
       "title": "Contacto - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Contacte a Anh Tailor - 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Llame al 0345197864 o contacte por WhatsApp, Facebook."
+      "description": "Anh Tailor: 357/1 Nguyen Dinh Chieu, Ham Tien, Mui Ne. Tel. 0345197864, WhatsApp o Facebook. Pedidos a distancia disponibles."
     },
     "service": {
       "title": "Servicios y Precios - Anh Tailor | Trajes, Camisas, Chalecos",
-      "description": "Servicios de sastrería Anh Tailor: Trajes, camisas a medida, chalecos. Precios y plazos detallados."
+      "description": "Servicios y precios Anh Tailor: trajes, camisas y chalecos a medida. Entrega 1–5 días, tejidos de calidad, precios claros."
     },
     "post": {
       "title": "Reseñas de Clientes - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Lea reseñas y vea fotos de clientes de Anh Tailor. Comentarios reales de clientes locales e internacionales."
+      "description": "Reseñas y fotos reales de clientes de Anh Tailor. Opiniones de clientes locales e internacionales en Mui Ne."
     }
   },
   "nav": {
@@ -32,6 +32,7 @@
   "tagline": "Sastrería Profesional & Trajes a Medida",
   "featuresTitle": "COMPRAR ROPA & Sastrería A MEDIDA",
   "servicesTitle": "Nuestros Servicios & Precios",
+  "serviceIntro": "Confeccionamos trajes, camisas y chalecos a medida con tejidos de calidad y plazos claros. Precios y plazos de entrega a continuación.",
   "priceLabel": "Desde",
   "customerReviews": "Reseñas de Clientes",
   "customerReviewsSubtitle": "Lo que dicen nuestros clientes",

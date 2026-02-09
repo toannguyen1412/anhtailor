@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Anh Tailor - May Veston Chuyên Nghiệp & Áo Vest Đo May | Ham Tien Mui Ne",
-      "description": "Anh Tailor - Tiệm may chuyên nghiệp tại Hàm Tiến, Mũi Né. Dịch vụ may đo veston, áo vest và áo sơ mi chất lượng cao với giá cả hợp lý."
+      "description": "Anh Tailor – Tiệm may chuyên nghiệp tại Hàm Tiến, Mũi Né. May đo veston, áo vest, áo sơ mi chất lượng cao, giá hợp lý. Hơn 25 năm kinh nghiệm."
     },
     "about": {
       "title": "Về Anh Tailor | Câu Chuyện Của Chúng Tôi - Ham Tien Mui Ne",
@@ -10,15 +10,15 @@
     },
     "contact": {
       "title": "Liên Hệ - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Liên hệ Anh Tailor - Địa chỉ 357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né. Gọi 0345197864 hoặc nhắn tin qua WhatsApp, Facebook."
+      "description": "Liên hệ Anh Tailor: 357/1 Nguyễn Đình Chiểu, Hàm Tiến, Mũi Né. Gọi 0345197864, nhắn WhatsApp hoặc Facebook. Hỗ trợ đặt may từ xa."
     },
     "service": {
       "title": "Dịch Vụ & Giá Cả - Anh Tailor | Veston, Áo Sơ Mi, Áo Ghi Lê",
-      "description": "Xem danh sách dịch vụ may đo của Anh Tailor: Veston, áo sơ mi, áo ghi lê. Bảng giá và thời gian hoàn thành chi tiết."
+      "description": "Bảng dịch vụ và giá Anh Tailor: veston, áo sơ mi, áo ghi lê may đo. Thời gian hoàn thành 1–5 ngày, vải cao cấp, báo giá rõ ràng."
     },
     "post": {
       "title": "Đánh Giá Khách Hàng - Anh Tailor | Ham Tien Mui Ne",
-      "description": "Đọc đánh giá và xem ảnh khách hàng đã may tại Anh Tailor. Nhận xét thực tế từ khách trong nước và quốc tế."
+      "description": "Đánh giá và ảnh khách hàng thực tế sau khi may tại Anh Tailor. Nhận xét từ khách trong nước và quốc tế tại Mũi Né."
     }
   },
   "nav": {
@@ -32,6 +32,7 @@
   "tagline": "May Veston Chuyên Nghiệp & Áo Vest Đo May",
   "featuresTitle": "MUA SẮM QUẦN ÁO VÀ MAY ĐO THEO YÊU CẦU",
   "servicesTitle": "Dịch Vụ & Giá Cả",
+  "serviceIntro": "Chúng tôi may đo veston, áo sơ mi và áo ghi lê theo số đo của bạn, với vải chất lượng và thời gian giao hàng rõ ràng. Bảng giá và thời gian hoàn thành bên dưới.",
   "priceLabel": "Bắt đầu từ",
   "customerReviews": "Đánh Giá Khách Hàng",
   "customerReviewsSubtitle": "Nhận xét từ khách hàng",
