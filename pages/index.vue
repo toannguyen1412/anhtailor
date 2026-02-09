@@ -31,7 +31,23 @@ const jsonLd = computed(() => ({
   inLanguage: [...BUSINESS.inLanguage],
 }))
 
+const { faqsWithTranslations } = useFAQs()
+const faqSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqsWithTranslations.value.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+}))
+const faqSchemaString = computed(() => JSON.stringify(faqSchema.value))
+
 usePageSeo('home', { jsonLd })
+
+useHead({
+  script: [{ type: 'application/ld+json', children: faqSchemaString }],
+})
 </script>
 
 <style scoped>

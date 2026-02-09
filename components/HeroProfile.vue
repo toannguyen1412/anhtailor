@@ -1,5 +1,5 @@
 <template>
-  <div id="main-content" class="hero-profile">
+  <div class="hero-profile">
     <div class="profile-image hero-reveal">
       <img
         src="/images/logo-anh-tailor.jpg"
