@@ -1,5 +1,5 @@
 import type { LocaleCode } from '~/config/site.config'
-import { LOCALE_CODES } from '~/config/site.config'
+import { DEFAULT_LOCALE, LOCALE_CODES } from '~/config/site.config'
 
 /**
  * Path hiện tại không chứa prefix locale (vd: / → /, /vi/about → /about).
@@ -13,10 +13,14 @@ export function pathWithoutLocale(path: string): string {
 }
 
 /**
- * Build URL cho locale: strategy prefix → baseUrl/{code}{path}.
- * pathNoLocale: path không có locale (/, /about, ...).
+ * Build URL cho locale.
+ * prefix_except_default: locale mặc định (en) không có prefix → baseUrl + path;
+ * các locale khác → baseUrl/{code}{path}.
  */
 export function localeUrl(baseUrl: string, localeCode: string, pathNoLocale: string): string {
   const path = pathNoLocale === '/' ? '' : pathNoLocale
+  if (localeCode === DEFAULT_LOCALE) {
+    return `${baseUrl}${path}`
+  }
   return `${baseUrl}/${localeCode}${path}`
 }

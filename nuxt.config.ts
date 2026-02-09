@@ -7,14 +7,18 @@ import {
 } from "./config/site.config";
 import { BUSINESS } from "./config/business.config";
 
-/** Routes cho prerender: mỗi locale × mỗi page. strategy prefix: mọi locale có /vi, /en, ... */
+/** Routes cho prerender: prefix_except_default → en không prefix, các locale khác /vi, /de, ... */
 function getPrerenderRoutes(): string[] {
   const pathsByPage = NAV_ITEMS.map((item) => item.path);
   const routes: string[] = [];
   for (const locale of LOCALE_CODES) {
     for (const path of pathsByPage) {
       const pathNorm = path === "/" ? "" : path;
-      routes.push(`/${locale}${pathNorm}`);
+      if (locale === DEFAULT_LOCALE) {
+        routes.push(pathNorm || "/");
+      } else {
+        routes.push(`/${locale}${pathNorm}`);
+      }
     }
   }
   return [...new Set(routes)];
@@ -119,7 +123,7 @@ export default defineNuxtConfig({
   i18n: {
     locales: LOCALES,
     defaultLocale: DEFAULT_LOCALE,
-    strategy: "prefix",
+    strategy: "prefix_except_default",
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",
