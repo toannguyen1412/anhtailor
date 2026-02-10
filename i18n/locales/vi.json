@@ -66,6 +66,13 @@
   "imageNotLoaded": "Không tải được ảnh",
   "mapTitle": "Vị trí cửa hàng",
   "openInGoogleMaps": "Mở trong Google Maps",
+  "map": {
+    "mainStore": "Cửa hàng chính",
+    "homeStudio": "Nhà riêng",
+    "openingHours": "Giờ mở cửa",
+    "openingHoursValue": "Thứ 2 – Chủ nhật: 09:00 – 17:00",
+    "getDirections": "Chỉ đường đến cửa hàng"
+  },
   "services": {
     "suits": {
       "name": "Veston & Áo Vest",

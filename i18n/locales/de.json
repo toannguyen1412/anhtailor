@@ -66,6 +66,13 @@
   "imageNotLoaded": "Bild nicht geladen",
   "mapTitle": "Geschäftsstandort",
   "openInGoogleMaps": "In Google Maps öffnen",
+  "map": {
+    "mainStore": "Hauptgeschäft",
+    "homeStudio": "Privatadresse",
+    "openingHours": "Öffnungszeiten",
+    "openingHoursValue": "Mo – So: 09:00 – 17:00",
+    "getDirections": "Route planen"
+  },
   "services": {
     "suits": {
       "name": "Anzüge & Veston",

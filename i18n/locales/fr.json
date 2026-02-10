@@ -66,6 +66,13 @@
   "imageNotLoaded": "Image non chargée",
   "mapTitle": "Emplacement du magasin",
   "openInGoogleMaps": "Ouvrir dans Google Maps",
+  "map": {
+    "mainStore": "Magasin principal",
+    "homeStudio": "Domicile",
+    "openingHours": "Horaires d'ouverture",
+    "openingHoursValue": "Lun – Dim : 09h00 – 17h00",
+    "getDirections": "Obtenir l'itinéraire"
+  },
   "services": {
     "suits": {
       "name": "Costumes & Veston",

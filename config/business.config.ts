@@ -31,7 +31,7 @@ export const BUSINESS = {
     latitude: '10.9381',
     longitude: '108.2778',
   },
-  openingHours: 'Mo-Su 08:00-20:00',
+  openingHours: 'Mo-Su 09:00-17:00',
   priceRange: '$40 - $380',
   /** Năm thành lập (schema) */
   foundingDate: '1996',

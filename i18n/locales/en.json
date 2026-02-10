@@ -66,6 +66,13 @@
   "imageNotLoaded": "Image not loaded",
   "mapTitle": "Store Location",
   "openInGoogleMaps": "Open in Google Maps",
+  "map": {
+    "mainStore": "Main Store",
+    "homeStudio": "Home Studio",
+    "openingHours": "Opening Hours",
+    "openingHoursValue": "Mon – Sun: 09:00 – 17:00",
+    "getDirections": "Get Directions"
+  },
   "services": {
     "suits": {
       "name": "Suits & Veston",

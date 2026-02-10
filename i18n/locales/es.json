@@ -66,6 +66,13 @@
   "imageNotLoaded": "Imagen no cargada",
   "mapTitle": "Ubicación de la tienda",
   "openInGoogleMaps": "Abrir en Google Maps",
+  "map": {
+    "mainStore": "Tienda principal",
+    "homeStudio": "Domicilio",
+    "openingHours": "Horario de apertura",
+    "openingHoursValue": "Lun – Dom: 09:00 – 17:00",
+    "getDirections": "Cómo llegar"
+  },
   "services": {
     "suits": {
       "name": "Trajes & Veston",
