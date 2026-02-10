@@ -2,21 +2,46 @@
   <div class="map-section">
     <!-- Header -->
     <div class="map-header">
-      <h3 class="map-title">{{ t('mapTitle') }}</h3>
+      <h3 class="map-title">{{ t("mapTitle") }}</h3>
       <span class="map-title-line" />
     </div>
 
     <!-- Address Cards -->
     <div class="map-address-cards">
+      <!-- Opening Hours -->
+      <div class="map-address-card">
+        <div class="map-address-icon">
+          <i class="fa-regular fa-clock" />
+        </div>
+        <div class="map-address-info">
+          <p class="map-address-label">{{ t("map.openingHours") }}</p>
+          <p class="map-address-text">{{ t("map.openingHoursValue") }}</p>
+        </div>
+      </div>
+
       <!-- Address 1: Main Store -->
       <div class="map-address-card">
         <div class="map-address-icon">
           <i class="fa-solid fa-store" />
         </div>
         <div class="map-address-info">
-          <p class="map-address-label">{{ t('map.mainStore') }}</p>
-          <p class="map-address-text">{{ t('contact.address') }}</p>
+          <p class="map-address-label">{{ t("map.mainStore") }}</p>
+          <p class="map-address-text">{{ t("contact.address") }}</p>
         </div>
+      </div>
+
+      <!-- Map Embed -->
+      <div class="map-embed-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1234567890!2d108.2778!3d10.9381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTAuOTM4MSAxMDguMjc3OA!5e0!3m2!1svi!2s!4v1234567890123!5m2!1svi!2s&q=357/1+Nguyen+Dinh+Chieu,+Ham+Tien,+Mui+Ne"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          :title="t('mapTitle')"
+        />
       </div>
 
       <!-- Address 2: Home -->
@@ -25,66 +50,18 @@
           <i class="fa-solid fa-house" />
         </div>
         <div class="map-address-info">
-          <p class="map-address-label">{{ t('map.homeStudio') }}</p>
-          <p class="map-address-text">{{ t('contact.address2') }}</p>
+          <p class="map-address-label">{{ t("map.homeStudio") }}</p>
+          <p class="map-address-text">{{ t("contact.address2") }}</p>
         </div>
       </div>
-
-      <!-- Opening Hours -->
-      <div class="map-address-card">
-        <div class="map-address-icon">
-          <i class="fa-regular fa-clock" />
-        </div>
-        <div class="map-address-info">
-          <p class="map-address-label">{{ t('map.openingHours') }}</p>
-          <p class="map-address-text">{{ t('map.openingHoursValue') }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Map Embed -->
-    <div class="map-embed-wrapper">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1234567890!2d108.2778!3d10.9381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTAuOTM4MSAxMDguMjc3OA!5e0!3m2!1svi!2s!4v1234567890123!5m2!1svi!2s&q=357/1+Nguyen+Dinh+Chieu,+Ham+Tien,+Mui+Ne"
-        width="100%"
-        height="100%"
-        style="border: 0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        :title="t('mapTitle')" />
-    </div>
-
-    <!-- Actions -->
-    <div class="map-actions">
-      <a
-        :href="BUSINESS.googleMapsPlaceUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="map-action-card">
-        <span class="map-action-icon">
-          <i class="fa-solid fa-location-dot" />
-        </span>
-        <span class="map-action-text">{{ t('map.getDirections') }}</span>
-        <i class="fa-solid fa-chevron-right map-action-chevron" />
-      </a>
-      <a
-        :href="`tel:${BUSINESS.phoneDisplay}`"
-        class="map-action-card">
-        <span class="map-action-icon">
-          <i class="fa-solid fa-phone" />
-        </span>
-        <span class="map-action-text">{{ t('contact.callUs') }}</span>
-        <i class="fa-solid fa-chevron-right map-action-chevron" />
-      </a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { BUSINESS } from '~/config/business.config'
+import { BUSINESS } from "~/config/business.config";
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
 
 <style scoped>
@@ -202,7 +179,7 @@ const { t } = useI18n()
 }
 
 .map-embed-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: var(--radius-md);

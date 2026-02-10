@@ -200,6 +200,7 @@ const handleLinkClick = (event: Event) => {
 /* ─── Grouped card (WhatsApp + QR) ─── */
 .cl-card--grouped {
   display: flex;
+  align-items: stretch;
   gap: 0;
   padding: 0;
   overflow: hidden;
