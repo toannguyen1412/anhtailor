@@ -34,7 +34,7 @@ export function useContactLinks() {
       target: "_blank",
     },
     {
-      icon: "fa-brands fa-tripadvisor",
+      icon: "fa-solid fa-compass",
       textKey: "tripadvisor",
       href: BUSINESS.tripadvisorReviewUrl,
       target: "_blank",
